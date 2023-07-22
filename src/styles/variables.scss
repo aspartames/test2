@@ -1,0 +1,53 @@
+@import '../fonts/stylesheet.css';
+
+$gothamPro: "GothamPro";
+$gothamProMedium: "GothamProMedium";
+$gothamProBold: "GothamProBold";
+
+$color1: #ffffff;
+$color2: #212832;
+$color3: #6d82fc;
+
+$gradientColor1: #49a9ff;
+$gradientColor2: #d327ff;
+
+$marginDesktop: 110px;
+$marginLaptop: 31px;
+$marginMobile: 10px;
+
+$transition: 300ms;
+
+$laptop: 'max-width: 1500px';
+$tablet: 'max-width: 1024px';
+$mobile: 'max-width: 600px';
+
+@mixin font14 ($lineHeight: 1){
+  font-size: 14px;
+  line-height: $lineHeight;
+}
+
+@mixin font16 ($lineHeight: 1){
+  font-size: 16px;
+  line-height: $lineHeight;
+}
+@mixin font20 ($lineHeight: 1){
+  /*
+  font-size: max(1.0416667vw, 16px);
+  */
+  font-size: 20px;
+  line-height: $lineHeight;
+  @media ($laptop) {
+    font-size: 16px;
+  }
+}
+
+
+@mixin container{
+  padding: 0 $marginDesktop;
+  @media ($laptop) {
+    padding: 0 $marginLaptop;
+  }
+  @media ($mobile) {
+    padding: 0 $marginMobile;
+  }
+}
