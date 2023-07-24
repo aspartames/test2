@@ -5,6 +5,7 @@ header{
   position: absolute;
   top: 0;
   width: 100vw;
+  z-index: 100;
   &.fixed{
     position: fixed;
   }
@@ -14,41 +15,14 @@ header{
   }
 }
 
-.header_container{
-
-}
-
-
 //////////////////////////////////////////// header top //////////////////////////////////////////////////////////
 
-.header_top{
-  @include container;
-  width: 100%;
-  background: $color2;
-  display: flex;
-  justify-content: flex-end;
+.header_top {
+  @include siteNavigation;
   @media ($tablet) {
     display: none;
   }
-
-  & ul{
-    @include font14(18px);
-    font-family: $gothamProMedium;
-    width: 1056px;
-    display: flex;
-    justify-content: space-between;
-    color: $color1;
-    list-style-type: none;
-    @media ($laptop) {
-      font-size: 13px;
-      line-height: 14px;
-      width: 850px;
-    }
-  }
-
 }
-
-
 
 //////////////////////////////////////////// header mid //////////////////////////////////////////////////////////
 
@@ -96,30 +70,7 @@ header{
   }
 }
 .header_logo{
-  margin-right: 86px;
-  @media ($laptop) {
-    margin-right: 54px;
-    margin-top: -6px;
-  }
-  & img{
-    position: relative;
-    top: 8px;
-    max-height: 58px;
-    max-width: 205px;
-    @media ($laptop) {
-      max-height: 47px;
-      max-width: 169px;
-    }
-    @media ($tablet) {
-      max-height: 40px;
-      max-width: 150px;
-      top: 8px;
-    }
-    @media ($mobile) {
-      max-height: 30px;
-      max-width: 103px;
-    }
-    }
+  @include logo;
 }
 .header_mid_center{
   display: flex;
@@ -135,83 +86,24 @@ header{
 }
 
 .header_address_container{
-
+ @include address;
 }
 .header_address {
-  @include font16(24px);
-  font-family: $gothamProBold;
-  @media ($laptop) {
-    font-size: 15px;
-    margin-right: 36px;
-  }
+
 }
 .header_address_links{
-  position: relative;
-  top: 4px;
-  @media ($laptop) {
-    top: 0;
-  }
-  & a{
-    @include font14(24px);
-    font-family: $gothamPro;
-    color: $color3;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    margin-right: 20px;
-    @media ($laptop) {
-      font-size: 13px;
-    }
-  }
+  @include addressLinks;
 }
-.phone_number{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  & span:first-child{
-    font-size: 20px;
-    line-height: 24px;
-    font-family: $gothamProBold;
-    @media ($laptop) {
-      font-size: 20px;
-    }
-  }
-  & span:last-child{
-    @include font14(24px);
-    font-family: $gothamPro;
-    position: relative;
-    top: 4px;
-    @media ($laptop) {
-      font-size: 13px;
-      top: 0;
-    }
-  }
+.header_phone_number{
+  @include phoneNumber;
 }
 
 .floor_plan_button{
-  font-family: $gothamProMedium;
-  border: 2px solid #777777;
-  background: $color1;
-  border-radius: 8px;
-  cursor: pointer;
-  padding: 0 18px;
+  @include floorPlanButton;
   @media ($tablet) {
     display: none;
     &.mobile{
       display: block;
-    }
-  }
-  & span{
-    @include font20(44px);
-  }
-  & .fa-map{
-    position: relative;
-    font-size: 22px;
-    line-height: 30px;
-    color: $color3;
-    margin-right: 6px;
-    top: 1px;
-    @media ($laptop) {
-      font-size: 20px;
     }
   }
 }
@@ -537,7 +429,7 @@ $bottomNavOffsetLaptop: 62px;
   }
 }
 
-/////////////////////////////////////////// drop mobile ///////////////
+////////////////////////////////////////////////// drop mobile menu //////////////////////////////////////////////////////
 
 
 .drop_menu_mobile{
@@ -545,6 +437,8 @@ $bottomNavOffsetLaptop: 62px;
   position: relative;
   background: $color1;
   width: 100%;
+  height: 0;
+  overflow: hidden;
   box-shadow: 0 24px 32px 0 rgba(1, 2, 2, 0.71);
   display: none;
   opacity: 0;
@@ -557,6 +451,7 @@ $bottomNavOffsetLaptop: 62px;
     opacity: 1;
     pointer-events: auto;
     user-select: auto;
+    height: 100%;
   }
   @media ($tablet) {
     display: block;

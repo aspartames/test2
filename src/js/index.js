@@ -92,7 +92,24 @@ mobileMenu()
 
 
 
+const mapActive = () => {
+    const mapOverlay = $('.map_overlay')
+    mapOverlay.click(()=>{
+        mapOverlay.css('display', 'none')
+    })
 
+    function handleTouch(event) {
+        if (event.touches.length === 2) {
+            mapOverlay.css('display', 'none')
+        } else if (event.touches.length === 1) {
+            mapOverlay.css('display', 'block')
+        }
+    }
+    $(document).on('touchstart', handleTouch);
+
+}
+
+mapActive()
 
 
 

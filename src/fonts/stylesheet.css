@@ -98,7 +98,7 @@
 }
 
 @font-face {
-	font-family: 'Gotham Pro';
+	font-family: 'GothamProBlack';
 	src: url('GothamPro-Black.eot');
 	src: local('Gotham Pro Black'), local('GothamPro-Black'),
 		url('GothamPro-Black.eot?#iefix') format('embedded-opentype'),
@@ -128,4 +128,13 @@
 		url('GothamPro-MediumItalic.ttf') format('truetype');
 	font-weight: 500;
 	font-style: italic;
+}
+
+
+
+@font-face {
+	font-family: 'OpenSans';
+	src: url('OpenSans-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }

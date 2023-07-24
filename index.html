@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="src/styles/index.css">
     <link rel="stylesheet" type="text/css" href="src/styles/style.css">
     <link rel="stylesheet" type="text/css" href="src/styles/header.css">
+    <link rel="stylesheet" type="text/css" href="src/styles/footer.css">
     <link rel="stylesheet" type="text/css" href="src/libraries/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="src/libraries/slick.css">
     <link rel="stylesheet" type="text/css" href="src/fonts/fontAwesomeAll.min.css">
@@ -16,267 +17,369 @@
 <body>
     <main>
         <header>
-            <div class="header_container">
-                <div class="header_top">
-                    <nav>
-                        <ul>
-                            <li><a href="#">О центре</a></li>
-                            <li><a href="#">Акции и события</a></li>
-                            <li><a href="#">Эко-тренды</a></li>
-                            <li><a href="#">Доступная среда</a></li>
-                            <li><a href="#">Аренда</a></li>
-                            <li><a href="#">Вход для арендаторов</a></li>
-                            <li><a href="#">Контакты</a></li>
-                        </ul>
-                    </nav>
+            <div class="header_top">
+                <nav>
+                    <ul>
+                        <li><a href="#">О центре</a></li>
+                        <li><a href="#">Акции и события</a></li>
+                        <li><a href="#">Эко-тренды</a></li>
+                        <li><a href="#">Доступная среда</a></li>
+                        <li><a href="#">Аренда</a></li>
+                        <li><a href="#">Вход для арендаторов</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header_mid">
+                <div class="header_all header_all_fixed">
+                    <div class="menu_icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
-                <div class="header_mid">
-                    <div class="header_all header_all_fixed">
+                <div class="header_mid_info">
+                    <div class="header_logo">
+                        <a href="#">
+                            <img src="./src/images/logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="header_mid_center">
+                        <div class="header_address_container">
+                            <span>г. Москва, Вешняковская улица, 18</span>
+                            <div class="header_address_links">
+                                <a href="#">Как добраться?</a>
+                                <a href="#">Парковка</a>
+                            </div>
+                        </div>
+                        <div class="header_phone_number">
+                            <span>+7 495 510 45 21</span>
+                            <span>Ежедневно с 10.00 до 23.00</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="floor_plan_button">
+                    <i class="fa-regular fa-map"></i>
+                    <span>Планы этажей</span>
+                </button>
+
+                <div class="header_mid_mobile_buttons">
+                    <a href="#"><i class="fa-regular fa-map mob_icon"></i></a>
+                    <a href="#"><i class="fas fa-map-marker-alt mob_icon"></i></a>
+                </div>
+            </div>
+            <div class="header_bottom">
+                <nav class="header_bottom_nav">
+                    <div class="header_all">
                         <div class="menu_icon">
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
+                        <span>Все магазины</span>
                     </div>
-                    <div class="header_mid_info">
-                        <div class="header_logo">
-                            <a href="#">
-                                <img src="./src/images/logo.png" alt="logo">
-                            </a>
-                        </div>
-                        <div class="header_mid_center">
-                            <div class="header_address_container">
-                                <div class="header_address">г. Москва, Вешняковская улица, 18</div>
-                                <div class="header_address_links">
-                                    <a href="#">Как добраться?</a>
-                                    <a href="#">Парковка</a>
-                                </div>
-                            </div>
-                            <div class="phone_number">
-                                <span>+7 495 510 45 21</span>
-                                <span>Ежедневно с 10.00 до 23.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="floor_plan_button">
-                        <i class="fa-regular fa-map"></i>
-                        <span>Планы этажей</span>
-                    </button>
-
-                    <div class="header_mid_mobile_buttons">
-                        <a href="#"><i class="fa-regular fa-map mob_icon"></i></a>
-                        <a href="#"><i class="fas fa-map-marker-alt mob_icon"></i></a>
-                    </div>
-                </div>
-                <div class="header_bottom">
-                    <nav class="header_bottom_nav">
-                        <div class="header_all">
-                            <div class="menu_icon">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <span>Все магазины</span>
-                        </div>
-                        <ul class="header_bottom_nav_list">
-                            <li class="header_bottom_nav_item" data-nav-item="clothes"><a href="#">Одежда</a></li>
-                            <li class="header_bottom_nav_item" data-nav-item="food"><a href="#">Где поесть</a></li>
-                            <li class="header_bottom_nav_item" data-nav-item="pickUpPoints"><a href="#">Пункты выдачи</a></li>
-                            <li class="header_bottom_nav_item" data-nav-item="sport"><a href="#">Спорт</a></li>
-                            <li class="header_bottom_nav_item" data-nav-item="kids"><a href="#">Для детей</a></li>
-                            <li class="header_bottom_nav_item" data-nav-item="technics"><a href="#">Бытовая техника</a></li>
-                            <li class="header_bottom_nav_item" data-nav-item="gifts"><a href="#">Подарки</a></li>
+                    <ul class="header_bottom_nav_list">
+                        <li class="header_bottom_nav_item" data-nav-item="clothes"><a href="#">Одежда</a></li>
+                        <li class="header_bottom_nav_item" data-nav-item="food"><a href="#">Где поесть</a></li>
+                        <li class="header_bottom_nav_item" data-nav-item="pickUpPoints"><a href="#">Пункты выдачи</a>
+                        </li>
+                        <li class="header_bottom_nav_item" data-nav-item="sport"><a href="#">Спорт</a></li>
+                        <li class="header_bottom_nav_item" data-nav-item="kids"><a href="#">Для детей</a></li>
+                        <li class="header_bottom_nav_item" data-nav-item="technics"><a href="#">Бытовая техника</a></li>
+                        <li class="header_bottom_nav_item" data-nav-item="gifts"><a href="#">Подарки</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="drop_menu">
+                <nav class="drop_menu_nav">
+                    <div class="drop_menu_content">
+                        <ul class="drop_menu_nav_list">
+                            <li class="drop_menu_categories">
+                                <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
+                                <ul class="drop_menu_shops">
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Этли</a></li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Галина</a></li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">ТВОЕ</a></li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Алана стили</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">БОКО стиль</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Джинсовый
+                                        мир</a></li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Zenden</a></li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Башмаг</a></li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Венеция</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a
+                                            href="#">Кожгалантарея</a></li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Balaclan</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">RAW City</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">4 сезона</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">PISERRO</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a
+                                            href="#">Lingere-line</a></li>
+                                    <li class="drop_menu_shops_item" data-category="clothes"><a href="#">KARI</a></li>
+                                </ul>
+                            </li>
+                            <li class="drop_menu_categories">
+                                <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
+                                <ul class="drop_menu_shops">
+                                    <li class="drop_menu_shops_item" data-category="food"><a href="#">Этли</a></li>
+                                    <li class="drop_menu_shops_item" data-category="food"><a href="#">Галина</a></li>
+                                    <li class="drop_menu_shops_item" data-category="food"><a href="#">ТВОЕ</a></li>
+                                    <li class="drop_menu_shops_item" data-category="food"><a href="#">Алана стили</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="food"><a href="#">БОКО стиль</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="food"><a href="#">Джинсовый мир</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="food"><a href="#">4 сезона</a></li>
+                                </ul>
+                            </li>
+                            <li class="drop_menu_categories">
+                                <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
+                                <ul class="drop_menu_shops">
+                                    <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">Этли</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">Галина</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">ТВОЕ</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">Алана
+                                        стили</a></li>
+                                    <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">БОКО
+                                        стиль</a></li>
+                                    <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">Джинсовый
+                                        мир</a></li>
+                                    <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">4
+                                        сезона</a></li>
+                                </ul>
+                            </li>
+                            <li class="drop_menu_categories">
+                                <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
+                                <ul class="drop_menu_shops">
+                                    <li class="drop_menu_shops_item" data-category="sport"><a href="#">Этли</a></li>
+                                    <li class="drop_menu_shops_item" data-category="sport"><a href="#">Галина</a></li>
+                                    <li class="drop_menu_shops_item" data-category="sport"><a href="#">ТВОЕ</a></li>
+                                    <li class="drop_menu_shops_item" data-category="sport"><a href="#">Алана стили</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="sport"><a href="#">БОКО стиль</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="sport"><a href="#">Джинсовый мир</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="sport"><a href="#">4 сезона</a></li>
+                                </ul>
+                            </li>
+                            <li class="drop_menu_categories">
+                                <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
+                                <ul class="drop_menu_shops">
+                                    <li class="drop_menu_shops_item" data-category="kids"><a href="#">Этли</a></li>
+                                    <li class="drop_menu_shops_item" data-category="kids"><a href="#">Галина</a></li>
+                                    <li class="drop_menu_shops_item" data-category="kids"><a href="#">ТВОЕ</a></li>
+                                    <li class="drop_menu_shops_item" data-category="kids"><a href="#">Алана стили</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="kids"><a href="#">БОКО стиль</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="kids"><a href="#">Джинсовый мир</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="kids"><a href="#">4 сезона</a></li>
+                                </ul>
+                            </li>
+                            <li class="drop_menu_categories">
+                                <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
+                                <ul class="drop_menu_shops">
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">Этли</a></li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">Галина</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">ТВОЕ</a></li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">Алана
+                                        стили</a></li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">БОКО стиль</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">Джинсовый
+                                        мир</a></li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">4 сезона</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="drop_menu_categories">
+                                <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
+                                <ul class="drop_menu_shops">
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Этли</a></li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Галина</a></li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">ТВОЕ</a></li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Алана стили</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">БОКО стиль</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Джинсовый мир</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">4 сезона</a></li>
+                                </ul>
+                            </li>
+                            <li class="drop_menu_categories">
+                                <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
+                                <ul class="drop_menu_shops">
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">Этли</a></li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">Галина</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">ТВОЕ</a></li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">Алана
+                                        стили</a></li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">БОКО стиль</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">Джинсовый
+                                        мир</a></li>
+                                    <li class="drop_menu_shops_item" data-category="technics"><a href="#">4 сезона</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="drop_menu_categories">
+                                <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
+                                <ul class="drop_menu_shops">
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Этли</a></li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Галина</a></li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">ТВОЕ</a></li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Алана стили</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">БОКО стиль</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Джинсовый мир</a>
+                                    </li>
+                                    <li class="drop_menu_shops_item" data-category="gifts"><a href="#">4 сезона</a></li>
+                                </ul>
+                            </li>
                         </ul>
-                    </nav>
-                </div>
-                <div class="drop_menu">
-                    <nav class="drop_menu_nav">
-                        <div class="drop_menu_content">
-                            <ul class="drop_menu_nav_list">
-                                <li class="drop_menu_categories">
-                                    <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
-                                    <ul class="drop_menu_shops">
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Этли</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Галина</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">ТВОЕ</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Алана стили</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">БОКО стиль</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Джинсовый мир</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Zenden</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Башмаг</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Венеция</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Кожгалантарея</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Balaclan</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">RAW City</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">4 сезона</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">PISERRO</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">Lingere-line</a></li>
-                                        <li class="drop_menu_shops_item" data-category="clothes"><a href="#">KARI</a></li>
-                                    </ul>
-                                </li>
-                                <li class="drop_menu_categories">
-                                    <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
-                                    <ul class="drop_menu_shops">
-                                        <li class="drop_menu_shops_item" data-category="food"><a href="#">Этли</a></li>
-                                        <li class="drop_menu_shops_item" data-category="food"><a href="#">Галина</a></li>
-                                        <li class="drop_menu_shops_item" data-category="food"><a href="#">ТВОЕ</a></li>
-                                        <li class="drop_menu_shops_item" data-category="food"><a href="#">Алана стили</a></li>
-                                        <li class="drop_menu_shops_item" data-category="food"><a href="#">БОКО стиль</a></li>
-                                        <li class="drop_menu_shops_item" data-category="food"><a href="#">Джинсовый мир</a></li>
-                                        <li class="drop_menu_shops_item" data-category="food"><a href="#">4 сезона</a></li>
-                                    </ul>
-                                </li>
-                                <li class="drop_menu_categories">
-                                    <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
-                                    <ul class="drop_menu_shops">
-                                        <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">Этли</a></li>
-                                        <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">Галина</a></li>
-                                        <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">ТВОЕ</a></li>
-                                        <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">Алана стили</a></li>
-                                        <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">БОКО стиль</a></li>
-                                        <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">Джинсовый мир</a></li>
-                                        <li class="drop_menu_shops_item" data-category="pickUpPoints"><a href="#">4 сезона</a></li>
-                                    </ul>
-                                </li>
-                                <li class="drop_menu_categories">
-                                    <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
-                                    <ul class="drop_menu_shops">
-                                        <li class="drop_menu_shops_item" data-category="sport"><a href="#">Этли</a></li>
-                                        <li class="drop_menu_shops_item" data-category="sport"><a href="#">Галина</a></li>
-                                        <li class="drop_menu_shops_item" data-category="sport"><a href="#">ТВОЕ</a></li>
-                                        <li class="drop_menu_shops_item" data-category="sport"><a href="#">Алана стили</a></li>
-                                        <li class="drop_menu_shops_item" data-category="sport"><a href="#">БОКО стиль</a></li>
-                                        <li class="drop_menu_shops_item" data-category="sport"><a href="#">Джинсовый мир</a></li>
-                                        <li class="drop_menu_shops_item" data-category="sport"><a href="#">4 сезона</a></li>
-                                    </ul>
-                                </li>
-                                <li class="drop_menu_categories">
-                                    <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
-                                    <ul class="drop_menu_shops">
-                                        <li class="drop_menu_shops_item" data-category="kids"><a href="#">Этли</a></li>
-                                        <li class="drop_menu_shops_item" data-category="kids"><a href="#">Галина</a></li>
-                                        <li class="drop_menu_shops_item" data-category="kids"><a href="#">ТВОЕ</a></li>
-                                        <li class="drop_menu_shops_item" data-category="kids"><a href="#">Алана стили</a></li>
-                                        <li class="drop_menu_shops_item" data-category="kids"><a href="#">БОКО стиль</a></li>
-                                        <li class="drop_menu_shops_item" data-category="kids"><a href="#">Джинсовый мир</a></li>
-                                        <li class="drop_menu_shops_item" data-category="kids"><a href="#">4 сезона</a></li>
-                                    </ul>
-                                </li>
-                                <li class="drop_menu_categories">
-                                    <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
-                                    <ul class="drop_menu_shops">
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">Этли</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">Галина</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">ТВОЕ</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">Алана стили</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">БОКО стиль</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">Джинсовый мир</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">4 сезона</a></li>
-                                    </ul>
-                                </li>
-                                <li class="drop_menu_categories">
-                                    <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
-                                    <ul class="drop_menu_shops">
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Этли</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Галина</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">ТВОЕ</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Алана стили</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">БОКО стиль</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Джинсовый мир</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">4 сезона</a></li>
-                                    </ul>
-                                </li>
-                                <li class="drop_menu_categories">
-                                    <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
-                                    <ul class="drop_menu_shops">
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">Этли</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">Галина</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">ТВОЕ</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">Алана стили</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">БОКО стиль</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">Джинсовый мир</a></li>
-                                        <li class="drop_menu_shops_item" data-category="technics"><a href="#">4 сезона</a></li>
-                                    </ul>
-                                </li>
-                                <li class="drop_menu_categories">
-                                    <span class="drop_menu_category_name"><a href="#">Одежда и обувь</a></span>
-                                    <ul class="drop_menu_shops">
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Этли</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Галина</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">ТВОЕ</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Алана стили</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">БОКО стиль</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">Джинсовый мир</a></li>
-                                        <li class="drop_menu_shops_item" data-category="gifts"><a href="#">4 сезона</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="drop_menu_nav_list drop_menu_nav_selected"></ul>
+                        <ul class="drop_menu_nav_list drop_menu_nav_selected"></ul>
+                    </div>
+                    <div class="drop_menu_bottom_nav_wrapper">
+                        <ul class="drop_menu_bottom_nav">
+                            <li><a href="#">О центре</a></li>
+                            <li><a href="#">Акции и события</a></li>
+                            <li><a href="#">Эко-тренды</a></li>
+                            <li><a href="#">Доступная среда</a></li>
+                            <li><a href="#">Арендаторам</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="drop_menu_mobile">
+                <nav>
+                    <div class="drop_menu_mobile_buttons">
+                        <button class="drop_menu_mobile_button">
+                            <i class="fa-regular fa-map button_icon"></i>
+                            <span>Планы <br> этажей</span>
+                        </button>
+                        <button class="drop_menu_mobile_button">
+                            <i class="fas fa-map-marker-alt button_icon"></i>
+                            <span>Как <br> добраться</span>
+                        </button>
+                    </div>
+                    <div class="drop_menu_mobile_shops">
+                        <ul>
+                            <li><a href="#">Одежда</a></li>
+                            <li><a href="#">Пункты выдачи</a></li>
+                            <li><a href="#">Кафе и продукты</a></li>
+                            <li><a href="#">Фудкорт</a></li>
+                            <li><a href="#">Для детей</a></li>
+                            <li><a href="#">Бытовая техника</a></li>
+                            <li><a href="#">Книги и подарки</a></li>
+                            <li><a href="#">Красота и здоровье</a></li>
+                            <li><a href="#">Прочее</a></li>
+                            <li><a href="#">Услуги</a></li>
+                        </ul>
+                    </div>
+                    <div class="drop_menu_mobile_info">
+                        <ul>
+                            <li><a href="#">О центре</a></li>
+                            <li><a href="#">Акции и события</a></li>
+                            <li><a href="#">Эко-тренды</a></li>
+                            <li><a href="#">Доступная среда</a></li>
+                            <li><a href="#">Арендаторам</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="drop_menu_mobile_phone">
+                        <div class="header_phone_number">
+                            <span>+7 495 510 45 21</span>
+                            <span>Ежедневно с 10.00 до 23.00</span>
                         </div>
-                        <div class="drop_menu_bottom_nav_wrapper">
-                            <ul class="drop_menu_bottom_nav">
-                                <li><a href="#">О центре</a></li>
-                                <li><a href="#">Акции и события</a></li>
-                                <li><a href="#">Эко-тренды</a></li>
-                                <li><a href="#">Доступная среда</a></li>
-                                <li><a href="#">Арендаторам</a></li>
-                                <li><a href="#">Контакты</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-                <div class="drop_menu_mobile">
-                    <nav>
-                        <div class="drop_menu_mobile_buttons">
-                            <button class="drop_menu_mobile_button">
-                                <i class="fa-regular fa-map button_icon"></i>
-                                <span>Планы <br> этажей</span>
-                            </button>
-                            <button class="drop_menu_mobile_button">
-                                <i class="fas fa-map-marker-alt button_icon"></i>
-                                <span>Как <br> добраться</span>
-                            </button>
-                        </div>
-                        <div class="drop_menu_mobile_shops">
-                            <ul>
-                                <li><a href="#">Одежда</a></li>
-                                <li><a href="#">Пункты выдачи</a></li>
-                                <li><a href="#">Кафе и продукты</a></li>
-                                <li><a href="#">Фудкорт</a></li>
-                                <li><a href="#">Для детей</a></li>
-                                <li><a href="#">Бытовая техника</a></li>
-                                <li><a href="#">Книги и подарки</a></li>
-                                <li><a href="#">Красота и здоровье</a></li>
-                                <li><a href="#">Прочее</a></li>
-                                <li><a href="#">Услуги</a></li>
-                            </ul>
-                        </div>
-                        <div class="drop_menu_mobile_info">
-                            <ul>
-                                <li><a href="#">О центре</a></li>
-                                <li><a href="#">Акции и события</a></li>
-                                <li><a href="#">Эко-тренды</a></li>
-                                <li><a href="#">Доступная среда</a></li>
-                                <li><a href="#">Арендаторам</a></li>
-                                <li><a href="#">Контакты</a></li>
-                            </ul>
-                        </div>
-                        <div class="drop_menu_mobile_phone">
-                            <div class="phone_number">
-                                <span>+7 495 510 45 21</span>
-                                <span>Ежедневно с 10.00 до 23.00</span>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
+                    </div>
+                </nav>
             </div>
         </header>
         <section>
             <img src="./src/images/mainImg.png" alt="" style="width: 100vw">
-            <img src="./src/images/mainImg.png" alt="" style="width: 100vw">
-            <img src="./src/images/mainImg.png" alt="" style="width: 100vw">
-
         </section>
+        <footer>
+            <div class="footer_subscribe">
+                <div class="footer_subscribe_logo">
+                    <img src="./src/images/at.png" alt="at">
+                    <span>VESHNYAKI</span>
+                </div>
+                <div class="footer_subscribe_form">
+                    <form action="./subscribe" method="post">
+                        <label for="subscribe"></label>
+                        <input type="email" name="subscribe" id="subscribe" placeholder="Введите Ваш e-mail">
+                        <button id="subscribe_submit_button" type="submit">Подпишись</button>
+                    </form>
+                </div>
+                <p>И будь всегда в курсе акций, скидок и наших мероприятий!</p>
+            </div>
+            <div class="footer_map">
+                <div class="map_overlay"></div>
+                <div class="map_wrapper">
+                    <a href="https://yandex.com/maps/org/veshnyaki/106962112972/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Вешняки</a>
+                    <a href="https://yandex.com/maps/213/moscow/category/shopping_mall/184108083/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Торговый центр в Москве</a>
+                    <iframe src="https://yandex.com/map-widget/v1/?ll=37.825155%2C55.724124&mode=search&oid=106962112972&ol=biz&z=17.08&disableScroll=true&hideToolbar=true" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="footer_main">
+                <div class="footer_info">
+                    <div class="footer_logo">
+                        <a href="#">
+                            <img src="./src/images/logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="footer_address_container">
+                        <span>г. Москва, Вешняковская улица, 18</span>
+                        <div class="footer_address_links">
+                            <a href="#">Как добраться?</a>
+                            <a href="#">Парковка</a>
+                        </div>
+                    </div>
+                    <div class="footer_phone_number">
+                        <span>+7 495 510 45 21</span>
+                        <span>Ежедневно с 10.00 до 23.00</span>
+                    </div>
+                    <button class="footer_floor_plan_button">
+                        <i class="fa-regular fa-map"></i>
+                        <span>Планы этажей</span>
+                    </button>
+                    <div class="questor_it_logo_wrapper">
+                        <img src="./src/images/questorItLogo.png" alt="questoe it">
+                        <span>Разработка и поддержка сайта</span>
+                    </div>
+                </div>
+                <nav class="footer_bottom_nav">
+                    <span><a href="#">Политика конфиденциальности</a></span>
+                    <ul>
+                        <li><a href="#">О центре</a></li>
+                        <li><a href="#">Акции и события</a></li>
+                        <li><a href="#">Эко-тренды</a></li>
+                        <li><a href="#">Доступная среда</a></li>
+                        <li><a href="#">Аренда</a></li>
+                        <li><a href="#">Вход для арендаторов</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
     </main>
 </body>
 
