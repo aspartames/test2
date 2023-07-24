@@ -709,6 +709,12 @@ header.fixed {
   user-select: auto;
   height: 100%;
 }
+@media (max-height: 580px) {
+  .drop_menu_mobile.active {
+    height: 410px;
+    overflow: scroll;
+  }
+}
 @media (max-width: 1024px) {
   .drop_menu_mobile {
     display: block;

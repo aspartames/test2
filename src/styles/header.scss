@@ -452,6 +452,10 @@ $bottomNavOffsetLaptop: 62px;
     pointer-events: auto;
     user-select: auto;
     height: 100%;
+    @media (max-height: 580px ) {
+      height: 410px;
+      overflow: scroll;
+    }
   }
   @media ($tablet) {
     display: block;
