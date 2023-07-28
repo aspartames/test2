@@ -1,35 +1,84 @@
-const isDesktop = () => $(window).width() > 1500
-const isLaptop = () => $(window).width() <= 1500
-const isTablet = () => $(window).width() <= 1000
-const isMobile = () => $(window).width() <= 600
 
 
-$(document).ready(function() {
+// header
+const headerParameters = {
+    isHeaderFixed: false,
+    header: $("header"),
+    heightHeader: $('header').height(),
+    heightBottom: $('.header_bottom').height(),
+    heightTop: $('.header_top').height(),
+}
 
+const setFixedHeader = () => {
+    if (!isTablet()) {
+        const {isHeaderFixed, header, heightHeader, heightBottom, heightTop} = headerParameters
 
+        const scrollPosition = $(this).scrollTop();
 
-const dropMenu = () => {
-    if(!isTablet()) {
+        const headerFixedHeight = heightHeader - heightBottom - heightTop
+
+        if (scrollPosition > heightTop && !isHeaderFixed) {
+            header.addClass('fixed');
+            header.css('top', `-${heightTop}px`)
+            header.css('height', `${headerFixedHeight}px`)
+            $(".header_mid").addClass('fixed');
+            $(".header_bottom").css('top', `-${heightBottom}px`)
+            $(".drop_menu").css('top', `${isLaptop() ? 110 : 124}px`)
+            $('.header_all_fixed').addClass('fixed')
+            $('.header_mid_info').addClass('fixed')
+            $('.drop_menu_bottom_nav_wrapper').addClass('fixed')
+            $('.drop_menu_nav_list').addClass('fixed')
+
+            headerParameters.isHeaderFixed = true
+
+        }
+        if (scrollPosition < heightTop) {
+            header.removeClass('fixed');
+            header.css('top', '0')
+            header.css('height', 'fit-content')
+            $(".header_mid").removeClass('fixed');
+            $(".header_bottom").css('top', `0`)
+            $(".drop_menu").css('top', `${heightHeader}px`)
+            $('.header_all_fixed').removeClass('fixed')
+            $('.header_mid_info').removeClass('fixed')
+            $('.drop_menu_bottom_nav_wrapper').removeClass('fixed')
+            $('.drop_menu_nav_list').removeClass('fixed')
+
+            headerParameters.isHeaderFixed = false
+
+        }
+    }
+
+}
+
+const setDropMenu = () => {
+    if (!isTablet()) {
+        removeMenuHandlers()
+
         const dropMenu = $('.drop_menu')
         const hoverItem = $('.header_bottom_nav_item')
         const button = $('.header_all')
+        const menuIcon = $('.menu_icon')
+        const dropMenuNavList = $('.drop_menu_nav_list')
         const dropMenuNavSelected = $('.drop_menu_nav_selected')
 
         let timer = null
         let isButtonAllShops = false
 
-        button.mouseenter(()=>{
+        button.mouseenter(() => {
             clearTimeout(timer)
             dropMenuNavSelected.html('')
             isButtonAllShops = true
             dropMenu.addClass('active')
-            $('.menu_icon').addClass('active')
-            $('.drop_menu_nav_list').removeClass('hidden')
+            button.addClass('active')
+            menuIcon.addClass('active')
+            dropMenuNavList.removeClass('hidden')
         })
         button.mouseleave(() => {
             timer = setTimeout(() => {
                 dropMenu.removeClass('active')
-                $('.menu_icon').removeClass('active')
+                button.removeClass('active')
+                menuIcon.removeClass('active')
                 return () => clearTimeout()
             }, 300)
 
@@ -42,17 +91,16 @@ const dropMenu = () => {
             isButtonAllShops = false
 
             dropMenu.addClass('active')
-            $('.menu_icon').removeClass('active')
+            menuIcon.removeClass('active')
 
             const selectedShopItems = $(`[data-category="${e.currentTarget.dataset.navItem}"]`)
             const copySelectedShopItems = selectedShopItems.clone()
             dropMenuNavSelected.html(copySelectedShopItems)
-            $('.drop_menu_nav_list').addClass('hidden')
+            dropMenuNavList.addClass('hidden')
         })
         hoverItem.mouseleave(() => {
             timer = setTimeout(() => {
                 dropMenu.removeClass('active')
-                shopsItem.removeClass('visible')
 
                 return () => clearTimeout()
             }, 300)
@@ -63,39 +111,84 @@ const dropMenu = () => {
         dropMenu.mouseenter(() => {
             clearTimeout(timer)
             dropMenu.addClass('active')
-            isButtonAllShops && $('.menu_icon').addClass('active')
+            isButtonAllShops && menuIcon.addClass('active')
         })
         dropMenu.mouseleave(() => {
             dropMenu.removeClass('active')
-            $('.menu_icon').removeClass('active')
+            button.removeClass('active')
+            menuIcon.removeClass('active')
         })
     }
 }
 
-dropMenu()
+const setMobileMenu = () => {
+    if (isTablet()) {
+        removeMenuHandlers()
 
+        $('.header_all').click(function () {
+            $('.drop_menu_mobile').toggleClass('active')
+            $('.menu_icon').toggleClass('active')
+            $(this).toggleClass('active')
+        })
+    }
 
-
-const mobileMenu = () =>{
-        if(isTablet()){
-            const button= $('.header_all')
-
-            button.click(()=>{
-                $('.drop_menu_mobile').toggleClass('active')
-                $('.menu_icon').toggleClass('active')
-
-            })
-        }
 }
 
-mobileMenu()
+const removeMenuHandlers = () => {
+    $('.header_all').off()
+    $('.header_bottom_nav_item').off()
+    $('.drop_menu').off()
+}
 
 
+// slider
+let swiper = null
 
-const mapActive = () => {
+const setIntroductionSlider = () => {
+    swiper && swiper.destroy()
+
+    swiper = new Swiper('.introduction_slider', {
+        loop: isTablet() ? false : true,
+        speed: 300,
+        spaceBetween: isMobile() ? 14 : isTablet() ? 20 : 40,
+        slidesPerView: isMobile() ? 1 : 2,
+
+        navigation: {
+            prevEl: '.prev_button',
+            nextEl: '.next_button',
+        },
+
+        pagination: {
+            el: '.pagination',
+            type: 'fraction',
+
+        },
+        grid: isTablet() ? {
+            rows: 2,
+            fill: "row"
+        } : {},
+    })
+}
+
+
+// image zoom on hover
+const setImageZoom = () => {
+    $('.zoom_hover').hover(function () {
+            $(this).addClass('zoom')
+        },
+        function () {
+            $(this).removeClass('zoom')
+        }
+    )
+}
+
+
+// map overlay
+const setMapActive = () => {
     const mapOverlay = $('.map_overlay')
-    mapOverlay.click(()=>{
-        mapOverlay.css('display', 'none')
+
+    mapOverlay.click(function () {
+        $(this).css('display', 'none')
     })
 
     function handleTouch(event) {
@@ -105,57 +198,30 @@ const mapActive = () => {
             mapOverlay.css('display', 'block')
         }
     }
+
     $(document).on('touchstart', handleTouch);
 
+    return () => $(document).off('touchstart', handleTouch)
 }
 
-mapActive()
 
+const initSettings = [
+    setFixedHeader,
+    setDropMenu,
+    setMobileMenu,
+    setIntroductionSlider,
+    setImageZoom,
+    setMapActive,
+]
 
-
-if(!isTablet()) {
-
-    const heightHeader = $('header').height();
-    const heightBottom = $('.header_bottom').height();
-    const heightTop = $('.header_top').height();
-    const headerFixedHeight = heightHeader - heightBottom - heightTop
-
-    let isTru = false
-    $(window).scroll(function () {
-        const scrollPosition = $(this).scrollTop();
-
-
-        if (scrollPosition > heightTop && !isTru) {
-            $("header").addClass('fixed');
-            $("header").css('top', `-${heightTop}px`)
-            $("header").css('height', `${headerFixedHeight}px`)
-            $(".header_mid").addClass('fixed');
-            $(".header_bottom").css('top', `-${heightBottom}px`)
-            $(".drop_menu").css('top', `${isLaptop() ? 110 : 124}px`)
-            $('.header_all_fixed').addClass('fixed')
-            $('.header_mid_info').addClass('fixed')
-            $('.drop_menu_bottom_nav_wrapper').addClass('fixed')
-            $('.drop_menu_nav_list').addClass('fixed')
-
-            isTru = true
-
-        }
-        if (scrollPosition < heightTop) {
-            $("header").removeClass('fixed');
-            $("header").css('top', '0')
-            $("header").css('height', 'fit-content')
-            $(".header_mid").removeClass('fixed');
-            $(".header_bottom").css('top', `0`)
-            $(".drop_menu").css('top', `${heightHeader}px`)
-            $('.header_all_fixed').removeClass('fixed')
-            $('.header_mid_info').removeClass('fixed')
-            $('.drop_menu_bottom_nav_wrapper').removeClass('fixed')
-            $('.drop_menu_nav_list').removeClass('fixed')
-
-            isTru = false
-
-        }
-
-    })
+const settings = {
+    init: initSettings,
+    scroll: [setFixedHeader],
+    desktop: [setDropMenu, setIntroductionSlider],
+    tablet: [setMobileMenu, setIntroductionSlider],
+    mobile: [setIntroductionSlider]
 }
-})
+
+
+// execute
+isDocumentReady(settings)

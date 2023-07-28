@@ -53,6 +53,17 @@ header{
     @media ($laptop) {
       height: 70px;
     }
+    & button {
+      @media (max-width: 1100px) {
+        border: none;
+        & span {
+          display: none;
+        }
+        & .fa-map {
+          font-size: 26px;
+        }
+      }
+    }
   }
 }
 
@@ -173,9 +184,9 @@ header{
 }
 
 .header_all{
+  @include backgroundGradientHover($gradient, $gradientReverse);
   @include font20(20px);
   font-family: $gothamProMedium;
-  background: linear-gradient(90deg, $gradientColor1, $gradientColor2);
   color: $color1;
   border: none;
   white-space: nowrap;
@@ -186,9 +197,20 @@ header{
   padding: 13px 23px;
   border-radius: 8px;
   margin-right: 68px;
+  overflow: unset;
   @media ($laptop) {
     padding: 10px 18px;
     margin-right: 40px;
+  }
+
+  &:before, &:after{
+    border-radius: 8px;
+  }
+
+  &.active{
+    &:after {
+      opacity: 1;
+    }
   }
 
   &.header_all_fixed{

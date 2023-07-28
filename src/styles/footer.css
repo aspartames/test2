@@ -61,7 +61,7 @@ footer {
 }
 @media (max-width: 1600px) {
   .footer_subscribe_logo {
-    margin: 40px 0 40px 0;
+    margin: 40px 0 36px 0;
   }
 }
 @media (max-width: 1024px) {
@@ -93,6 +93,14 @@ footer {
 .footer_subscribe_form {
   margin-right: 30px;
 }
+@media (max-width: 1024px) {
+  .footer_subscribe_form {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 8px;
+    max-width: 320px;
+  }
+}
 .footer_subscribe_form form {
   display: flex;
   justify-content: space-between;
@@ -111,14 +119,6 @@ footer {
     margin-left: unset;
     flex-direction: column;
     align-items: center;
-  }
-}
-@media (max-width: 1024px) {
-  .footer_subscribe_form {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 8px;
-    max-width: 320px;
   }
 }
 
@@ -152,6 +152,9 @@ footer {
 }
 
 #subscribe_submit_button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   font-size: 18px;
   line-height: 44px;
   font-family: "GothamProMedium";
@@ -159,8 +162,30 @@ footer {
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(90deg, #49a9ff, #d327ff);
   color: #ffffff;
+}
+#subscribe_submit_button:before, #subscribe_submit_button:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  background: linear-gradient(90deg, #49a9ff, #d327ff);
+  opacity: 1;
+  transition: 300ms;
+  z-index: -1;
+}
+#subscribe_submit_button:after {
+  background: linear-gradient(90deg, #d327ff, #49a9ff);
+  opacity: 0;
+  transition: 600ms;
+}
+#subscribe_submit_button:hover:after {
+  opacity: 1;
 }
 @media (max-width: 1600px) {
   #subscribe_submit_button {
@@ -176,15 +201,15 @@ footer {
     right: 5px;
     top: 5px;
     z-index: 3;
+    border-radius: 5px;
   }
 }
 @media (max-width: 1024px) {
   #subscribe_submit_button {
     height: unset;
-    position: unset;
-    right: unset;
-    top: unset;
-    z-index: unset;
+    position: relative;
+    z-index: 1;
+    border-radius: 8px;
     padding-top: 12px;
     padding-bottom: 12px;
     width: 160px;
@@ -245,7 +270,7 @@ footer {
 }
 @media (max-width: 1600px) {
   .footer_info {
-    padding-top: 28px;
+    padding-top: 30px;
     padding-bottom: 28px;
   }
 }
@@ -472,9 +497,6 @@ footer {
   grid-area: button;
 }
 .footer_floor_plan_button span {
-  /*
-  font-size: max(1.0416667vw, 16px);
-  */
   font-size: 20px;
   line-height: 44px;
 }
@@ -508,9 +530,6 @@ footer {
   }
 }
 .footer_floor_plan_button span {
-  /*
-  font-size: max(1.0416667vw, 16px);
-  */
   font-size: 20px;
   line-height: 44px;
   white-space: nowrap;
@@ -604,9 +623,13 @@ footer {
 .footer_bottom_nav span {
   font-family: "GothamPro";
 }
+@media (max-width: 1600px) {
+  .footer_bottom_nav span {
+    font-size: 13px;
+  }
+}
 @media (max-width: 1024px) {
   .footer_bottom_nav span {
-    font-size: 14px;
     text-align: center;
     width: 100%;
   }
