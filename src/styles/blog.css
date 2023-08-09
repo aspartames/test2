@@ -1,0 +1,377 @@
+@import '../fonts/stylesheet.css';
+.blog_section h1 {
+  font-size: 56px;
+  line-height: 44px;
+  font-family: "GothamProBold";
+  padding-top: 260px;
+  text-align: center;
+  margin-bottom: 66px;
+  margin-bottom: 58px;
+}
+@media (max-width: 1600px) {
+  .blog_section h1 {
+    font-size: 42px;
+  }
+}
+@media (max-width: 600px) {
+  .blog_section h1 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1600px) {
+  .blog_section h1 {
+    padding-top: 220px;
+    margin-bottom: 38px;
+  }
+}
+@media (max-width: 1024px) {
+  .blog_section h1 {
+    padding-top: 80px;
+  }
+}
+@media (max-width: 600px) {
+  .blog_section h1 {
+    padding-top: 96px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+}
+
+.promotions_section {
+  width: 100vw;
+  overflow-x: hidden;
+  padding-top: 74px;
+  padding-bottom: 90px;
+  padding-top: 42px;
+}
+@media (max-width: 1600px) {
+  .promotions_section {
+    padding-top: 48px;
+  }
+}
+@media (max-width: 1024px) {
+  .promotions_section {
+    padding-top: 74px;
+  }
+}
+@media (max-width: 800px) {
+  .promotions_section {
+    padding-top: 30px;
+  }
+}
+@media (max-width: 1600px) {
+  .promotions_section {
+    padding-top: 30px;
+    padding-bottom: 42px;
+  }
+}
+@media (max-width: 1024px) {
+  .promotions_section {
+    padding-top: 42px;
+  }
+}
+@media (max-width: 600px) {
+  .promotions_section {
+    padding-top: 40px;
+    padding-bottom: 76px;
+  }
+}
+
+.promotions_items {
+  padding: 0 110px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding-bottom: 60px;
+}
+@media (max-width: 1600px) {
+  .promotions_items {
+    padding: 0 31px;
+  }
+}
+@media (max-width: 600px) {
+  .promotions_items {
+    padding: 0 10px;
+  }
+}
+@media (max-width: 1600px) {
+  .promotions_items {
+    gap: unset;
+    row-gap: 28px;
+    column-gap: 40px;
+    padding-bottom: 42px;
+  }
+}
+@media (max-width: 1024px) {
+  .promotions_items {
+    row-gap: unset;
+    column-gap: unset;
+    gap: 40px;
+    grid-template-columns: repeat(2, calc(50% - 20px));
+    padding-bottom: 60px;
+  }
+}
+@media (max-width: 800px) {
+  .promotions_items {
+    grid-template-columns: repeat(2, calc(50% - 10px));
+    gap: 20px;
+    padding-bottom: 42px;
+  }
+}
+@media (max-width: 600px) {
+  .promotions_items {
+    grid-template-columns: repeat(1, 100%);
+    grid-auto-rows: auto;
+    align-items: stretch;
+    gap: 34px;
+    padding-bottom: 0;
+  }
+}
+
+.promotions_item {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.promotions_item a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.item_image {
+  overflow: hidden;
+  aspect-ratio: 1.36/1;
+  /*
+  @media ($laptop) {
+    height: 218px;
+  }
+  @media ($tablet) {
+    height: 290px;
+  }
+  @media ($tabletMini) {
+    height: 218px;
+  }
+  */
+}
+.item_image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.item_description {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 22px 0 0;
+}
+.item_description p {
+  font-size: 15px;
+  line-height: 20px;
+  font-family: "GothamPro";
+  margin: 0;
+  width: 62%;
+}
+@media (max-width: 1600px) {
+  .item_description p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1024px) {
+  .item_description p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 800px) {
+  .item_description p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .item_description p {
+    font-size: 13px;
+    line-height: 18;
+  }
+}
+@media (max-width: 1600px) {
+  .item_description p {
+    line-height: 18px;
+    width: 75%;
+  }
+}
+@media (max-width: 1024px) {
+  .item_description p {
+    line-height: 20px;
+  }
+}
+@media (max-width: 800px) {
+  .item_description p {
+    line-height: 18px;
+  }
+}
+@media (max-width: 1600px) {
+  .item_description img.high {
+    height: 35px;
+    width: auto;
+  }
+}
+@media (max-width: 1024px) {
+  .item_description img.high {
+    height: unset;
+    width: unset;
+  }
+}
+@media (max-width: 800px) {
+  .item_description img.high {
+    height: 35px;
+    width: auto;
+  }
+}
+@media (max-width: 600px) {
+  .item_description img.high {
+    height: 32px;
+  }
+}
+@media (max-width: 1600px) {
+  .item_description img {
+    width: 64px;
+    margin-top: 4px;
+  }
+}
+@media (max-width: 1024px) {
+  .item_description img {
+    width: unset;
+    margin-top: unset;
+  }
+}
+@media (max-width: 800px) {
+  .item_description img {
+    width: 64px;
+    margin-top: 4px;
+  }
+}
+@media (max-width: 1600px) {
+  .item_description {
+    padding: 16px 0 0;
+  }
+}
+@media (max-width: 1024px) {
+  .item_description {
+    gap: 20px;
+    padding: 22px 0 0;
+  }
+}
+@media (max-width: 600px) {
+  .item_description {
+    gap: 20px;
+    padding: 14px 0 0;
+  }
+}
+
+.blog_filter {
+  padding: 0 110px;
+}
+@media (max-width: 1600px) {
+  .blog_filter {
+    padding: 0 31px;
+  }
+}
+@media (max-width: 600px) {
+  .blog_filter {
+    padding: 0 10px;
+  }
+}
+.blog_filter .desktop_form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+@media (max-width: 1024px) {
+  .blog_filter .desktop_form {
+    gap: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .blog_filter .desktop_form {
+    display: none;
+  }
+}
+.blog_filter .mobile_form {
+  display: none;
+}
+@media (max-width: 600px) {
+  .blog_filter .mobile_form {
+    display: block;
+  }
+}
+
+.blog_filter_button {
+  cursor: pointer;
+}
+.blog_filter_button input[type=radio] {
+  display: none;
+}
+.blog_filter_button input[type=radio]:checked + span {
+  background-color: #212832;
+  color: #fff;
+}
+.blog_filter_button input[type=radio]:checked ~ .mobile_button,
+.blog_filter_button input[type=radio]:checked ~ .desktop_button {
+  background-color: #212832;
+  color: #fff;
+}
+.blog_filter_button span {
+  display: inline-block;
+  background: #6d82fc;
+  color: #ffffff;
+  padding: 14px 20px;
+  font-family: "GothamProBold";
+  font-size: 14px;
+  line-height: 26px;
+  border-radius: 8px;
+  transition: 300ms;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .blog_filter_button span {
+    margin-bottom: 34px;
+  }
+}
+.blog_filter_button span {
+  font-size: 18px;
+  padding: 10px 28px;
+}
+
+#blog_filter_select {
+  font-family: "GothamProBold";
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background: white url("../images/about/svg/angleDown.svg") no-repeat 93% 50%;
+  background-size: 24px 24px;
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 26px;
+  outline: none;
+  padding: 16px 20px;
+  border: 1px solid black;
+}
+#blog_filter_select option {
+  font-family: "GothamPro";
+  font-size: 16px;
+}
+#blog_filter_select option[value=""][disabled] {
+  display: none;
+}
+
+/*# sourceMappingURL=blog.css.map */
