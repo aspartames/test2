@@ -939,6 +939,8 @@
   .rental_application {
     top: 0;
     height: auto;
+    padding-left: 0;
+    padding-right: 0;
   }
   .rental_application.active {
     display: block;
@@ -984,7 +986,6 @@
 .form_wrapper {
   position: relative;
   width: 100%;
-  overflow: auto;
   background: #ffffff;
   border-radius: 20px;
   padding-top: 46px;
@@ -1001,7 +1002,7 @@
 }
 @media (max-width: 900px) {
   .form_wrapper {
-    height: 100vh;
+    border-radius: 0;
   }
 }
 .form_wrapper input {
@@ -1141,6 +1142,13 @@
 @media (max-width: 1400px) {
   .form_wrapper button {
     font-size: 18px;
+  }
+}
+@media (max-width: 900px) {
+  .form_wrapper form {
+    height: 100vh;
+    overflow-x: auto;
+    padding-bottom: 200px;
   }
 }
 

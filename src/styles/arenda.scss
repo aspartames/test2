@@ -472,6 +472,8 @@
   @media (max-width: 900px) {
     top: 0;
     height: auto;
+    padding-left: 0;
+    padding-right: 0;
     &.active{
       display: block;
     }
@@ -511,7 +513,6 @@
 .form_wrapper{
   position: relative;
   width: 100%;
-  overflow: auto;
   background: $color1;
   border-radius: 20px;
   padding-top: 46px;
@@ -524,8 +525,7 @@
     padding-bottom: 40px;
   }
   @media (max-width: 900px) {
-    height: 100vh;
-
+    border-radius: 0;
   }
   & input{
     @include font18(26px);
@@ -558,6 +558,13 @@
     }
     @media (max-width: 1400px) {
       font-size: 18px;
+    }
+  }
+  & form{
+    @media (max-width: 900px) {
+      height: 100vh;
+      overflow-x: auto;
+      padding-bottom: 200px;
     }
   }
 }
@@ -597,7 +604,6 @@
       padding-left: 20px;
     }
   }
-
 }
 
 @mixin formInputsSection{
