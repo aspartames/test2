@@ -109,6 +109,8 @@ footer{
   color: $color1;
   padding: 8px 18px;
   width: 400px;
+  position: relative;
+
   @media ($tablet) {
     width: 100%;
     margin-bottom: 26px;
