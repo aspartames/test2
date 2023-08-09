@@ -99,10 +99,13 @@
 
 
   & form{
-    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 22px;
     margin-bottom: 30px;
+    display: none;
+    &.active{
+      display: grid;
+    }
     @media ($mobile) {
       &:before{
         content: "";
@@ -149,7 +152,6 @@
     font-size: 16px;
     line-height: 26px;
     font-family: $gothamProMedium;
-    color: #7d7d7d;
     border: 2px solid #777777;
     border-radius: 8px;
     padding: 12px 26px;
@@ -221,6 +223,13 @@
   }
 }
 
+
+.rout_selector{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
 .rout_button{
   all: unset;
   background: #212832;
@@ -234,9 +243,13 @@
   transition: $transition;
   text-align: center;
   cursor: pointer;
+  display: none;
   @media ($mobile) {
     width: 71%;
     justify-self: end;
+  }
+  &.active{
+    display: block;
   }
   & span:nth-child(2){
     display: none;
@@ -258,6 +271,10 @@
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  display: none;
+  &.active{
+    display: block;
+  }
   & .fa-circle-xmark{
     font-size: 20px;
   }
@@ -314,6 +331,10 @@
 
 .how_to_go_form_parking{
   margin-bottom: 20px;
+  display: none;
+  &.active{
+    display: block;
+  }
   & .pIcon{
     font-size: 50px;
     line-height: 30px;
@@ -329,6 +350,7 @@
     top: -3px;
   }
   @media ($mobile) {
+    display: block;
     margin-top: 50px;
     margin-bottom: 0;
   }
@@ -336,8 +358,12 @@
 
 .how_to_go_form_map_links{
   margin-bottom: 20px;
+  display: none;
   @media ($mobile) {
     margin-top: 20px;
+  }
+  &.active{
+    display: block;
   }
   & a{
     font-family: $gothamPro;
@@ -376,15 +402,27 @@
   }
 }
 
+.how_to_go_form_bottom{
+  &.mobile{
+    position: absolute;
+    bottom: 0;
+    background: $color1;
+    width: 100%;
+  }
+}
 
 .detailed_route_wrapper{
-  &.hide{
+  display: none;
+  &.active{
+    display: block;
+  }
+  &.mobile_hide{
     @media ($mobile) {
       display: none;
     }
   }
 }
-.detailed_route_result{
+.detailed_route_mobile{
   display: none;
   position: fixed;
   background: $color1;
@@ -393,7 +431,9 @@
   width: 100%;
   overflow: hidden;
   @media ($mobile) {
-    display: block;
+    &.active{
+      display: block;
+    }
   }
 }
 
@@ -425,7 +465,14 @@
   }
   @media ($mobile) {
     width: calc(100% + 20px);
-    height: 68vh;
+    height: 80vh;
+    padding-bottom: 80px;
+  }
+  @media(max-width: 600px) and (max-height: 600px) {
+    padding-bottom: 100px;
+  }
+  @media(max-width: 600px) and (max-height: 500px) {
+    padding-bottom: 140px;
   }
   & p{
     font-family: $gothamProBold;
