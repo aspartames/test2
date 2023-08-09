@@ -495,11 +495,6 @@
     display: block;
   }
 }
-.detailed_route_mobile > div {
-  position: relative;
-  width: 100vw;
-  overflow: hidden;
-}
 
 .detailed_route_top {
   display: flex;
