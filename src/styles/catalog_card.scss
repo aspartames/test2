@@ -1,0 +1,579 @@
+@import "variables";
+@import "common";
+
+.catalog_card_section{
+  @include container;
+  h1{
+    @include h1;
+    margin-bottom: 54px;
+  }
+}
+
+.catalog_card_wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 40px;
+  @media ($tablet) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+  }
+  @media ($mobile) {
+    gap: 0;
+    position: relative;
+/*    overflow: hidden;
+    margin-left: -10px;
+    padding-left: 10px;*/
+  }
+}
+
+
+.catalog_card_contacts{
+  padding-bottom: 30px;
+  @media ($laptop) {
+    padding-bottom: 10px;
+  }
+  @media ($mobile) {
+    padding-bottom: 0;
+
+  }
+}
+.catalog_card_image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @media ($tablet) {
+    grid-row: 1;
+    grid-column: 1;
+    height: 42vw;
+    width: 100%;
+  }
+  @media ($mobile) {
+    grid-row: unset;
+    grid-column: unset;
+    height: 42vw;
+    width: 100vw;
+    margin-left: -$marginMobile;
+  }
+  & img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    @media ($laptop) {
+      object-position: center 20%;
+      width: 105%;
+      height: 105%;
+    }
+    @media ($mobile) {
+      object-position: center 30%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .card_image_logo{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 177px;
+    height: 177px;
+    background: $color6;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media ($mobile) {
+      display: none;
+    }
+    & img{
+      width: 71%;
+      height: 64%;
+      object-fit: contain;
+    }
+  }
+}
+
+.catalog_card_text{
+  @media ($mobile) {
+    margin-bottom: 26px;
+  }
+  & p{
+    @include text(black);
+    line-height: 24px;
+    margin-bottom: 24px;
+    @media ($laptop) {
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+    @media ($mobile) {
+      font-size: 14px;
+      line-height: 22px;
+      margin-bottom: 20px;
+    }
+    &:first-child{
+      margin-top: 0;
+      @media ($laptop) {
+        padding-top: 10px;
+      }
+      @media ($mobile) {
+        padding-top: 28px;
+      }
+    }
+  }
+}
+
+.catalog_card_floor{
+  position: relative;
+  margin-top: 6px;
+
+}
+
+.card_floor_wrapper{
+  position: relative;
+  padding: 30px 10px;
+  border-radius: 8px;
+  border: 1px solid #bbc1ca;
+  @media ($laptop) {
+    padding: 20px 10px;
+    margin-top: 14px;
+  }
+  @media ($mobile) {
+    padding: 20px 0;
+    width: calc(100% + $marginMobile);
+    margin-left: -$marginMobile;
+    border: none;
+    border-radius: 0;
+    transition: $transition;
+    overflow: hidden;
+    &.zoom{
+      overflow: auto;
+    }
+  }
+
+  & img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    @media ($mobile) {
+      transition: $transition;
+      height: auto;
+      object-position: center bottom;
+      &.zoom{
+        object-position: center bottom;
+        width: 300%;
+      }
+    }
+  }
+}
+
+.card_floor_controls{
+
+  @media ($mobile) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  & span{
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    line-height: 20px;
+    font-family: $gothamProBold;
+    background: $color6;
+    padding: 10px 18px;
+    text-transform: lowercase;
+    margin-top: 20px;
+    z-index: 10;
+    @media ($laptop) {
+      top: -26px;
+      font-size: 14px;
+      padding: 5px 12px;
+    }
+    @media ($mobile) {
+      font-size: 18px;
+      padding: 10px 18px;
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-top: 0;
+      transform: unset;
+    }
+  }
+
+}
+
+.card_floor_buttons{
+  display: none;
+  & button{
+    all: unset;
+    border: none;
+    outline: none;
+    color: $color1;
+    background: $gradient;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 12px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  @media ($mobile) {
+    display: block;
+  }
+}
+
+
+
+
+.brand_info_wrapper{
+  grid-area: b;
+  @media ($laptop) {
+    display: flex;
+    column-gap: 40px;
+  }
+  @media ($mobile) {
+    flex-direction: column;
+    position: relative;
+  }
+}
+
+.brand_logo_wrapper{
+  width: 100%;
+  aspect-ratio: 395 / 280;
+  background: $color6;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: none;
+  @media ($laptop) {
+    flex: 1;
+    aspect-ratio: 290 / 280;
+  }
+  @media ($mobile) {
+    aspect-ratio: 320 / 213;
+    width: calc(100% + $marginMobile);
+    margin-left: -$marginMobile;
+    margin-bottom: 40px;
+    display: flex;
+  }
+  img{
+    width: 7.2vw;
+    height: auto;
+    @media ($laptop) {
+      width: 47%;
+    }
+    @media ($mobile) {
+      width: 33%;
+    }
+  }
+
+}
+
+.brand_info{
+  @media ($laptop) {
+    flex: 1;
+  }
+}
+
+.brand_name_wrapper{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  @media ($laptop) {
+    align-items: flex-start;
+  }
+  @media ($mobile) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-right: $marginMobile;
+
+  }
+
+  h2{
+    @include font48(1);
+    font-family: $gothamProMedium;
+    margin-right: 26px;
+    margin-bottom: 20px;
+    margin-top: 12px;
+    @media ($laptop) {
+      margin-top: 2px;
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
+    @media ($mobile) {
+      margin-top: 8px;
+      margin-right: unset;
+      margin-bottom: 10px;
+    }
+  }
+  span{
+    font-size: 18px;
+    line-height: 20px;
+    font-family: $gothamProBold;
+    background: $color6;
+    padding: 10px 18px;
+    text-transform: lowercase;
+    margin-top: 0;
+  }
+}
+
+.brand_contacts_wrapper{
+  @include font18(20px);
+  font-family: $gothamProLight;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  span{
+    padding-left: 44px;
+    margin-bottom: 30px;
+    position: relative;
+    &:before {
+      position: absolute;
+      left: 0;
+      content: '';
+      height: 24px;
+      width: 24px;
+    }
+    @media ($laptop) {
+      margin-bottom: 20px;
+    }
+    @media ($mobile) {
+      margin-left: 14px;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+  }
+  .brand_phone_number{
+    font-family: $gothamProBold;
+    &:before {
+      top: -2px;
+      background: url("../images/blogCard/icon1.png") no-repeat center center;
+    }
+  }
+  .brand_link{
+    color: $color3;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    top: -3px;
+    &:before {
+      background: url("../images/blogCard/icon2.png") no-repeat center center;
+    }
+  }
+  .brand_working_hours{
+    line-height: 30px;
+    @media ($laptop) {
+      line-height: 26px;
+      margin-bottom: 18px;
+    }
+    @media ($mobile) {
+      line-height: 30px;
+      margin-bottom: 12px;
+    }
+    &:before {
+      top: 2px;
+      background: url("../images/blogCard/icon3.png") no-repeat center center;
+    }
+  }
+}
+
+.brand_sn_links{
+  @media ($mobile) {
+    background: $color6;
+    border-bottom: none;
+    padding: 20px 0;
+    width: calc(100% + $marginMobile );
+    margin-left: -$marginMobile;
+    display: flex;
+    justify-content: center;
+  }
+}
+.links_wrapper{
+  margin-left: 40px;
+  font-size: 30px;
+  width: 154px;
+  display: flex;
+  justify-content: space-between;
+  @media ($mobile) {
+    margin-left: unset;
+  }
+  & :nth-child(3), & :nth-child(4){
+    font-size: 28px;
+  }
+}
+
+
+
+
+.other_cards{
+  @include container;
+  padding-top: 32px;
+  padding-bottom: 70px;
+  @media ($laptop) {
+    padding-top: 10px;
+    padding-bottom: 70px;
+  }
+  @media ($tablet) {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+  & h2{
+    font-family: $gothamProBold;
+    font-size: 48px;
+    line-height: 44px;
+    @media ($laptop) {
+      font-size: 38px;
+    }
+    @media ($mobile) {
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+    }
+  }
+}
+
+
+.catalog_tiles_items{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media ($tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media ($mobile) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+}
+
+.catalog_tiles_item{
+  position: relative;
+  border: 1px solid #bbc1ca;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.tiles_item_image_wrapper{
+  background: $color6;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 395 / 290 ;
+
+  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68%;
+    height: 55%;
+    object-fit: contain;
+
+  }
+}
+
+.tiles_item_text_wrapper{
+  flex: 1;
+  padding: 14px 24px 20px 30px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid #bbc1ca;
+  @media ($laptop) {
+    padding: 4px 20px 20px;
+  }
+
+  h5{
+    font-family: $gothamProMedium;
+    font-size: 20px;
+    line-height: 44px;
+    margin: 0 0 -10px 0;
+  }
+  p{
+    font-family: $gothamPro;
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 16px;
+    @media ($laptop) {
+      font-size: 14px;
+    }
+    @media ($mobile) {
+      line-height: 18px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+.tiles_item_text_bottom{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: calc(100%);
+  bottom: 20px;
+  column-gap: 40px;
+  row-gap: 20px;
+  font-size: 15px;
+  line-height: 20px;
+  @media ($laptop) {
+    font-size: 14px;
+    column-gap: 10px;
+  }
+  span{
+    font-family: $gothamProBold;
+  }
+  a{
+    position: relative;
+    right: 0;
+    font-family: $gothamPro;
+    color: $color3;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding-left: 30px;
+    @media ($laptop) {
+      padding-left: 26px;
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 30px;
+      left: 0;
+      top: -6px;
+      background: url("../images/iconLocation.png") no-repeat center center;
+      @media ($laptop) {
+        top: -4px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

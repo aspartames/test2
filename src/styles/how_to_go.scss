@@ -1,0 +1,623 @@
+@import "variables";
+@import "common";
+
+.how_to_go_section{
+  h1{
+    @include h1;
+    margin-bottom: 50px;
+  }
+}
+
+
+.how_to_go_map_wrapper{
+  position: relative;
+  width: 100%;
+  height: 700px;
+  margin-bottom: 52px;
+  @media ($laptop) {
+    height: 500px;
+    margin-bottom: 42px;
+  }
+  @media ($tablet) {
+    height: 100vh;
+  }
+  @media ($mobile) {
+    background: #ffffff;
+    height: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.desktop_map, .desktop_overlay{
+  @media ($mobile) {
+    display: none;
+  }
+}
+
+.how_to_go_form_wrapper{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 650px;
+  min-height: 100%;
+  background: $color1;
+  box-shadow: black;
+  border-radius: 0 20px 20px 0;
+  -webkit-box-shadow: 0 5px 32px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 5px 32px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 32px 0 rgba(0, 0, 0, 0.3);
+  z-index: 20;
+  padding: 54px 48px 0 $marginDesktop;
+  @media ($laptop) {
+    padding-top: 40px;
+    width: 574px;
+    padding-left: $marginLaptop;
+  }
+  @media ($tablet) {
+    top: auto;
+    bottom: 0;
+    min-height: unset;
+    padding-bottom: 20px;
+  }
+  @media ($mobile) {
+    max-height: 100%;
+    top: unset;
+    bottom: unset;
+    left: unset;
+    position: relative;
+    width: 100%;
+    padding: 20px 10px;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 2;
+    background: transparent;
+  }
+
+  & h3{
+    font-family: $gothamProBold;
+    font-size: 24px;
+    line-height: 28px;
+    max-width: 310px;
+    margin: 0 0 14px 0;
+    @media ($laptop) {
+      max-width: 100%;
+      min-height: 56px;
+      font-size: 22px;
+      margin-bottom: 0;
+    }
+    @media ($mobile) {
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      max-width: 236px;
+      margin-bottom: 6px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+
+  & form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 30px;
+    @media ($mobile) {
+      &:before{
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 220px;
+        background: #f2f2f2;
+        z-index: -1;
+
+      }
+    }
+  }
+
+  & p{
+    grid-column: span 2;
+    font-family: $gothamPro;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0 0 4px 0;
+    @media ($mobile) {
+      font-size: 12px;
+      line-height: 18px;
+      text-align: center;
+      max-width: 236px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 0;
+    }
+  }
+
+
+  & label:nth-child(4){
+    grid-column: span 2;
+    grid-row: 3;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+  }
+  & input[type="text"]{
+    font-size: 16px;
+    line-height: 26px;
+    font-family: $gothamProMedium;
+    color: #7d7d7d;
+    border: 2px solid #777777;
+    border-radius: 8px;
+    padding: 12px 26px;
+    width: 100%;
+    outline: none;
+    position: relative;
+    @media ($laptop) {
+      padding: 16px 22px;
+    }
+    @media (max-width: 1400px) {
+      padding: 10px 20px;
+    }
+    @media (max-width: 900px) {
+      padding: 10px 20px;
+    }
+    @media ($mobile) {
+      font-size: 14px;
+      padding: 12px 10px;
+    }
+  }
+
+
+
+  & label:nth-child(3){
+    display: block;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+  }
+
+
+  & select{
+    padding: 20px;
+    border-radius: 8px;
+    @media ($mobile) {
+      padding: 18px 15px;
+    }
+
+    font-family: $gothamProBold;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 90% 60%;
+    background-size: 24px 24px;
+    transition: $transition;
+    outline: none;
+    padding: 16px 20px;
+    border: 1px solid black;
+    @media ($laptop) {
+      background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 90% 50%;
+      background-size: 24px 24px;
+    }
+    @media ($mobile) {
+      background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 93% 50%;
+      background-size: 24px 24px;
+      width: 130%;
+      font-size: 13px;
+    }
+    option{
+      font-family: $gothamPro;
+      font-size: 16px;
+    }
+    option[value=""][disabled] {
+      display: none;
+    }
+  }
+}
+
+.rout_button{
+  all: unset;
+  background: #212832;
+  color: $color1;
+  padding: 14px 0;
+  font-family: $gothamProBold;
+  font-size: 14px;
+  line-height: 26px;
+  width: 100%;
+  border-radius: 8px;
+  transition: $transition;
+  text-align: center;
+  cursor: pointer;
+  @media ($mobile) {
+    width: 71%;
+    justify-self: end;
+  }
+  & span:nth-child(2){
+    display: none;
+    @media ($mobile) {
+      display: inline-block;
+    }
+  }
+  & span:nth-child(1){
+    @media ($mobile) {
+      display: none;
+    }
+  }
+}
+
+.reset_button{
+  all: unset;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  & .fa-circle-xmark{
+    font-size: 20px;
+  }
+}
+
+
+.how_to_go_radio_button {
+  cursor: pointer;
+  width: 100%;
+  input[type="radio"] {
+    display: none;
+
+    &:checked + span {
+      background-color: #212832;
+      color: #fff;
+    }
+  }
+
+  input[type="radio"]:checked ~ .mobile_button,
+  input[type="radio"]:checked ~ .desktop_button {
+    background-color: #212832;
+    color: #fff;
+  }
+
+  span {
+    display: inline-block;
+    background: $color3;
+    color: $color1;
+    padding: 14px 20px;
+    font-family: $gothamProBold;
+    font-size: 14px;
+    line-height: 26px;
+    width: 100%;
+    border-radius: 8px;
+    transition: $transition;
+    text-align: center;
+    @media ($mobile) {
+      margin-bottom: 34px;
+    }
+  }
+
+  & .mobile_button{
+    display: none;
+    @media ($mobile) {
+      display: inline-block !important;
+    }
+  }
+  & .desktop_button{
+    @media ($mobile) {
+      display: none;
+    }
+  }
+}
+
+.how_to_go_form_parking{
+  margin-bottom: 20px;
+  & .pIcon{
+    font-size: 50px;
+    line-height: 30px;
+    margin-right: 14px;
+  }
+  & span{
+    position: relative;
+    display: inline-block;
+    font-family: $gothamPro;
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 200px;
+    top: -3px;
+  }
+  @media ($mobile) {
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+}
+
+.how_to_go_form_map_links{
+  margin-bottom: 20px;
+  @media ($mobile) {
+    margin-top: 20px;
+  }
+  & a{
+    font-family: $gothamPro;
+    font-size: 14px;
+    line-height: 22px;
+    color: $color2;
+    position: relative;
+    &:nth-child(1){
+      margin-right: 50px;
+      padding-left: 30px;
+      @media ($mobile) {
+        margin-right: 29px;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        top: -12px;
+        left: -12px;
+        width: 40px;
+        height: 40px;
+        background: url("../images/yandexMap.png") no-repeat center center;
+      }
+    }
+    &:nth-child(2){
+      padding-left: 36px;
+      &:before{
+        content: '';
+        position: absolute;
+        top: -12px;
+        left: -12px;
+        width: 40px;
+        height: 40px;
+        background: url("../images/googleMap.png") no-repeat center center;
+      }
+    }
+  }
+}
+
+
+.detailed_route_wrapper{
+  &.hide{
+    @media ($mobile) {
+      display: none;
+    }
+  }
+}
+.detailed_route_result{
+  display: none;
+  position: fixed;
+  background: $color1;
+  z-index: 9999;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  @media ($mobile) {
+    display: block;
+  }
+}
+
+
+
+.detailed_route_top{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  & p {
+    @media ($mobile) {
+      font-size: 14px;
+      text-align: left;
+      left: unset;
+      transform: unset;
+    }
+  }
+}
+.detailed_route{
+  height: 440px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  margin-bottom: 40px;
+  width: calc(100% + 48px);
+  @media ($laptop) {
+    height: 270px;
+  }
+  @media ($mobile) {
+    width: calc(100% + 20px);
+    height: 68vh;
+  }
+  & p{
+    font-family: $gothamProBold;
+    position: relative;
+    padding: 0 22px;
+    margin-bottom: 22px;
+    @media ($laptop) {
+      font-size: 14px;
+      padding-left: 24px;
+    }
+    @media ($mobile) {
+      max-width: 100%;
+      text-align: left;
+      margin-bottom: 18px;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      left: -2px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background: url("../images/iconLocation.png") no-repeat center center;
+    }
+  }
+  & span{
+    font-family: $gothamProLight;
+    position: relative;
+    padding: 0 22px;
+    margin-bottom: 22px;
+    @media ($laptop) {
+      font-size: 14px;
+      padding-left: 24px;
+    }
+    @media ($mobile) {
+      font-size: 12px;
+      line-height: 20px;
+      max-width: 100%;
+      padding-right: 60px;
+      margin-bottom: 14px;
+    }
+
+    &:before{
+      content: "—";
+      position: absolute;
+      left: -2px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+}
+
+.detailed_route_back{
+  font-family: $gothamProBold;
+  font-size: 14px;
+  line-height: 26px;
+  border: 1px solid black;
+  background: $color1;
+  cursor: pointer;
+  padding: 2px 24px 2px 16px;
+  border-radius: 8px;
+  margin-right: 10px;
+  @media ($mobile) {
+    white-space: nowrap;
+    padding: 14px 22px 10px 16px;
+    margin-right: 16px;
+  }
+  & .fa-arrow-left{
+    font-size: 20px;
+    line-height: 1;
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
+    color: $color2;
+    @media ($mobile) {
+      margin-right: 4px;
+    }
+  }
+}
+
+.detailed_route_close{
+  all: unset;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  cursor: pointer;
+  @media ($laptop) {
+    top: 30px;
+  }
+  @media ($mobile) {
+    display: none;
+  }
+  & .fa-xmark {
+    font-size: 50px;
+  }
+
+}
+
+
+.mobile_map{
+  position: relative;
+  width: 100vw;
+  height: 345px;
+  margin-left: -$marginMobile;
+  display: none;
+  @media ($mobile) {
+    margin-bottom: 10px;
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+.how_to_go_description{
+  @include container;
+  padding-bottom: 116px;
+  @media ($laptop) {
+    padding-bottom: 44px;
+  }
+  @media ($mobile) {
+    padding-bottom: 10px;
+  }
+  & > div{
+    margin-bottom: 36px;
+    @media ($laptop) {
+      margin-bottom: 28px;
+    }
+  }
+  & h3 {
+    font-family: $gothamProBlack;
+    font-size: 24px;
+    line-height: 34px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    @media ($laptop) {
+      font-size: 22px;
+    }
+    @media ($mobile) {
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  & p{
+    font-family: $gothamProLight;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 0;
+    @media ($laptop) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @media ($mobile) {
+      font-size: 13px;
+      line-height: 20px;
+      margin-top: 0;
+    }
+  }
+}
+
+
+
+
+
+//////////////////////////////////////////// pages nav section /////////////////////////////////////////////////////////
+
+.pages_nav_section{
+  @include pagesNavSection;
+}
+
+.pages_nav_item{
+  @include pagesNavItem;
+  &:nth-child(1){
+    background: $color1;
+  }
+  &:nth-child(2){
+    background: $color5;
+  }
+  &:nth-child(3){
+    background: $color1;
+  }
+}
+
+.pages_nav_item_button{
+  @include pagesNavButton
+}
+
+

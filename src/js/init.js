@@ -4,7 +4,6 @@ const isMobile = () => $(window).width() <= 600
 
 const isLaptop = () => $(window).width() <= 1500
 
-
 const getCallbacks = (callbacks) => {
     if(callbacks){
         for (let i = 0; i < callbacks.length; i++) {

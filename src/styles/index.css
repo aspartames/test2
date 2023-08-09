@@ -1,9 +1,14 @@
 @import '../fonts/stylesheet.css';
+@import '../fonts/stylesheet.css';
 .introduction_section {
   position: relative;
   width: 100%;
   height: 900px;
   overflow: hidden;
+  background-image: url("../images/mainImg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
 }
 .introduction_section img {
   width: 100%;
@@ -48,7 +53,7 @@
   }
 }
 
-.introduction_slider h3 {
+.introduction_slider h1 {
   font-family: "GothamProMedium";
   font-size: 36px;
   line-height: 44px;
@@ -57,25 +62,25 @@
   text-align: center;
 }
 @media (max-width: 1600px) {
-  .introduction_slider h3 {
+  .introduction_slider h1 {
     font-size: 32px;
     margin: 0 0 18px;
   }
 }
 @media (max-width: 1024px) {
-  .introduction_slider h3 {
+  .introduction_slider h1 {
     font-size: 36px;
     margin: 0 0 24px;
   }
 }
 @media (max-width: 800px) {
-  .introduction_slider h3 {
+  .introduction_slider h1 {
     font-size: 32px;
     margin: 0 0 18px;
   }
 }
 @media (max-width: 600px) {
-  .introduction_slider h3 {
+  .introduction_slider h1 {
     font-size: 24px;
     margin: 0 0 6px;
   }
@@ -464,16 +469,14 @@
   }
 }
 .long p {
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 14px !important;
+  line-height: 22px !important;
   font-family: "GothamPro";
   margin: 0 0 30px 0;
   max-width: 350px;
 }
 @media (max-width: 1600px) {
   .long p {
-    font-size: 14px;
-    line-height: 22px;
     margin: 0;
   }
 }
@@ -485,15 +488,11 @@
 }
 @media (max-width: 800px) {
   .long p {
-    font-size: 14px;
-    line-height: 22px;
     margin: 0;
   }
 }
 @media (max-width: 600px) {
   .long p {
-    font-size: 14px;
-    line-height: 22px;
     text-align: center;
     margin: 0 0 38px 0;
     max-width: 268px;
@@ -826,13 +825,21 @@
   .pages_nav_item p {
     font-size: 13px;
     line-height: 18px;
-    margin: 0 0 24px 0;
   }
 }
 @media (max-width: 600px) {
   .pages_nav_item p {
     font-size: 14px;
     line-height: 22px;
+  }
+}
+@media (max-width: 1600px) {
+  .pages_nav_item p {
+    margin: 0 0 24px 0;
+  }
+}
+@media (max-width: 600px) {
+  .pages_nav_item p {
     text-align: center;
     margin: 0 0 34px 0;
   }
@@ -869,6 +876,16 @@
   min-width: fit-content;
   position: absolute;
   bottom: 64px;
+}
+@media (max-width: 1600px) {
+  .pages_nav_item_button {
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .pages_nav_item_button {
+    font-size: 14px;
+  }
 }
 .pages_nav_item_button:before, .pages_nav_item_button:after {
   position: absolute;
@@ -924,8 +941,6 @@
 }
 @media (max-width: 1600px) {
   .pages_nav_item_button {
-    font-size: 16px;
-    line-height: 1;
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -933,7 +948,6 @@
 @media (max-width: 600px) {
   .pages_nav_item_button {
     font-size: 18px;
-    line-height: 1;
     padding: 14px 27px 14px 25px;
   }
 }

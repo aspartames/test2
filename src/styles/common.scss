@@ -1,0 +1,182 @@
+@import 'variables';
+
+//////////////////////////////////////////// pages nav section /////////////////////////////////////////////////////////
+
+@mixin pagesNavSection{
+  display: flex;
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+  }
+}
+
+@mixin pagesNavItem{
+  position: relative;
+  overflow: hidden;
+  padding: 58px 20px 110px;
+  background: rgba(0, 2, 13, 0.6);
+  cursor: pointer;
+  flex: 1;
+  @media ($laptop) {
+    padding: 38px 20px 78px;
+  }
+  @media (max-width: 1200px) {
+    flex: auto;
+    width: 50%;
+  }
+  @media ($mobile) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 38px 10px 56px 10px !important;
+  }
+  &:nth-child(1){
+    padding-left: $marginDesktop;
+    background: $color5;
+    color: $color2;
+    @media ($laptop) {
+      padding-left: $marginLaptop;
+    }
+  }
+  &:nth-child(2){
+    & img{
+      top: -20%;
+      left: -42%;
+      @media (max-width: 1200px) {
+        width: 100%;
+        left: 0;
+      }
+      @media ($tablet) {
+        top: 0;
+        left: 0;
+      }
+      @media (max-width: 840px) {
+        height: 100%;
+        width: auto;
+      }
+      @media ($mobile) {
+        width: 160%;
+        height: unset;
+        top: auto;
+        bottom: 0;
+      }
+    }
+  }
+  &:nth-child(3){
+    & img{
+      top: -40%;
+      left: 0;
+      @media (max-width: 1200px) {
+        width: 100%;
+        top: -130%;
+      }
+      @media ($tablet) {
+        top: -90%;
+      }
+      @media (max-width: 860px) {
+        width: unset;
+      }
+      @media ($mobile) {
+        top: auto;
+        bottom: -120%;
+        width: 135%;
+      }
+    }
+  }
+  &:nth-child(4){
+    padding-right: $marginDesktop;
+    background: $gradient;
+    @media ($laptop) {
+      padding-right: $marginLaptop;
+    }
+  }
+  & h3{
+    @include font30(44px);
+    position: relative;
+    margin: 0 0 20px 0;
+    padding-bottom: 20px;
+    font-family: $gothamProBlack;
+    text-transform: uppercase;
+    @media ($laptop) {
+      margin: 0 0 14px 0;
+      padding-bottom: 18px;
+    }
+    @media ($mobile) {
+      margin: 0 0 20px 0;
+      padding-bottom: 16px;
+    }
+    &::after{
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 7px;
+      background: $gradient;
+      @media ($mobile) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &.light{
+      &::after{
+        background: linear-gradient(90deg, #ffffff, #03edff);
+      }
+    }
+  }
+  & p{
+    @include font14(22px);
+    font-family: $gothamPro;
+    margin: 0 0 34px 0;
+    max-width: 366px;
+    min-height: 66px;
+    @media ($laptop) {
+      margin: 0 0 24px 0;
+    }
+    @media ($mobile) {
+      text-align: center;
+      margin: 0 0 34px 0;
+    }
+  }
+  & img{
+    transition: $transition;
+    position: absolute;
+    z-index: -1;
+    width: auto;
+    height: auto;
+  }
+  &.light{
+    color: $color1;
+    & h3{
+      &::after{
+        background: linear-gradient(90deg, #ffffff, #03edff);
+      }
+    }
+  }
+  &.zoom{
+    & img{
+      transform: scale(1.03);
+    }
+  }
+}
+
+@mixin pagesNavButton{
+  @include button;
+  position: absolute;
+  bottom: 64px;
+  @media ($laptop) {
+    bottom: 38px;
+  }
+  @media ($mobile) {
+    position: relative;
+    bottom: unset;
+  }
+  &.light{
+    position: absolute;
+    @media ($mobile) {
+      position: relative;
+      bottom: unset;
+    }
+  }
+}
+

@@ -158,6 +158,8 @@ header{
   background: $color1;
   padding-top: 2px;
   padding-bottom: 2px;
+  border-bottom: 1px solid black;
+
   @media ($tablet) {
     display: none;
   }
@@ -238,7 +240,6 @@ header{
 }
 
 
-
 .menu_icon{
   display: block;
   position: relative;
@@ -267,27 +268,27 @@ header{
   }
   &.active{
     & span{
-      height: 3px;
       position: absolute;
       width: calc(100% + 6px);
       &:nth-child(1) {
+        /*
         top: calc(50% + 1px);
-        left: 0;
-        transform: translate(-3px, -50%) rotate(45deg);
+        */
+        transform: translate(-10%, 200%) rotate(45deg);
       }
       &:nth-child(2) {
-        top: calc(50% + 1px);
+/*        top: calc(50% + 1px);
         left: 0;
-        transform: translate(-3px, -50%);
+        transform: translate(-3px, -50%);*/
         opacity: 0;
       }
       &:nth-child(3) {
-        top: calc(50% + 1px);
+/*        top: calc(50% + 1px);
         left: 0;
-        transform: translate(-3px, -50%) rotate(-45deg);
+        transform: translate(-3px, -50%) rotate(-45deg);*/
+        transform: translate(-10%, -200%) rotate(-45deg);
       }
     }
-
   }
 
 }
@@ -307,7 +308,7 @@ $bottomNavOffsetLaptop: 62px;
   position: absolute;
   left: $marginDesktop;
   width: calc(100% - $marginDesktop * 2 + 20px);
-  box-shadow: 0 24px 32px 0 rgba(1, 2, 2, 0.71);
+  box-shadow: 0 14px 32px 0 rgba(1, 2, 2, 0.29);
   opacity: 0;
   user-select: none;
   pointer-events: none;

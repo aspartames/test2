@@ -1,0 +1,153 @@
+@import "variables";
+@import "common";
+
+.contacts_section{
+  h1{
+    @include h1;
+    margin-bottom: 86px;
+    @media ($laptop) {
+      margin-bottom: 36px;
+    }
+    @media ($mobile) {
+      margin-bottom: 10px;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  }
+}
+
+
+.contacts_wrapper{
+  display: flex;
+  @media ($tablet) {
+    flex-direction: column;
+  }
+}
+
+.contacts{
+  flex: 1;
+  padding-left: $marginDesktop;
+  padding-top: 46px;
+  @media ($laptop) {
+    padding-left: $marginLaptop;
+    padding-top: 0;
+  }
+  @media ($tablet) {
+    background: #f2f2f2;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @media ($mobile) {
+    padding-left: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.contacts_image{
+  flex: 1.143;
+  @media ($laptop) {
+    flex: 1.045;
+  }
+    & img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.contacts_item{
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 76px;
+  @media ($laptop) {
+    margin-bottom: 64px;
+  }
+  @media ($tablet) {
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  @media ($mobile) {
+    margin-bottom: 20px;
+  }
+  & .icon{
+    font-size: 24px;
+    line-height: 30px;
+    grid-column: 1;
+    grid-row: span 2;
+    position: relative;
+    top: 8px;
+    @media ($laptop) {
+      top: 6px;
+    }
+    @media ($mobile) {
+      top: -1px;
+    }
+  }
+  & span{
+    font-style: normal;
+    font-size: 24px;
+    line-height: 34px;
+    @media ($laptop) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+    @media ($mobile) {
+      font-size: 18px;
+      line-height: 22px;
+      max-width: 200px;
+    }
+    &:nth-child(2){
+      text-transform: uppercase;
+      font-family: $gothamProBlack;
+    }
+    &:nth-child(3){
+      font-family: $gothamProLight;
+    }
+  }
+
+  &:nth-child(3){
+    @media ($mobile) {
+      & span{
+        max-width: 190px;
+      }
+    }
+  }
+}
+
+
+.map{
+  position: relative;
+  width: 100%;
+  height: 700px;
+  @media ($laptop) {
+    height: 500px;
+  }
+}
+
+
+//////////////////////////////////////////// pages nav section /////////////////////////////////////////////////////////
+
+.pages_nav_section{
+  @include pagesNavSection;
+}
+
+.pages_nav_item{
+  @include pagesNavItem;
+  &:nth-child(1){
+    background: $color1;
+  }
+  &:nth-child(2){
+    background: $color5;
+  }
+  &:nth-child(3){
+    background: $color1;
+  }
+}
+
+.pages_nav_item_button{
+  @include pagesNavButton
+}

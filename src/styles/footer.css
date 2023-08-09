@@ -367,12 +367,20 @@ footer {
 @media (max-width: 1600px) {
   .footer_address_container span {
     font-size: 15px;
-    margin-right: 36px;
   }
 }
 @media (max-width: 1024px) {
   .footer_address_container span {
     font-size: 16px;
+  }
+}
+@media (max-width: 1600px) {
+  .footer_address_container span {
+    margin-right: 36px;
+  }
+}
+@media (max-width: 1024px) {
+  .footer_address_container span {
     line-height: 26px;
   }
 }

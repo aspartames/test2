@@ -12,6 +12,7 @@ $color2: rgb(33, 40, 50);
 $color3: #6d82fc;
 $color4: #4aa8ff;
 $color5: #eff0f0;
+$color6: #f2f2f2;
 
 $gradientColor1: #49a9ff;
 $gradientColor2: #d327ff;
@@ -36,6 +37,14 @@ $mobile: 'max-width: 600px';
 @mixin font14 ($lineHeight: 1){
   font-size: 14px;
   line-height: $lineHeight;
+  @media ($laptop) {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  @media ($mobile) {
+    font-size: 14px;
+    line-height: $lineHeight;
+  }
 }
 
 @mixin font15 ($lineHeight: 1){
@@ -59,11 +68,23 @@ $mobile: 'max-width: 600px';
 @mixin font16 ($lineHeight: 1){
   font-size: 16px;
   line-height: $lineHeight;
+  @media ($laptop) {
+    font-size: 15px;
+  }
+  @media ($tablet) {
+    font-size: 16px;
+  }
 }
 
 @mixin font18 ($lineHeight: 1){
   font-size: 18px;
   line-height: $lineHeight;
+  @media ($laptop) {
+    font-size: 16px;
+  }
+  @media ($mobile) {
+    font-size: 14px;
+  }
 }
 
 @mixin font20 ($lineHeight: 1){
@@ -84,6 +105,26 @@ $mobile: 'max-width: 600px';
     font-size: 24px;
   }
 }
+
+@mixin font48 ($lineHeight: 1){
+  font-size: 48px;
+  line-height: $lineHeight;
+  @media ($laptop) {
+    font-size: 38px;
+  }
+}
+
+@mixin font56 ($lineHeight: 1){
+  font-size: 56px;
+  line-height: $lineHeight;
+  @media ($laptop) {
+    font-size: 42px;
+  }
+  @media ($mobile) {
+    font-size: 24px;
+  }
+}
+
 
 @mixin container{
   padding: 0 $marginDesktop;
@@ -142,15 +183,90 @@ $mobile: 'max-width: 600px';
   }
 
   @media ($laptop) {
-    @include font16(1);
     padding-top: 15px;
     padding-bottom: 15px;
   }
   @media ($mobile) {
-    @include font18(1);
+    font-size: 18px;
     padding: 14px 27px 14px 25px;
   }
 }
+
+@mixin h1{
+  @include font56(44px);
+  font-family: $gothamProBold;
+  padding-top: 260px;
+  text-align: center;
+  margin-bottom: 66px;
+  @media ($laptop) {
+    padding-top: 220px;
+    margin-bottom: 38px;
+  }
+  @media ($tablet) {
+    padding-top: 80px;
+  }
+  @media ($mobile) {
+    padding-top: 96px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+}
+
+@mixin text($color){
+  @include font16(22px);
+  position: relative;
+  font-family: $gothamPro;
+  color: $color;
+}
+
+@mixin section ($background: transparent) {
+  @include container;
+  background: $background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > div{
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
+@mixin radioButton{
+  cursor: pointer;
+  input[type="radio"] {
+    display: none;
+
+    &:checked + span {
+      background-color: #212832;
+      color: #fff;
+    }
+  }
+
+  input[type="radio"]:checked ~ .mobile_button,
+  input[type="radio"]:checked ~ .desktop_button {
+    background-color: #212832;
+    color: #fff;
+  }
+
+  span {
+    display: inline-block;
+    background: $color3;
+    color: $color1;
+    padding: 14px 20px;
+    font-family: $gothamProBold;
+    font-size: 14px;
+    line-height: 26px;
+    border-radius: 8px;
+    transition: $transition;
+    text-align: center;
+    @media ($mobile) {
+      margin-bottom: 34px;
+    }
+  }
+}
+
+
 
 ///////////////////////////////////////////////// header - footer /////////////////////////////////////////////////////
 
@@ -183,7 +299,8 @@ $mobile: 'max-width: 600px';
 
 @mixin siteNavigation{
   @include container;
-  @include font14(18px);
+  font-size: 14px;
+  line-height: 18px;
   font-family: $gothamProMedium;
   color: $color1;
   background: $color2;
@@ -235,11 +352,9 @@ $mobile: 'max-width: 600px';
     @include font16(24px);
     font-family: $gothamProBold;
     @media ($laptop) {
-      font-size: 15px;
       margin-right: 36px;
     }
     @media ($tablet) {
-      font-size: 16px;
       line-height: 26px;
     }
   }
@@ -252,7 +367,8 @@ $mobile: 'max-width: 600px';
     top: 0;
   }
   & a{
-    @include font14(24px);
+    font-size: 14px;
+    line-height: 24px;
     font-family: $gothamPro;
     color: $color3;
     text-decoration: underline;
@@ -277,7 +393,8 @@ $mobile: 'max-width: 600px';
     }
   }
   & span:last-child{
-    @include font14(24px);
+    font-size: 14px;
+    line-height: 24px;
     font-family: $gothamPro;
     position: relative;
     top: 4px;
@@ -290,3 +407,6 @@ $mobile: 'max-width: 600px';
     }
   }
 }
+
+
+
