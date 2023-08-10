@@ -288,11 +288,11 @@
   }
   @media ($mobile) {
     font-size: 24px;
-    line-height: 38px;
+    line-height: 1;
     border: 1px solid black;
     width: 40px !important;
     border-radius: 8px !important;
-    padding: 0 !important;
+    padding: 6px 0 !important;
     margin: 0 !important;
   }
   &.swiper-pagination-bullet-active {
@@ -317,6 +317,7 @@
   @media ($mobile) {
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
   & span{
     font-family: $gothamProBold;
@@ -426,7 +427,8 @@
   font-family: $gothamPro;
   font-size: 15px;
   line-height: 20px;
-  @media ($mobile) {
+
+    @media ($mobile) {
     font-size: 13px;
     line-height: 18px;
   }
@@ -436,8 +438,8 @@
 
 .shop_description_wrapper{
   position: absolute;
-  top: 700px;
-  right: 270px;
+  top: 60%;
+  left: 46.7%;
   z-index: 10;
   display: grid;
   grid-template-columns: 180px auto;
@@ -446,10 +448,19 @@
   color: $color1;
   border-radius: 8px;
   filter: drop-shadow(2px 10px 15px rgba(4, 13, 52, 0.7));
-  @media ($mobile) {
-    right: 0;
-    display: block;
+  @media (max-width: 1300px) {
+    grid-template-columns: auto 180px;
+    left: 16.5%;
+    top: 62%;
+
+  }
+  @media ($tablet) {
+    grid-template-columns: 180px auto;
+    left: 0;
     width: 100%;
+  }
+  @media ($mobile) {
+    display: block;
     border-radius: 0;
   }
 }
@@ -462,6 +473,14 @@
   position: relative;
   border: 1px solid #cdd1d8;
   border-radius: 8px;
+  @media (max-width: 1300px) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  @media ($tablet) {
+    grid-column: 1;
+    grid-row: 1;
+  }
   @media ($mobile) {
     display: none;
   }
@@ -476,7 +495,10 @@
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-bottom: 20px solid #ffffff;
-  }
+    @media ($tablet) {
+      display: none;
+    }
+    }
   & img{
     width: 70%;
     height: 60%;
@@ -489,7 +511,14 @@
 .shop_description{
   position: relative;
   padding: 16px 30px;
-  @media ($mobile) {
+  @media (max-width: 1300px) {
+    grid-column: 1;
+  }
+  @media ($tablet) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+    @media ($mobile) {
     padding: 20px 10px 24px;
   }
   & h5{
