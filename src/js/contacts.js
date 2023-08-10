@@ -1,4 +1,3 @@
-
 const initSettings = [
     setFixedHeader,
     setDropMenu,
@@ -12,7 +11,7 @@ const settings = {
     scroll: [setFixedHeader],
     desktop: [setDropMenu, setFixedHeader, updateHeaderParameters],
     tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters],
-    mobile: [rentersLogoGrid]
+    mobile: []
 }
 
 
