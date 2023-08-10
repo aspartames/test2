@@ -621,6 +621,8 @@
     padding-right: 20px;
   }
   & input{
+    color: black;
+    outline: none;
     @media (max-width: 900px) {
       margin: 10px 0;
     }
@@ -774,7 +776,6 @@
 #rent_type{
   @include font18(26px);
   font-family: $gothamProMedium;
-  color: #7d7d7d;
   border: 2px solid #777777;
   border-radius: 8px;
   padding: 18px 26px;

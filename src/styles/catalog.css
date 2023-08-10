@@ -105,6 +105,7 @@
     overflow: hidden;
     grid-row: 2;
     width: 100%;
+    min-height: 60px;
   }
   .catalog_controls_filter #catalog_category_form {
     grid-row: 1;
@@ -113,6 +114,7 @@
     display: none;
     grid-row: 2;
     overflow: hidden;
+    min-height: 60px;
   }
   .catalog_controls_filter.search {
     grid-template-rows: 1fr 60px;

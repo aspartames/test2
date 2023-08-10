@@ -129,6 +129,27 @@ const rentersLogoGrid = () => {
 }
 
 
+const animation = () => {
+    let windowTop = $(window).scrollTop() - 300;
+    let windowBottom = windowTop + $(window).height() + 800;
+
+    $('.description_item').each(function() {
+
+        let elemTop = $(this).offset().top;
+        let elemBottom = elemTop + $(this).height();
+        console.log(elemBottom,  windowBottom)
+
+        if ((elemBottom <= windowBottom) && (elemTop >= windowTop)) {
+            $(this).find('.description_text').addClass('animated');
+            $(this).find('.description_images').addClass('animated');
+
+        } else {
+            $(this).find('.description_text').removeClass('animated');
+            $(this).find('.description_images').removeClass('animated');
+        }
+    });
+}
+
 const initSettings = [
     setFixedHeader,
     setDropMenu,
@@ -137,13 +158,14 @@ const initSettings = [
     setMapActive,
     setVideoControls,
     rentersLogoGrid,
+    animation
 ]
 
 const settings = {
     init: initSettings,
-    scroll: [setFixedHeader],
-    desktop: [setDropMenu, rentersLogoGrid],
-    tablet: [setMobileMenu, rentersLogoGrid],
+    scroll: [setFixedHeader, animation],
+    desktop: [setDropMenu, rentersLogoGrid, setFixedHeader, updateHeaderParameters],
+    tablet: [setMobileMenu, rentersLogoGrid, setFixedHeader, updateHeaderParameters],
     mobile: [rentersLogoGrid]
 }
 

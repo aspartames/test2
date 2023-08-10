@@ -133,6 +133,7 @@ footer {
   padding: 8px 18px;
   width: 400px;
   position: relative;
+  outline: none;
 }
 @media (max-width: 1024px) {
   #subscribe {

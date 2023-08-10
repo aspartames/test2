@@ -732,6 +732,11 @@
   top: -40%;
   left: 0;
 }
+@media (min-width: 1921px) {
+  .pages_nav_item:nth-child(3) img {
+    width: 100%;
+  }
+}
 @media (max-width: 1200px) {
   .pages_nav_item:nth-child(3) img {
     width: 100%;

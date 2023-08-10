@@ -6,8 +6,8 @@ const initSettings = [
 
 const settings = {
     init: initSettings,
-    scroll: [setFixedHeader],
-    desktop: [setDropMenu],
+    scroll: [setFixedHeader, setFixedHeader, updateHeaderParameters],
+    desktop: [setDropMenu, setFixedHeader, updateHeaderParameters],
     tablet: [setMobileMenu],
     mobile: []
 }

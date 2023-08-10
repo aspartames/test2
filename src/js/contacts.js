@@ -10,8 +10,8 @@ const initSettings = [
 const settings = {
     init: initSettings,
     scroll: [setFixedHeader],
-    desktop: [setDropMenu, rentersLogoGrid],
-    tablet: [setMobileMenu, rentersLogoGrid],
+    desktop: [setDropMenu, setFixedHeader, updateHeaderParameters],
+    tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters],
     mobile: [rentersLogoGrid]
 }
 

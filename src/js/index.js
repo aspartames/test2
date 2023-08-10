@@ -41,8 +41,8 @@ const initSettings = [
 const settings = {
     init: initSettings,
     scroll: [setFixedHeader],
-    desktop: [setDropMenu, setIntroductionSlider],
-    tablet: [setMobileMenu, setIntroductionSlider],
+    desktop: [setDropMenu, setIntroductionSlider, setFixedHeader, updateHeaderParameters],
+    tablet: [setMobileMenu, setIntroductionSlider, setFixedHeader, updateHeaderParameters],
     mobile: [setIntroductionSlider]
 }
 

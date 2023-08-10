@@ -75,6 +75,9 @@ const mapSchemeSlider = () =>{
         }
     })
 
+    swiper.on('slideChange', function () {
+        $(".mobile_floor").text(`${swiper.realIndex + 1} этаж`)
+    });
 }
 
 

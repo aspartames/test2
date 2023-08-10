@@ -66,6 +66,9 @@
     & img{
       top: -40%;
       left: 0;
+      @media (min-width: 1921px) {
+        width: 100%;
+      }
       @media (max-width: 1200px) {
         width: 100%;
         top: -130%;
