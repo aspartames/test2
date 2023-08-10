@@ -28,7 +28,7 @@
 }
 @media (max-width: 600px) {
   .introduction_section {
-    height: max(470px, 100dvh - 10px);
+    height: max(470px, 100svh - 10px);
   }
 }
 

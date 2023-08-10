@@ -26,7 +26,7 @@
     height: max(586px, calc(100vh - 10px));
   }
   @media ($mobile) {
-    height: max(470px, calc(100dvh - 10px));
+    height: max(470px, calc(100svh - 10px));
   }
 
 }
