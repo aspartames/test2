@@ -89,8 +89,7 @@ header.fixed {
   }
 }
 .header_mid.fixed {
-  border-bottom: 1px solid transparent;
-  transition: border 300ms 300ms height 300ms;
+  transition: height 300ms;
   height: 80px;
 }
 @media (max-width: 1600px) {

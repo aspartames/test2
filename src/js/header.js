@@ -7,6 +7,14 @@ let headerParameters = {
     heightTop: $('.header_top').height(),
 }
 
+const updateHeaderParameters = () => {
+    headerParameters.header = $("header")
+    headerParameters.heightHeader = $('header').height()
+    headerParameters.heightBottom = $('.header_bottom').height()
+    headerParameters.heightTop = $('.header_top').height()
+}
+
+
 const setFixedHeader = () => {
     if (!isTablet()) {
         const {isHeaderFixed, header, heightHeader, heightBottom, heightTop} = headerParameters
@@ -15,28 +23,35 @@ const setFixedHeader = () => {
 
         const headerFixedHeight = heightHeader - heightBottom - heightTop
 
-        if (scrollPosition > heightTop && !isHeaderFixed) {
+        const dropMenuFixedTop = isLaptop() ? 110 : 124
+        const dropMenuDefaultTop = isLaptop() ? 216 : 240
+
+        if (scrollPosition > heightTop ) {
             header.addClass('fixed');
             header.css('top', `-${heightTop}px`)
             header.css('height', `${headerFixedHeight}px`)
             $(".header_mid").addClass('fixed');
-            $(".header_bottom").css('top', `-${heightBottom}px`)
-            $(".drop_menu").css('top', `${isLaptop() ? 110 : 124}px`)
+            $(".header_bottom").css('top', `-${heightBottom + 6}px`)
+            $(".header_bottom").addClass('fixed');
+            $(".drop_menu").css('top', `${dropMenuFixedTop}px`)
             $('.header_all_fixed').addClass('fixed')
             $('.header_mid_info').addClass('fixed')
             $('.drop_menu_bottom_nav_wrapper').addClass('fixed')
             $('.drop_menu_nav_list').addClass('fixed')
 
             headerParameters.isHeaderFixed = true
-
         }
         if (scrollPosition < heightTop) {
+            console.log(isLaptop())
             header.removeClass('fixed');
             header.css('top', '0')
             header.css('height', 'fit-content')
             $(".header_mid").removeClass('fixed');
             $(".header_bottom").css('top', `0`)
-            $(".drop_menu").css('top', `${heightHeader}px`)
+/*
+            $(".drop_menu").css('top', `${heightHeader - 1}px`)
+*/
+            $(".drop_menu").css('top', `${dropMenuDefaultTop}px`)
             $('.header_all_fixed').removeClass('fixed')
             $('.header_mid_info').removeClass('fixed')
             $('.drop_menu_bottom_nav_wrapper').removeClass('fixed')
@@ -45,6 +60,19 @@ const setFixedHeader = () => {
             headerParameters.isHeaderFixed = false
 
         }
+    }
+    else {
+        const {header} = headerParameters
+        header.removeClass('fixed');
+        header.css('top', '0')
+        header.css('height', 'fit-content')
+
+        $(".header_mid").removeClass('fixed');
+        $(".header_bottom").css('top', `0`)
+        $('.header_all_fixed').removeClass('fixed')
+        $('.header_mid_info').removeClass('fixed')
+        $('.drop_menu_bottom_nav_wrapper').removeClass('fixed')
+        $('.drop_menu_nav_list').removeClass('fixed')
     }
 }
 

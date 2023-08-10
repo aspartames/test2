@@ -47,8 +47,7 @@ header{
 
   }
   &.fixed{
-    border-bottom: 1px solid transparent;
-    transition: border $transition $transition height $transition;
+    transition: height $transition;
     height: 80px;
     @media ($laptop) {
       height: 70px;
@@ -159,7 +158,6 @@ header{
   padding-top: 2px;
   padding-bottom: 2px;
   border-bottom: 1px solid black;
-
   @media ($tablet) {
     display: none;
   }

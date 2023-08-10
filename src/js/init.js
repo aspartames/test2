@@ -2,7 +2,7 @@ const isDesktop = () => $(window).width() > 1000
 const isTablet = () => $(window).width() <= 1000
 const isMobile = () => $(window).width() <= 600
 
-const isLaptop = () => $(window).width() <= 1500
+const isLaptop = () => $(window).width() <= 1600
 
 const getCallbacks = (callbacks) => {
     if(callbacks){

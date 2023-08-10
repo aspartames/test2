@@ -210,6 +210,24 @@
   }
 }
 
+
+.map_scheme_slider_container{
+  @media ($tablet) {
+    height: auto;
+    width: 100%;
+  }
+  @media ($mobile) {
+    width: 100vw;
+    margin-left: -10px;
+    transition: $transition;
+    &.zoom {
+      height: 600px;
+      overflow: auto;
+    }
+  }
+
+}
+
 .map_scheme_slider{
   position: relative;
   width: 1254px;
@@ -226,8 +244,16 @@
   }
   @media ($tablet) {
     width: 100%;
-    height: 100%;
+    height: auto;
     margin: 0;
+  }
+  @media ($mobile) {
+    transition: $transition;
+
+    &.zoom{
+      width: 300%;
+      touch-action: unset !important;
+    }
   }
   & img{
     width: 100%;
@@ -458,6 +484,8 @@
     grid-template-columns: 180px auto;
     left: 0;
     width: 100%;
+    top: auto;
+    bottom: 10%;
   }
   @media ($mobile) {
     display: block;

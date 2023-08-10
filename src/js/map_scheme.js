@@ -1,23 +1,36 @@
 
 
+const setMobileSchemeWrapper = () => {
+/*    if(isMobile()){
+        const slider = $('.map_scheme_slider');
+        const wrapper = `<div class="ssd"></div>`;
+
+        const s = $('.map_scheme_wrapper');
+
+        wrapper.append(slider);
+        s.append(wrapper)
+    }*/
+
+}
+
 
 const zoomFloorScheme = () => {
-    const zoomImage = $('.swiper-wrapper');
-    const zoomImage2 = $('.map_scheme_slider_item');
+    const sliderContainer= $('.map_scheme_slider_container');
+    const slider = $('.map_scheme_slider');
 
     const zoomInButton = $('.zoom_plus');
     const zoomOutButton = $('.zoom_minus');
 
 
     zoomInButton.on('click', function () {
-        zoomImage.addClass('zoom')
-        zoomImage2.addClass('zoom')
+        sliderContainer.addClass('zoom')
+        slider.addClass('zoom')
     });
 
 
     zoomOutButton.on('click', function () {
-        zoomImage.removeClass('zoom')
-        zoomImage2.removeClass('zoom')
+        sliderContainer.removeClass('zoom')
+        slider.removeClass('zoom')
     });
 
 }
@@ -36,20 +49,28 @@ const mobileButtonSearch = () =>{
 }
 
 
+
 const mapSchemeSlider = () =>{
+
     swiper = new Swiper('.map_scheme_slider', {
         allowTouchMove: false,
         loop: false,
         speed: 300,
         spaceBetween: 200,
         slidesPerView: 1,
-        direction: !isTablet() ? 'vertical' : 'horizontal',
+        direction: 'horizontal',
 
         pagination: {
             el: '.map_scheme_slider_pagination',
             clickable: true,
             renderBullet: function (index, className) {
                 return '<span class="pagination_item ' + className + '">' + (index + 1) + '</span>';
+            },
+        },
+
+        breakpoints: {
+            1000: {
+                direction:'vertical',
             },
         }
     })
@@ -64,15 +85,16 @@ const initSettings = [
     setMobileMenu,
     mobileButtonSearch,
     mapSchemeSlider,
-    zoomFloorScheme
+    zoomFloorScheme,
+    setMobileSchemeWrapper
 ]
 
 const settings = {
     init: initSettings,
     scroll: [setFixedHeader],
-    desktop: [setDropMenu],
-    tablet: [setMobileMenu],
-    mobile: []
+    desktop: [setDropMenu, setFixedHeader, updateHeaderParameters],
+    tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters],
+    mobile: [setMobileSchemeWrapper]
 }
 
 
