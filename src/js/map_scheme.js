@@ -1,19 +1,5 @@
 
-
-const setMobileSchemeWrapper = () => {
-/*    if(isMobile()){
-        const slider = $('.map_scheme_slider');
-        const wrapper = `<div class="ssd"></div>`;
-
-        const s = $('.map_scheme_wrapper');
-
-        wrapper.append(slider);
-        s.append(wrapper)
-    }*/
-
-}
-
-
+// zoom scheme on mobile
 const zoomFloorScheme = () => {
     const sliderContainer= $('.map_scheme_slider_container');
     const slider = $('.map_scheme_slider');
@@ -35,22 +21,17 @@ const zoomFloorScheme = () => {
 
 }
 
-
-
-
+// visible search input on mobile
 const mobileButtonSearch = () =>{
     $('.map_scheme_search_icon_mobile').on('click', function (){
         $('.map_scheme_filter').toggleClass('active')
         $('.map_scheme_search_icon_mobile').toggleClass('active')
         $('#map_scheme_search').toggleClass('active')
-
     })
-
 }
 
-
-
-const mapSchemeSlider = () =>{
+// slider
+const setMapSchemeSlider = () =>{
 
     swiper = new Swiper('.map_scheme_slider', {
         allowTouchMove: false,
@@ -87,9 +68,8 @@ const initSettings = [
     setDropMenu,
     setMobileMenu,
     mobileButtonSearch,
-    mapSchemeSlider,
+    setMapSchemeSlider,
     zoomFloorScheme,
-    setMobileSchemeWrapper
 ]
 
 const settings = {
@@ -97,9 +77,8 @@ const settings = {
     scroll: [setFixedHeader],
     desktop: [setDropMenu, setFixedHeader, updateHeaderParameters],
     tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters],
-    mobile: [setMobileSchemeWrapper]
+    mobile: []
 }
 
 
-// execute
 isDocumentReady(settings)

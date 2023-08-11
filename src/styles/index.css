@@ -240,17 +240,6 @@
 .item_image {
   overflow: hidden;
   aspect-ratio: 1.36/1;
-  /*
-  @media ($laptop) {
-    height: 218px;
-  }
-  @media ($tablet) {
-    height: 290px;
-  }
-  @media ($tabletMini) {
-    height: 218px;
-  }
-  */
 }
 .item_image img {
   width: 100%;
@@ -587,8 +576,7 @@
   padding-top: 48px;
   padding-bottom: 46px;
   border-top: 7px solid;
-  border-image: linear-gradient(90deg, #49a9ff, #d327ff);
-  border-image-slice: 1;
+  border-image: linear-gradient(90deg, #49a9ff, #d327ff) 1;
 }
 @media (max-width: 1600px) {
   .promotions_brands {
@@ -647,7 +635,7 @@
     padding-bottom: 18px;
     grid-gap: unset;
     column-gap: 40px;
-    row-gap: 0px;
+    row-gap: 0;
   }
 }
 

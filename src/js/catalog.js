@@ -1,6 +1,5 @@
 
-
-const catalogViewButtons = () => {
+const setCatalogViewButtons = () => {
 
     $("#tiles_button").on('click', function (){
         $(".catalog_list").removeClass('active')
@@ -16,7 +15,7 @@ const catalogViewButtons = () => {
     })
 }
 
-const mobileButtons = () =>{
+const setMobileButtons = () =>{
     $('.mobile_search_button').on('click', function (){
         $('.mobile_floor_button').removeClass('active')
         $('.catalog_controls_filter').removeClass('floor')
@@ -35,14 +34,13 @@ const mobileButtons = () =>{
 }
 
 
-
 const initSettings = [
     setFixedHeader,
     setDropMenu,
     setMobileMenu,
     setImageZoom,
-    catalogViewButtons,
-    mobileButtons,
+    setCatalogViewButtons,
+    setMobileButtons,
 ]
 
 const settings = {
@@ -53,6 +51,4 @@ const settings = {
     mobile: []
 }
 
-
-// execute
 isDocumentReady(settings)

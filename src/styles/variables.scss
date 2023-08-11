@@ -220,17 +220,6 @@ $mobile: 'max-width: 600px';
   color: $color;
 }
 
-@mixin section ($background: transparent) {
-  @include container;
-  background: $background;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  & > div{
-    max-width: 1200px;
-    width: 100%;
-  }
-}
 
 @mixin radioButton{
   cursor: pointer;

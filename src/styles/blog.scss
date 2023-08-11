@@ -1,187 +1,21 @@
 @import "variables";
+@import "common";
 
-.blog_section{
 
-  h1{
+.blog_section {
+  h1 {
     @include h1;
     margin-bottom: 58px;
   }
 }
 
+/////////////////////////////////////////// filter /////////////////////////////////////////////////////////////////////
 
-.promotions_section{
-  width: 100vw;
-  overflow-x: hidden;
-  padding-top: 74px;
-  @media ($laptop) {
-    padding-top: 48px;
-  }
-  @media ($tablet) {
-    padding-top: 74px;
-  }
-  @media ($tabletMini) {
-    padding-top: 30px;
-  }
-
-  padding-bottom: 90px;
-  padding-top: 42px;
-  @media ($laptop) {
-    padding-top: 30px;
-    padding-bottom: 42px;
-  }
-  @media ($tablet) {
-    padding-top: 42px;
-  }
-  @media ($mobile) {
-    padding-top: 40px;
-    padding-bottom: 76px;
-  }
-}
-
-.promotions_items{
-  @include container;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  padding-bottom: 60px;
-  @media ($laptop) {
-    gap: unset;
-    row-gap: 28px;
-    column-gap: 40px;
-    padding-bottom: 42px;
-  }
-  @media ($tablet) {
-    row-gap: unset;
-    column-gap: unset;
-    gap: 40px;
-    grid-template-columns: repeat(2, calc(50% - 20px));
-    padding-bottom: 60px;
-  }
-  @media ($tabletMini) {
-    grid-template-columns: repeat(2, calc(50% - 10px));
-    gap: 20px;
-    padding-bottom: 42px;
-  }
-  @media ($mobile) {
-    grid-template-columns: repeat(1, 100%);
-    grid-auto-rows: auto;
-    align-items: stretch;
-    gap: 34px;
-    padding-bottom: 0;
-  }
-}
-.promotions_item{
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  & a{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
-  }
-}
-.item_image {
-  overflow: hidden;
-  aspect-ratio: 1.36/1;
-  & img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center center;
-  }
-  /*
-  @media ($laptop) {
-    height: 218px;
-  }
-  @media ($tablet) {
-    height: 290px;
-  }
-  @media ($tabletMini) {
-    height: 218px;
-  }
-  */
-
-
-}
-.item_description{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 22px 0 0;
-  & p{
-    @include font15(20px);
-    font-family: $gothamPro;
-    margin: 0;
-    width: 62%;
-    @media ($laptop) {
-      line-height: 18px;
-      width: 75%;
-    }
-    @media ($tablet) {
-      line-height: 20px;
-    }
-    @media ($tabletMini) {
-      line-height: 18px;
-    }
-  }
-  & img{
-    &.high{
-      @media ($laptop) {
-        height: 35px;
-        width: auto;
-      }
-      @media ($tablet) {
-        height: unset;
-        width: unset;
-      }
-      @media ($tabletMini) {
-        height: 35px;
-        width: auto;
-      }
-      @media ($mobile) {
-        height: 32px;
-      }
-    }
-    @media ($laptop) {
-      width: 64px;
-      margin-top: 4px;
-    }
-    @media ($tablet) {
-      width: unset;
-      margin-top: unset;
-    }
-    @media ($tabletMini) {
-      width: 64px;
-      margin-top: 4px;
-    }
-
-
-  }
-
-  @media ($laptop) {
-    padding: 16px 0 0;
-  }
-  @media ($tablet) {
-    gap: 20px;
-    padding: 22px 0 0;
-  }
-  @media ($mobile) {
-    gap: 20px;
-    padding: 14px 0 0;
-  }
-
-}
-
-
-.blog_filter{
+.blog_filter {
   @include container;
 
 
-  & .desktop_form{
+  & .desktop_form {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
@@ -192,7 +26,8 @@
       display: none;
     }
   }
-  & .mobile_form{
+
+  & .mobile_form {
     display: none;
     @media ($mobile) {
       display: block;
@@ -201,16 +36,15 @@
 
 }
 
-
 .blog_filter_button {
   @include radioButton;
-  & span{
+
+  & span {
     font-size: 18px;
     padding: 10px 28px;
   }
 
 }
-
 #blog_filter_select {
   font-family: $gothamProBold;
   width: 100%;
@@ -227,6 +61,7 @@
   outline: none;
   padding: 16px 20px;
   border: 1px solid black;
+
   option {
     font-family: $gothamPro;
     font-size: 16px;
@@ -237,3 +72,39 @@
   }
 
 }
+
+
+/////////////////////////////////////////// promotions  ////////////////////////////////////////////////////////////////
+
+.promotions_section {
+  @include promotionsSection;
+  padding-bottom: 90px;
+  padding-top: 42px;
+  @media ($laptop) {
+    padding-top: 30px;
+    padding-bottom: 42px;
+  }
+  @media ($tablet) {
+    padding-top: 42px;
+  }
+  @media ($mobile) {
+    padding-top: 40px;
+    padding-bottom: 76px;
+  }
+}
+
+.promotions_items {
+  @include promotionsItems;
+}
+.promotions_item {
+  @include promotionsItem;
+}
+.item_image {
+  @include itemImage;
+}
+.item_description {
+  @include itemDescription;
+}
+
+
+

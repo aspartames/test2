@@ -78,7 +78,6 @@
   width: 650px;
   min-height: 100%;
   background: #ffffff;
-  box-shadow: black;
   border-radius: 0 20px 20px 0;
   -webkit-box-shadow: 0 5px 32px 0 rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 5px 32px 0 rgba(0, 0, 0, 0.3);
@@ -156,7 +155,7 @@
   .how_to_go_form_wrapper form:before {
     content: "";
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 220px;
@@ -182,6 +181,12 @@
     transform: translateX(-50%);
     margin-bottom: 0;
   }
+}
+.how_to_go_form_wrapper label:nth-child(3) {
+  display: block;
+  width: 100%;
+  height: fit-content;
+  position: relative;
 }
 .how_to_go_form_wrapper label:nth-child(4) {
   grid-column: span 2;
@@ -222,117 +227,6 @@
     font-size: 14px;
     padding: 12px 10px;
   }
-}
-.how_to_go_form_wrapper label:nth-child(3) {
-  display: block;
-  width: 100%;
-  height: fit-content;
-  position: relative;
-}
-.how_to_go_form_wrapper select {
-  padding: 20px;
-  border-radius: 8px;
-  font-family: "GothamProBold";
-  width: 100%;
-  height: 100%;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
-  background: white url("../images/about/svg/angleDown.svg") no-repeat 90% 60%;
-  background-size: 24px 24px;
-  transition: 300ms;
-  outline: none;
-  padding: 16px 20px;
-  border: 1px solid black;
-}
-@media (max-width: 600px) {
-  .how_to_go_form_wrapper select {
-    padding: 18px 15px;
-  }
-}
-@media (max-width: 1600px) {
-  .how_to_go_form_wrapper select {
-    background: white url("../images/about/svg/angleDown.svg") no-repeat 90% 50%;
-    background-size: 24px 24px;
-  }
-}
-@media (max-width: 600px) {
-  .how_to_go_form_wrapper select {
-    background: white url("../images/about/svg/angleDown.svg") no-repeat 93% 50%;
-    background-size: 24px 24px;
-    width: 130%;
-    height: unset;
-    font-size: 13px;
-  }
-}
-.how_to_go_form_wrapper select option {
-  font-family: "GothamPro";
-  font-size: 16px;
-}
-.how_to_go_form_wrapper select option[value=""][disabled] {
-  display: none;
-}
-
-.rout_selector {
-  display: none;
-}
-.rout_selector.active {
-  display: block;
-}
-
-.rout_button {
-  all: unset;
-  background: #212832;
-  color: #ffffff;
-  padding: 14px 0;
-  font-family: "GothamProBold";
-  font-size: 14px;
-  line-height: 26px;
-  width: 100%;
-  border-radius: 8px;
-  transition: 300ms;
-  text-align: center;
-  cursor: pointer;
-  display: none;
-}
-@media (max-width: 600px) {
-  .rout_button {
-    width: 71%;
-    justify-self: end;
-  }
-}
-.rout_button.active {
-  display: block;
-}
-.rout_button span:nth-child(2) {
-  display: none;
-}
-@media (max-width: 600px) {
-  .rout_button span:nth-child(2) {
-    display: inline-block;
-  }
-}
-@media (max-width: 600px) {
-  .rout_button span:nth-child(1) {
-    display: none;
-  }
-}
-
-.reset_button {
-  all: unset;
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  display: none;
-}
-.reset_button.active {
-  display: block;
-}
-.reset_button .fa-circle-xmark {
-  font-size: 20px;
 }
 
 .how_to_go_radio_button {
@@ -383,33 +277,111 @@
   }
 }
 
-.how_to_go_form_parking {
-  margin-bottom: 20px;
+.route_selector {
   display: none;
 }
-.how_to_go_form_parking.active {
-  display: block;
+.route_selector select {
+  border-radius: 8px;
+  font-family: "GothamProBold";
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background: white url("../images/about/svg/angleDown.svg") no-repeat 90% 60%;
+  background-size: 24px 24px;
+  transition: 300ms;
+  outline: none;
+  padding: 16px 20px;
+  border: 1px solid black;
 }
-.how_to_go_form_parking .pIcon {
-  font-size: 50px;
-  line-height: 30px;
-  margin-right: 14px;
-}
-.how_to_go_form_parking span {
-  position: relative;
-  display: inline-block;
-  font-family: "GothamPro";
-  font-size: 14px;
-  line-height: 20px;
-  max-width: 200px;
-  top: -3px;
+@media (max-width: 1600px) {
+  .route_selector select {
+    background: white url("../images/about/svg/angleDown.svg") no-repeat 90% 50%;
+    background-size: 24px 24px;
+  }
 }
 @media (max-width: 600px) {
-  .how_to_go_form_parking {
-    display: block;
-    margin-top: 50px;
-    margin-bottom: 0;
+  .route_selector select {
+    background: white url("../images/about/svg/angleDown.svg") no-repeat 93% 50%;
+    background-size: 24px 24px;
+    width: 130%;
+    height: unset;
+    font-size: 13px;
+    padding: 18px 15px;
   }
+}
+.route_selector select option {
+  font-family: "GothamPro";
+  font-size: 16px;
+}
+.route_selector select option[value=""][disabled] {
+  display: none;
+}
+.route_selector.active {
+  display: block;
+}
+
+.route_button {
+  all: unset;
+  background: #212832;
+  color: #ffffff;
+  padding: 14px 0;
+  font-family: "GothamProBold";
+  font-size: 14px;
+  line-height: 26px;
+  width: 100%;
+  border-radius: 8px;
+  transition: 300ms;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 600px) {
+  .route_button {
+    width: 71%;
+    justify-self: end;
+  }
+}
+.route_button.active {
+  display: block;
+}
+.route_button span:nth-child(2) {
+  display: none;
+}
+@media (max-width: 600px) {
+  .route_button span:nth-child(2) {
+    display: inline-block;
+  }
+}
+@media (max-width: 600px) {
+  .route_button span:nth-child(1) {
+    display: none;
+  }
+}
+
+.reset_button {
+  all: unset;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none;
+}
+.reset_button.active {
+  display: block;
+}
+.reset_button .fa-circle-xmark {
+  font-size: 20px;
+}
+
+.how_to_go_form_bottom.mobile {
+  position: absolute;
+  bottom: 0;
+  background: #ffffff;
+  width: 100%;
 }
 
 .how_to_go_form_map_links {
@@ -462,11 +434,33 @@
   background: url("../images/googleMap.png") no-repeat center center;
 }
 
-.how_to_go_form_bottom.mobile {
-  position: absolute;
-  bottom: 0;
-  background: #ffffff;
-  width: 100%;
+.how_to_go_form_parking {
+  margin-bottom: 20px;
+  display: none;
+}
+.how_to_go_form_parking.active {
+  display: block;
+}
+.how_to_go_form_parking .pIcon {
+  font-size: 50px;
+  line-height: 30px;
+  margin-right: 14px;
+}
+.how_to_go_form_parking span {
+  position: relative;
+  display: inline-block;
+  font-family: "GothamPro";
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 200px;
+  top: -3px;
+}
+@media (max-width: 600px) {
+  .how_to_go_form_parking {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
 }
 
 .detailed_route_wrapper {
@@ -478,21 +472,6 @@
 @media (max-width: 600px) {
   .detailed_route_wrapper.mobile_hide {
     display: none;
-  }
-}
-
-.detailed_route_mobile {
-  display: none;
-  position: fixed;
-  background: #ffffff;
-  z-index: 9999;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-@media (max-width: 600px) {
-  .detailed_route_mobile.active {
-    display: block;
   }
 }
 
@@ -663,6 +642,21 @@
 @media (max-width: 600px) {
   .mobile_map {
     margin-bottom: 10px;
+    display: block;
+  }
+}
+
+.detailed_route_mobile {
+  display: none;
+  position: fixed;
+  background: #ffffff;
+  z-index: 9999;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+  .detailed_route_mobile.active {
     display: block;
   }
 }

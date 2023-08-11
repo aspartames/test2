@@ -1,3 +1,4 @@
+
 const initSettings = [
     setFixedHeader,
     setDropMenu,
@@ -13,5 +14,4 @@ const settings = {
 }
 
 
-// execute
 isDocumentReady(settings)

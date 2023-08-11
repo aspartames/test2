@@ -13,6 +13,4 @@ const settings = {
     mobile: []
 }
 
-
-// execute
 isDocumentReady(settings)

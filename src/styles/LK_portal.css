@@ -130,6 +130,59 @@
   }
 }
 
+.portal_nav_mobile {
+  display: flex;
+  width: 100%;
+  position: relative;
+  gap: 22px;
+}
+.portal_nav_mobile label {
+  width: 100%;
+}
+.portal_nav_mobile select {
+  background: white url("../images/about/svg/angleDown.svg") no-repeat 93% 50%;
+  background-size: 24px 24px;
+  padding: 20px 26px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px black solid;
+  outline: none;
+  cursor: pointer;
+  font-family: "GothamProBold";
+  display: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 18px;
+  line-height: 26px;
+}
+@media (max-width: 600px) {
+  .portal_nav_mobile select {
+    display: block;
+  }
+}
+.portal_nav_mobile select option {
+  font-family: "GothamPro";
+}
+.portal_nav_mobile select option[value=""][disabled] {
+  display: none;
+}
+
+.portal_exit_mobile {
+  all: unset !important;
+  cursor: pointer;
+  font-size: 20px !important;
+  line-height: 30px;
+  margin-right: 20px !important;
+  display: none !important;
+}
+@media (max-width: 600px) {
+  .portal_exit_mobile {
+    display: block !important;
+  }
+}
+
 .LK_portal_content {
   grid-column: 3/span 10;
 }
@@ -228,59 +281,6 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-  }
-}
-
-.portal_nav_mobile {
-  display: flex;
-  width: 100%;
-  position: relative;
-  gap: 22px;
-}
-.portal_nav_mobile label {
-  width: 100%;
-}
-.portal_nav_mobile select {
-  background: white url("../images/about/svg/angleDown.svg") no-repeat 93% 50%;
-  background-size: 24px 24px;
-  padding: 20px 26px;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  border: 1px black solid;
-  outline: none;
-  cursor: pointer;
-  font-family: "GothamProBold";
-  display: none;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  font-size: 18px;
-  line-height: 26px;
-}
-@media (max-width: 600px) {
-  .portal_nav_mobile select {
-    display: block;
-  }
-}
-.portal_nav_mobile select option {
-  font-family: "GothamPro";
-}
-.portal_nav_mobile select option[value=""][disabled] {
-  display: none;
-}
-
-.portal_exit_mobile {
-  all: unset !important;
-  cursor: pointer;
-  font-size: 20px !important;
-  line-height: 30px;
-  margin-right: 20px !important;
-  display: none !important;
-}
-@media (max-width: 600px) {
-  .portal_exit_mobile {
-    display: block !important;
   }
 }
 
@@ -481,6 +481,7 @@
   background-size: 24px 24px;
   transition: 300ms;
   outline: none;
+  border: 1px solid #787878;
 }
 @media (max-width: 600px) {
   #letter_department {

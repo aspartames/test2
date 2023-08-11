@@ -1,15 +1,16 @@
 @import "variables";
 @import "common";
 
-.catalog_card_section{
+.catalog_card_section {
   @include container;
-  h1{
+
+  h1 {
     @include h1;
     margin-bottom: 54px;
   }
 }
 
-.catalog_card_wrapper{
+.catalog_card_wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
@@ -21,24 +22,13 @@
   @media ($mobile) {
     gap: 0;
     position: relative;
-/*    overflow: hidden;
-    margin-left: -10px;
-    padding-left: 10px;*/
+    /*    overflow: hidden;
+        margin-left: -10px;
+        padding-left: 10px;*/
   }
 }
 
-
-.catalog_card_contacts{
-  padding-bottom: 30px;
-  @media ($laptop) {
-    padding-bottom: 10px;
-  }
-  @media ($mobile) {
-    padding-bottom: 0;
-
-  }
-}
-.catalog_card_image{
+.catalog_card_image {
   position: relative;
   width: 100%;
   height: 100%;
@@ -56,7 +46,8 @@
     width: 100vw;
     margin-left: -$marginMobile;
   }
-  & img{
+
+  & img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -73,7 +64,8 @@
       height: 100%;
     }
   }
-  .card_image_logo{
+
+  .card_image_logo {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -87,19 +79,20 @@
     @media ($mobile) {
       display: none;
     }
-    & img{
+
+    & img {
       width: 71%;
       height: 64%;
       object-fit: contain;
     }
   }
 }
-
-.catalog_card_text{
+.catalog_card_text {
   @media ($mobile) {
     margin-bottom: 26px;
   }
-  & p{
+
+  & p {
     @include text(black);
     line-height: 24px;
     margin-bottom: 24px;
@@ -112,7 +105,8 @@
       line-height: 22px;
       margin-bottom: 20px;
     }
-    &:first-child{
+
+    &:first-child {
       margin-top: 0;
       @media ($laptop) {
         padding-top: 10px;
@@ -124,13 +118,14 @@
   }
 }
 
-.catalog_card_floor{
+////////////////////////////////////////////  floor scheme  ////////////////////////////////////////////////////////////
+
+.catalog_card_floor {
   position: relative;
   margin-top: 6px;
 
 }
-
-.card_floor_wrapper{
+.card_floor_wrapper {
   position: relative;
   padding: 30px 10px;
   border-radius: 8px;
@@ -147,12 +142,12 @@
     border-radius: 0;
     transition: $transition;
     overflow: hidden;
-    &.zoom{
+    &.zoom {
       overflow: auto;
     }
   }
 
-  & img{
+  & img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -161,15 +156,14 @@
       transition: $transition;
       height: auto;
       object-position: center bottom;
-      &.zoom{
+      &.zoom {
         object-position: center bottom;
         width: 300%;
       }
     }
   }
 }
-
-.card_floor_controls{
+.card_floor_controls {
 
   @media ($mobile) {
     display: flex;
@@ -177,7 +171,8 @@
     align-items: center;
 
   }
-  & span{
+
+  & span {
     position: absolute;
     top: -40px;
     left: 50%;
@@ -207,10 +202,10 @@
   }
 
 }
-
-.card_floor_buttons{
+.card_floor_buttons {
   display: none;
-  & button{
+
+  & button {
     all: unset;
     border: none;
     outline: none;
@@ -223,15 +218,27 @@
     font-size: 20px;
     line-height: 30px;
   }
+
   @media ($mobile) {
     display: block;
   }
 }
 
 
+////////////////////////////////////////////  contacts  ////////////////////////////////////////////////////////////////
 
+.catalog_card_contacts {
+  padding-bottom: 30px;
+  @media ($laptop) {
+    padding-bottom: 10px;
+  }
+  @media ($mobile) {
+    padding-bottom: 0;
 
-.brand_info_wrapper{
+  }
+}
+
+.brand_info_wrapper {
   grid-area: b;
   @media ($laptop) {
     display: flex;
@@ -242,8 +249,7 @@
     position: relative;
   }
 }
-
-.brand_logo_wrapper{
+.brand_logo_wrapper {
   width: 100%;
   aspect-ratio: 395 / 280;
   background: $color6;
@@ -262,7 +268,8 @@
     margin-bottom: 40px;
     display: flex;
   }
-  img{
+
+  img {
     width: 7.2vw;
     height: auto;
     @media ($laptop) {
@@ -274,14 +281,12 @@
   }
 
 }
-
-.brand_info{
+.brand_info {
   @media ($laptop) {
     flex: 1;
   }
 }
-
-.brand_name_wrapper{
+.brand_name_wrapper {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -298,7 +303,7 @@
 
   }
 
-  h2{
+  h2 {
     @include font48(1);
     font-family: $gothamProMedium;
     margin-right: 26px;
@@ -315,7 +320,8 @@
       margin-bottom: 10px;
     }
   }
-  span{
+
+  span {
     font-size: 18px;
     line-height: 20px;
     font-family: $gothamProBold;
@@ -325,79 +331,21 @@
     margin-top: 0;
   }
 }
-
-.brand_contacts_wrapper{
-  @include font18(20px);
-  font-family: $gothamProLight;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-
-  span{
-    padding-left: 44px;
-    margin-bottom: 30px;
-    position: relative;
-    &:before {
-      position: absolute;
-      left: 0;
-      content: '';
-      height: 24px;
-      width: 24px;
-    }
-    @media ($laptop) {
-      margin-bottom: 20px;
-    }
-    @media ($mobile) {
-      margin-left: 14px;
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-  }
-  .brand_phone_number{
-    font-family: $gothamProBold;
-    &:before {
-      top: -2px;
-      background: url("../images/blogCard/icon1.png") no-repeat center center;
-    }
-  }
-  .brand_link{
-    color: $color3;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    top: -3px;
-    &:before {
-      background: url("../images/blogCard/icon2.png") no-repeat center center;
-    }
-  }
-  .brand_working_hours{
-    line-height: 30px;
-    @media ($laptop) {
-      line-height: 26px;
-      margin-bottom: 18px;
-    }
-    @media ($mobile) {
-      line-height: 30px;
-      margin-bottom: 12px;
-    }
-    &:before {
-      top: 2px;
-      background: url("../images/blogCard/icon3.png") no-repeat center center;
-    }
-  }
+.brand_contacts_wrapper {
+  @include contactsWrapper;
 }
-
-.brand_sn_links{
+.brand_sn_links {
   @media ($mobile) {
     background: $color6;
     border-bottom: none;
     padding: 20px 0;
-    width: calc(100% + $marginMobile );
+    width: calc(100% + $marginMobile);
     margin-left: -$marginMobile;
     display: flex;
     justify-content: center;
   }
 }
-.links_wrapper{
+.links_wrapper {
   margin-left: 40px;
   font-size: 30px;
   width: 154px;
@@ -406,15 +354,16 @@
   @media ($mobile) {
     margin-left: unset;
   }
-  & :nth-child(3), & :nth-child(4){
+
+  & :nth-child(3), & :nth-child(4) {
     font-size: 28px;
   }
 }
 
 
+////////////////////////////////////////////  other cards  /////////////////////////////////////////////////////////////
 
-
-.other_cards{
+.other_cards {
   @include container;
   padding-top: 32px;
   padding-bottom: 70px;
@@ -426,7 +375,8 @@
     padding-top: 50px;
     padding-bottom: 70px;
   }
-  & h2{
+
+  & h2 {
     font-family: $gothamProBold;
     font-size: 48px;
     line-height: 44px;
@@ -441,126 +391,20 @@
   }
 }
 
-
-.catalog_tiles_items{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media ($tablet) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media ($mobile) {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
+.catalog_tiles_items {
+ @include catalogTileItems;
 }
-
-.catalog_tiles_item{
-  position: relative;
-  border: 1px solid #bbc1ca;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.catalog_tiles_item {
+  @include catalogTilesItem;
 }
-
-
-.tiles_item_image_wrapper{
-  background: $color6;
-  position: relative;
-  width: 100%;
-  aspect-ratio: 395 / 290 ;
-
-  img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 68%;
-    height: 55%;
-    object-fit: contain;
-
-  }
+.tiles_item_image_wrapper {
+  @include tilesItemImageWrapper;
 }
-
-.tiles_item_text_wrapper{
-  flex: 1;
-  padding: 14px 24px 20px 30px ;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-top: 1px solid #bbc1ca;
-  @media ($laptop) {
-    padding: 4px 20px 20px;
-  }
-
-  h5{
-    font-family: $gothamProMedium;
-    font-size: 20px;
-    line-height: 44px;
-    margin: 0 0 -10px 0;
-  }
-  p{
-    font-family: $gothamPro;
-    font-size: 15px;
-    line-height: 20px;
-    margin-bottom: 16px;
-    @media ($laptop) {
-      font-size: 14px;
-    }
-    @media ($mobile) {
-      line-height: 18px;
-      margin-bottom: 20px;
-    }
-  }
+.tiles_item_text_wrapper {
+  @include tilesItemTextWrapper;
 }
-
-
-.tiles_item_text_bottom{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: calc(100%);
-  bottom: 20px;
-  column-gap: 40px;
-  row-gap: 20px;
-  font-size: 15px;
-  line-height: 20px;
-  @media ($laptop) {
-    font-size: 14px;
-    column-gap: 10px;
-  }
-  span{
-    font-family: $gothamProBold;
-  }
-  a{
-    position: relative;
-    right: 0;
-    font-family: $gothamPro;
-    color: $color3;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    padding-left: 30px;
-    @media ($laptop) {
-      padding-left: 26px;
-    }
-    &:before{
-      content: '';
-      position: absolute;
-      width: 16px;
-      height: 30px;
-      left: 0;
-      top: -6px;
-      background: url("../images/iconLocation.png") no-repeat center center;
-      @media ($laptop) {
-        top: -4px;
-      }
-    }
-  }
+.tiles_item_text_bottom {
+  @include tilesItemTextBottom;
 }
 
 

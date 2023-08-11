@@ -1,20 +1,20 @@
 @import "variables";
 
-.eco_trends_section{
+.eco_trends_section {
   @include container;
   padding-bottom: 20px;
   @media ($mobile) {
     padding-bottom: 40px;
   }
-  h1{
+
+  h1 {
     @include h1;
     margin-bottom: 54px;
   }
 
 }
 
-
-.eco_trends_item{
+.eco_trends_item {
   display: grid;
   column-gap: 40px;
   row-gap: 8px;
@@ -30,9 +30,7 @@
     margin-bottom: 10px;
   }
 }
-
-
-.eco_trends_image{
+.eco_trends_image {
   grid-column: 1;
   grid-row: span 2;
   aspect-ratio: 395 / 290;
@@ -46,15 +44,15 @@
   }
   @media ($mobile) {
   }
-  img{
+
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center center;
   }
 }
-
-.eco_trends_description{
+.eco_trends_description {
   grid-column: 2;
   @media ($tablet) {
     grid-column: 1;
@@ -64,7 +62,8 @@
     padding-left: 4px;
     margin-top: -4px;
   }
-  & p{
+
+  & p {
     font-family: $gothamPro;
     font-size: 18px;
     line-height: 24px;
@@ -84,9 +83,7 @@
     }
   }
 }
-
-
-.eco_trends_logo{
+.eco_trends_logo {
   grid-column: 2;
   grid-row: 2;
   align-self: end;
@@ -98,7 +95,8 @@
   @media ($mobile) {
     padding-left: 4px;
   }
-  img{
+
+  img {
     max-width: 130px;
   }
 }

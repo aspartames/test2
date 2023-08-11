@@ -146,10 +146,7 @@ footer {
 }
 @media (max-width: 1024px) {
   #subscribe::placeholder {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
 

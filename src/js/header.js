@@ -65,12 +65,14 @@ const setFixedHeader = () => {
         const {header} = headerParameters
         header.removeClass('fixed');
         header.css('top', '0')
-        header.css('height', 'fit-content')
+        header.css('height', 'auto')
 
         $(".header_mid").removeClass('fixed');
         $(".header_bottom").css('top', `0`)
         $('.header_all_fixed').removeClass('fixed')
+
         $('.header_mid_info').removeClass('fixed')
+
         $('.drop_menu_bottom_nav_wrapper').removeClass('fixed')
         $('.drop_menu_nav_list').removeClass('fixed')
     }

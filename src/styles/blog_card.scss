@@ -1,4 +1,5 @@
 @import "variables";
+@import "common";
 
 .blog_card_section{
   @include container;
@@ -9,6 +10,7 @@
   }
 }
 
+/////////////////////////////////////////// blog card //////////////////////////////////////////////////////////////////
 
 .blog_card_wrapper{
   display: grid;
@@ -47,7 +49,6 @@
     height: auto;
   }
 }
-
 .text_wrapper{
   grid-area: t;
   @media ($laptop) {
@@ -93,7 +94,6 @@
     flex-direction: column;
   }
 }
-
 .brand_logo_wrapper{
   width: 100%;
   aspect-ratio: 395 / 280;
@@ -124,7 +124,6 @@
   }
 
 }
-
 .brand_info{
   @media ($laptop) {
     flex: 1;
@@ -177,63 +176,7 @@
 }
 
 .brand_contacts_wrapper{
-  @include font18(20px);
-  font-family: $gothamProLight;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-
-  span{
-    padding-left: 44px;
-    margin-bottom: 30px;
-    position: relative;
-    &:before {
-      position: absolute;
-      left: 0;
-      content: '';
-      height: 24px;
-      width: 24px;
-    }
-    @media ($laptop) {
-      margin-bottom: 20px;
-    }
-    @media ($mobile) {
-      margin-left: 14px;
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-  }
-  .brand_phone_number{
-    font-family: $gothamProBold;
-    &:before {
-      top: -2px;
-      background: url("../images/blogCard/icon1.png") no-repeat center center;
-    }
-  }
-  .brand_link{
-    color: $color3;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    top: -3px;
-    &:before {
-      background: url("../images/blogCard/icon2.png") no-repeat center center;
-    }
-  }
-  .brand_working_hours{
-    line-height: 30px;
-    @media ($laptop) {
-      line-height: 26px;
-      margin-bottom: 18px;
-    }
-    @media ($mobile) {
-      line-height: 30px;
-      margin-bottom: 12px;
-    }
-    &:before {
-      top: 2px;
-      background: url("../images/blogCard/icon3.png") no-repeat center center;
-    }
-  }
+  @include contactsWrapper;
 }
 
 .brand_sn_links{
@@ -264,12 +207,14 @@
 
 
 
+/////////////////////////////////////////// promotions /////////////////////////////////////////////////////////////////
+
 .other_promotions{
-  @include container;
   @media ($mobile) {
     padding-bottom: 72px;
   }
   h2{
+    @include container;
     @include font48(44px);
     font-family: $gothamProBold;
     margin-bottom: 48px;
@@ -289,143 +234,17 @@
   }
 }
 
-
-
-.promotions_items{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  padding-bottom: 36px;
-  @media ($laptop) {
-    gap: unset;
-    row-gap: 28px;
-    column-gap: 40px;
-    padding-bottom: 42px;
-  }
-  @media ($tablet) {
-    row-gap: unset;
-    column-gap: unset;
-    gap: 40px;
-    grid-template-columns: repeat(2, calc(50% - 20px));
-    padding-bottom: 60px;
-  }
-  @media ($tabletMini) {
-    grid-template-columns: repeat(2, calc(50% - 10px));
-    gap: 20px;
-    padding-bottom: 42px;
-  }
-  @media ($mobile) {
-    grid-template-columns: repeat(1, 100%);
-    grid-auto-rows: auto;
-    align-items: stretch;
-    gap: 30px;
-    padding-bottom: 0;
-  }
+.promotions_items {
+  @include promotionsItems;
 }
-.promotions_item{
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  & a{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
-  }
+.promotions_item {
+  @include promotionsItem;
 }
 .item_image {
-  overflow: hidden;
-  aspect-ratio: 1.36/1;
-  & img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center center;
-  }
-  /*
-  @media ($laptop) {
-    height: 218px;
-  }
-  @media ($tablet) {
-    height: 290px;
-  }
-  @media ($tabletMini) {
-    height: 218px;
-  }
-  */
-
-
+  @include itemImage;
 }
-.item_description{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 22px 0 0;
-  & p{
-    @include font15(20px);
-    font-family: $gothamPro;
-    margin: 0;
-    width: 62%;
-    @media ($laptop) {
-      line-height: 18px;
-      width: 75%;
-    }
-    @media ($tablet) {
-      line-height: 20px;
-    }
-    @media ($tabletMini) {
-      line-height: 18px;
-    }
-  }
-  & img{
-    &.high{
-      @media ($laptop) {
-        height: 35px;
-        width: auto;
-      }
-      @media ($tablet) {
-        height: unset;
-        width: unset;
-      }
-      @media ($tabletMini) {
-        height: 35px;
-        width: auto;
-      }
-      @media ($mobile) {
-        height: 32px;
-      }
-    }
-    @media ($laptop) {
-      width: 64px;
-      margin-top: 4px;
-    }
-    @media ($tablet) {
-      width: unset;
-      margin-top: unset;
-    }
-    @media ($tabletMini) {
-      width: 64px;
-      margin-top: 4px;
-    }
-
-
-  }
-
-  @media ($laptop) {
-    padding: 16px 0 0;
-  }
-  @media ($tablet) {
-    gap: 20px;
-    padding: 22px 0 0;
-  }
-  @media ($mobile) {
-    gap: 20px;
-    padding: 14px 0 0;
-  }
-
+.item_description {
+  @include itemDescription;
 }
 
 

@@ -1,6 +1,6 @@
 @import "variables";
 
-.login_section{
+.login_section {
   position: relative;
   min-height: calc(100vh - 92px);
   padding-bottom: 40px;
@@ -14,7 +14,8 @@
     min-height: unset;
     padding-bottom: 60px;
   }
-  h1{
+
+  h1 {
     @include h1;
     margin-bottom: 60px;
     @media ($laptop) {
@@ -26,16 +27,18 @@
   }
 }
 
-.login_form_wrapper{
+.login_form_wrapper {
   display: flex;
   justify-content: center;
-  & form{
+
+  & form {
     width: 395px;
     @media ($mobile) {
       width: calc(100% - $marginMobile * 2);
     }
   }
-  & input{
+
+  & input {
     font-family: $gothamProMedium;
     font-size: 16px;
     line-height: 26px;
@@ -44,18 +47,20 @@
     outline: none;
     padding: 18px 26px;
   }
-  & label{
+
+  & label {
     display: flex;
     flex-direction: column;
     gap: 26px;
   }
-  & span{
+
+  & span {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  & button{
+  & button {
     font-family: $gothamProBold;
     font-size: 16px;
     line-height: 26px;
@@ -70,7 +75,7 @@
     text-align: left;
   }
 
-  & a{
+  & a {
     font-size: 16px;
     line-height: 26px;
     position: relative;

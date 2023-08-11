@@ -1,4 +1,5 @@
 @import '../fonts/stylesheet.css';
+@import '../fonts/stylesheet.css';
 .blog_card_section {
   padding: 0 110px;
 }
@@ -378,29 +379,27 @@
   font-size: 28px;
 }
 
-.other_promotions {
-  padding: 0 110px;
-}
-@media (max-width: 1600px) {
-  .other_promotions {
-    padding: 0 31px;
-  }
-}
-@media (max-width: 600px) {
-  .other_promotions {
-    padding: 0 10px;
-  }
-}
 @media (max-width: 600px) {
   .other_promotions {
     padding-bottom: 72px;
   }
 }
 .other_promotions h2 {
+  padding: 0 110px;
   font-size: 48px;
   line-height: 44px;
   font-family: "GothamProBold";
   margin-bottom: 48px;
+}
+@media (max-width: 1600px) {
+  .other_promotions h2 {
+    padding: 0 31px;
+  }
+}
+@media (max-width: 600px) {
+  .other_promotions h2 {
+    padding: 0 10px;
+  }
 }
 @media (max-width: 1600px) {
   .other_promotions h2 {
@@ -426,10 +425,21 @@
 }
 
 .promotions_items {
+  padding: 0 110px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  padding-bottom: 36px;
+  padding-bottom: 60px;
+}
+@media (max-width: 1600px) {
+  .promotions_items {
+    padding: 0 31px;
+  }
+}
+@media (max-width: 600px) {
+  .promotions_items {
+    padding: 0 10px;
+  }
 }
 @media (max-width: 1600px) {
   .promotions_items {
@@ -460,7 +470,7 @@
     grid-template-columns: repeat(1, 100%);
     grid-auto-rows: auto;
     align-items: stretch;
-    gap: 30px;
+    gap: 34px;
     padding-bottom: 0;
   }
 }
@@ -482,17 +492,6 @@
 .item_image {
   overflow: hidden;
   aspect-ratio: 1.36/1;
-  /*
-  @media ($laptop) {
-    height: 218px;
-  }
-  @media ($tablet) {
-    height: 290px;
-  }
-  @media ($tabletMini) {
-    height: 218px;
-  }
-  */
 }
 .item_image img {
   width: 100%;

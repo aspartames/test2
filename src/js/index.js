@@ -47,5 +47,4 @@ const settings = {
 }
 
 
-// execute
 isDocumentReady(settings)

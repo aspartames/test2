@@ -1,7 +1,8 @@
 @import "variables";
+@import "common";
 
-.catalog_section{
-  h1{
+.catalog_section {
+  h1 {
     @include h1;
     margin-bottom: 40px;
     @media ($laptop) {
@@ -13,22 +14,25 @@
   }
 }
 
-@mixin controlFilters{
+
+/////////////////////////////////////////// controls ///////////////////////////////////////////////////////////////////
+
+@mixin controlFilters {
   padding: 20px;
   border-radius: 8px;
   @media ($mobile) {
     padding: 18px 15px;
   }
 }
-.catalog_controls_wrapper{
+
+.catalog_controls_wrapper {
   background: $color2;
   padding: 20px 0;
   @media ($mobile) {
     padding-bottom: 30px;
   }
 }
-
-.catalog_controls{
+.catalog_controls {
   @include container;
   display: flex;
   justify-content: space-between;
@@ -36,8 +40,7 @@
   flex-wrap: wrap;
 }
 
-
-.catalog_controls_filter{
+.catalog_controls_filter {
   font-size: 18px;
   line-height: 26px;
   display: flex;
@@ -56,41 +59,42 @@
     grid-auto-columns: auto;
     transition: $transition;
     gap: 0;
-    #catalog_search_form{
+    #catalog_search_form {
       display: none;
       overflow: hidden;
       grid-row: 2;
       width: 100%;
       min-height: 60px;
     }
-    #catalog_category_form{
+    #catalog_category_form {
       grid-row: 1;
     }
-    #catalog_floor_form{
+    #catalog_floor_form {
       display: none;
       grid-row: 2;
       overflow: hidden;
       min-height: 60px;
     }
 
-    &.search{
+    &.search {
       grid-template-rows: 1fr 60px;
       gap: 20px;
 
-      #catalog_search_form{
+      #catalog_search_form {
         display: block;
       }
     }
-    &.floor{
+    &.floor {
       grid-template-rows: 1fr 60px;
       gap: 20px;
-      #catalog_floor_form{
+
+      #catalog_floor_form {
         display: block;
       }
     }
   }
 
-  select{
+  select {
     @include controlFilters;
     font-family: $gothamProBold;
     width: 250px;
@@ -113,45 +117,50 @@
       background-size: 24px 24px;
       width: 66.5625vw;
     }
-    option{
+
+    option {
       font-family: $gothamPro;
     }
+
     option[value=""][disabled] {
       display: none;
     }
   }
 }
-
 .catalog_mobile_buttons {
   display: none;
   position: absolute;
   left: 75vw;
   margin-top: 14px;
   justify-content: space-between;
-  .mobile_floor_button{
+
+  .mobile_floor_button {
     font-size: 22px;
     margin-right: 14px;
   }
-  .fa-magnifying-glass{
+
+  .fa-magnifying-glass {
     font-size: 20px;
   }
+
   @media ($mobile) {
     display: block;
   }
 }
-.mobile_search_button, .mobile_floor_button{
+.mobile_search_button, .mobile_floor_button {
   all: unset;
   color: $color3;
   font-size: 20px;
   cursor: pointer;
-  &.active{
+
+  &.active {
     color: $color1;
   }
 }
-
-.catalog_search_label{
+.catalog_search_label {
   position: relative;
-  .search_input_button{
+
+  .search_input_button {
     all: unset;
     font-size: 20px;
     line-height: 30px;
@@ -163,7 +172,7 @@
     z-index: 5;
   }
 }
-#catalog_search{
+#catalog_search {
   @include controlFilters;
   font-family: $gothamProMedium;
   width: 395px;
@@ -175,14 +184,14 @@
   }
   @media ($mobile) {
     width: calc(100vw - $marginMobile * 2);
-  }}
-
-#catalog_floor{
+  }
+}
+#catalog_floor {
   @media ($mobile) {
     width: calc(100vw - $marginMobile * 2) !important;
   }
 }
-.catalog_controls_buttons{
+.catalog_controls_buttons {
   width: 363px;
   display: flex;
   justify-content: space-between;
@@ -192,14 +201,15 @@
     justify-content: flex-start;
     column-gap: 14px;
   }
-  button{
+
+  button {
     @include controlFilters;
     font-size: 16px;
     font-family: $gothamProBold;
     border-radius: 8px;
     cursor: pointer;
     transition: $transition;
-    border:  none;
+    border: none;
     background: $color3;
     color: $color1;
     @media ($mobile) {
@@ -207,19 +217,22 @@
       line-height: 20px;
       white-space: nowrap;
     }
-    &:nth-child(1){
+
+    &:nth-child(1) {
       padding-right: 30px;
       @media ($mobile) {
-        padding: 14px ;
+        padding: 14px;
       }
     }
-    &:nth-child(2){
+
+    &:nth-child(2) {
       padding-left: 30px;
       @media ($mobile) {
         padding: 14px;
       }
     }
-    & .icon{
+
+    & .icon {
       color: $color1;
       font-size: 20px;
       position: relative;
@@ -234,10 +247,12 @@
         margin-right: 4px;
       }
     }
-    &.active{
+
+    &.active {
       background: $color1;
       color: black;
-      & .icon{
+
+      & .icon {
         color: $color3;
       }
     }
@@ -245,186 +260,88 @@
 }
 
 
+/////////////////////////////////////////// tiles //////////////////////////////////////////////////////////////////////
 
-
-
-.catalog_tiles{
+.catalog_tiles {
   @include container;
   padding-top: 54px;
   padding-bottom: 180px;
   display: none;
-  &.active{
+
+  &.active {
     display: block;
   }
+
   @media ($laptop) {
     padding-top: 50px;
     padding-bottom: 80px;
   }
 }
-.catalog_tiles_items{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media ($tablet) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media ($mobile) {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
 
+.catalog_tiles_items {
+  @include catalogTileItems;
 }
 
-.catalog_tiles_item{
-  position: relative;
-  border: 1px solid #bbc1ca;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.catalog_tiles_item {
+  @include catalogTilesItem;
+}
+.tiles_item_image_wrapper {
+  @include tilesItemImageWrapper;
+}
+.tiles_item_text_wrapper {
+  @include tilesItemTextWrapper;
+}
+.tiles_item_text_bottom {
+  @include tilesItemTextBottom;
 }
 
 
-.tiles_item_image_wrapper{
-  background: $color6;
-  position: relative;
-  width: 100%;
-  aspect-ratio: 395 / 290 ;
+/////////////////////////////////////////// list ///////////////////////////////////////////////////////////////////////
 
-  img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 68%;
-    height: 55%;
-    object-fit: contain;
-
-  }
-}
-
-.tiles_item_text_wrapper{
-  flex: 1;
-  padding: 14px 24px 20px 30px ;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-top: 1px solid #bbc1ca;
-  @media ($laptop) {
-    padding: 4px 20px 20px;
-  }
-
-  h5{
-    font-family: $gothamProMedium;
-    font-size: 20px;
-    line-height: 44px;
-    margin: 0 0 -10px 0;
-  }
-  p{
-    font-family: $gothamPro;
-    font-size: 15px;
-    line-height: 20px;
-    margin-bottom: 16px;
-    @media ($laptop) {
-      font-size: 14px;
-    }
-    @media ($mobile) {
-      line-height: 18px;
-      margin-bottom: 20px;
-    }
-  }
-}
-
-
-.tiles_item_text_bottom{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: calc(100%);
-  bottom: 20px;
-  column-gap: 40px;
-  row-gap: 20px;
-  font-size: 15px;
-  line-height: 20px;
-  @media ($laptop) {
-    font-size: 14px;
-    column-gap: 10px;
-  }
-  span{
-    font-family: $gothamProBold;
-  }
-  a{
-    position: relative;
-    right: 0;
-    font-family: $gothamPro;
-    color: $color3;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    padding-left: 30px;
-    @media ($laptop) {
-      padding-left: 26px;
-    }
-    &:before{
-      content: '';
-      position: absolute;
-      width: 16px;
-      height: 30px;
-      left: 0;
-      top: -6px;
-      background: url("../images/iconLocation.png") no-repeat center center;
-      @media ($laptop) {
-        top: -4px;
-      }
-    }
-  }
-}
-
-
-
-
-.catalog_list{
+.catalog_list {
   @include container;
   padding-top: 24px;
   padding-bottom: 40px;
   display: none;
-  &.active{
+
+  &.active {
     display: block;
   }
+
   @media ($laptop) {
     padding-top: 20px;
     padding-bottom: 60px;
   }
 }
 
-.catalog_list_items{
+.catalog_list_items {
 
 }
 
-.catalog_list_item{
+.catalog_list_item {
   display: flex;
   column-gap: 40px;
   border-bottom: 1px solid #586374;
   padding: 26px 0 22px;
-  &:last-child{
+
+  &:last-child {
     border-bottom: unset;
   }
 }
-
-.list_item_letter{
+.list_item_letter {
   min-width: 105px;
   @media ($mobile) {
     min-width: 40px;
   }
-  span{
+
+  span {
     position: relative;
     font-size: 56px;
     line-height: 44px;
     font-family: $gothamProBlack;
     padding-bottom: 20px;
-    &:after{
+
+    &:after {
       content: "";
       position: absolute;
       width: 40px;
@@ -435,17 +352,15 @@
     }
   }
 }
-
-.list_item_shops{
+.list_item_shops {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   padding-top: 2px;
 }
+.shop_item {
 
-.shop_item{
-
-  h5{
+  h5 {
     font-family: $gothamProMedium;
     font-size: 30px;
     line-height: 44px;
@@ -456,8 +371,7 @@
     }
   }
 }
-
-.shop_item_bottom{
+.shop_item_bottom {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -473,10 +387,12 @@
   @media ($mobile) {
     font-size: 12px;
   }
-  span{
+
+  span {
     font-family: $gothamProBold;
   }
-  a{
+
+  a {
     position: relative;
     right: 0;
     font-family: $gothamPro;
@@ -487,7 +403,8 @@
     @media ($laptop) {
       padding-left: 26px;
     }
-    &:before{
+
+    &:before {
       content: '';
       position: absolute;
       width: 16px;

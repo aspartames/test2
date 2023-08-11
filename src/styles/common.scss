@@ -183,3 +183,707 @@
   }
 }
 
+
+/////////////////////////////////////////// promotions  ////////////////////////////////////////////////////////////////
+
+@mixin promotionsSection{
+  width: 100vw;
+  overflow-x: hidden;
+  padding-top: 74px;
+  @media ($laptop) {
+    padding-top: 48px;
+  }
+  @media ($tablet) {
+    padding-top: 74px;
+  }
+  @media ($tabletMini) {
+    padding-top: 30px;
+  }
+  @media ($mobile) {
+    padding-top: 40px;
+  }
+}
+
+@mixin promotionsItems{
+  @include container;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding-bottom: 60px;
+  @media ($laptop) {
+    gap: unset;
+    row-gap: 28px;
+    column-gap: 40px;
+    padding-bottom: 42px;
+  }
+  @media ($tablet) {
+    row-gap: unset;
+    column-gap: unset;
+    gap: 40px;
+    grid-template-columns: repeat(2, calc(50% - 20px));
+    padding-bottom: 60px;
+  }
+  @media ($tabletMini) {
+    grid-template-columns: repeat(2, calc(50% - 10px));
+    gap: 20px;
+    padding-bottom: 42px;
+  }
+  @media ($mobile) {
+    grid-template-columns: repeat(1, 100%);
+    grid-auto-rows: auto;
+    align-items: stretch;
+    gap: 34px;
+    padding-bottom: 0;
+  }
+}
+
+@mixin promotionsItem{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  & a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+@mixin itemImage{
+  overflow: hidden;
+  aspect-ratio: 1.36/1;
+
+  & img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+@mixin itemDescription{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 22px 0 0;
+
+  & p {
+    @include font15(20px);
+    font-family: $gothamPro;
+    margin: 0;
+    width: 62%;
+    @media ($laptop) {
+      line-height: 18px;
+      width: 75%;
+    }
+    @media ($tablet) {
+      line-height: 20px;
+    }
+    @media ($tabletMini) {
+      line-height: 18px;
+    }
+  }
+
+  & img {
+    &.high {
+      @media ($laptop) {
+        height: 35px;
+        width: auto;
+      }
+      @media ($tablet) {
+        height: unset;
+        width: unset;
+      }
+      @media ($tabletMini) {
+        height: 35px;
+        width: auto;
+      }
+      @media ($mobile) {
+        height: 32px;
+      }
+    }
+
+    @media ($laptop) {
+      width: 64px;
+      margin-top: 4px;
+    }
+    @media ($tablet) {
+      width: unset;
+      margin-top: unset;
+    }
+    @media ($tabletMini) {
+      width: 64px;
+      margin-top: 4px;
+    }
+
+
+  }
+
+  @media ($laptop) {
+    padding: 16px 0 0;
+  }
+  @media ($tablet) {
+    gap: 20px;
+    padding: 22px 0 0;
+  }
+  @media ($mobile) {
+    gap: 20px;
+    padding: 14px 0 0;
+  }
+
+}
+
+
+
+//////////////////////////////////////////// about - arenda /////////////////////////////////////////////////////////
+
+@mixin section ($background: transparent) {
+  @include container;
+  background: $background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > div{
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
+
+// intro
+@mixin introAboutArenda{
+  position: relative;
+  width: 100%;
+  height: 852px;
+  overflow: hidden;
+  background-image: url("../images/mainImg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  @media ($laptop) {
+    height: clamp(626px, 100vh, 852px);
+  }
+  @media ($tablet) {
+    height: max(586px, 100vh);
+  }
+
+  & h1 {
+    position: absolute;
+    top: 262px;
+    width: 100%;
+    font-family: $gothamProBold;
+    font-size: 56px;
+    line-height: 44px;
+    color: $color1;
+    text-align: center;
+    @media ($laptop) {
+      font-size: 42px;
+      line-height: 38px;
+      top: 222px;
+    }
+    @media ($tablet) {
+      font-size: 56px;
+      line-height: 44px;
+      top: 100px;
+    }
+    @media ($mobile) {
+      font-size: 24px;
+      top: 88px;
+    }
+  }
+}
+
+@mixin infoAboutArenda{
+  @include container;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: $color1;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px;
+  padding-top: 56px;
+  padding-bottom: 50px;
+  @media ($laptop) {
+    padding-top: 46px;
+    padding-bottom: 40px;
+  }
+  @media (max-width: 1170px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 660px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+    gap: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+
+@mixin infoItemAboutArenda{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 660px) {
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  & span {
+    white-space: nowrap;
+    @media (max-width: 660px) {
+      white-space: normal;
+    }
+
+    &:nth-child(1) {
+      font-family: $gothamProBlack;
+      font-size: 54px;
+      line-height: 44px;
+      color: $color3;
+      margin-bottom: 18px;
+
+      & span {
+        font-size: 44px;
+
+        & sup {
+          font-size: 26px;
+        }
+      }
+
+      @media ($laptop) {
+        font-size: 48px;
+        margin-bottom: 10px;
+        & span {
+          font-size: 40px;
+
+          & sup {
+            font-size: 22px;
+          }
+        }
+      }
+      @media (max-width: 660px) {
+        font-size: 36px;
+        line-height: 40px;
+      }
+    }
+
+    &:nth-child(2) {
+      @include font18(22px);
+      font-family: $gothamPro;
+    }
+  }
+}
+
+
+/// about us
+@mixin aboutUsSection{
+  @include section($color2)
+}
+
+@mixin aboutUsContainer{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 126px;
+  padding-bottom: 80px;
+  column-gap: 130px;
+  @media ($tablet) {
+    padding-top: 40px;
+    padding-bottom: 46px;
+    flex-direction: column-reverse;
+  }
+}
+
+@mixin aboutUsImageWrapper{
+  position: relative;
+  flex: 1;
+
+  & img {
+    width: 100%;
+    height: auto;
+    @media (max-width: 1280px) {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .lines {
+    position: absolute;
+    width: 80px;
+    right: 12px;
+    bottom: 8px;
+    z-index: 23;
+    display: flex;
+
+    & span {
+      display: inline-block;
+      height: 4px;
+      width: 100%;
+      background: $gradient;
+      transform: rotate(-90deg);
+
+      &:nth-child(1) {
+        transform: translateX(26px) rotate(-90deg);
+      }
+    }
+  }
+}
+
+@mixin aboutUsTextWrapper{
+  flex: 1;
+  color: $color1;
+  max-width: 470px;
+  @media ($tablet) {
+    max-width: 100%;
+  }
+
+  & h2 {
+    position: absolute;
+    top: -5px;
+    right: 254px;
+    font-family: $gothamProBlack;
+    font-size: 90px;
+    text-transform: uppercase;
+    color: #4d535b;
+    z-index: 1;
+    @media ($tablet) {
+      position: relative;
+      top: unset;
+      right: unset;
+      text-align: center;
+      margin: 0;
+    }
+    @media ($mobile) {
+      font-size: 68px;
+    }
+  }
+
+  & p {
+    font-size: 16px;
+    line-height: 22px;
+    position: relative;
+    font-family: $gothamPro;
+    margin-bottom: 26px;
+    z-index: 2;
+    @media ($mobile) {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+  }
+}
+
+
+/// video
+@mixin videoSection {
+  @include section($color2);
+}
+
+@mixin videoSectionContainer  {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 44px;
+  padding-bottom: 78px;
+
+  & h3 {
+    font-family: $gothamProBlack;
+    font-size: 50px;
+    line-height: 1;
+    width: fit-content;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-transform: uppercase;
+    margin: 0;
+    @media ($mobile) {
+      font-size: 7vw;
+    }
+  }
+
+  @media ($laptop) {
+    padding-bottom: 40px;
+  }
+}
+
+@mixin videoContainer {
+  width: 100%;
+  padding: 110px 40px 0;
+  margin-bottom: 74px;
+  position: relative;
+
+  & svg {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    top: 15px;
+    right: -9px;
+    z-index: 2;
+    @media ($mobile) {
+      width: 110px;
+    }
+  }
+
+  & video {
+    width: 100%;
+    height: auto;
+  }
+
+  @media ($laptop) {
+    margin-bottom: 68px;
+  }
+  @media ($mobile) {
+    padding-top: 60px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+}
+
+@mixin videoWrapper {
+  position: relative;
+
+}
+
+@mixin controls {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  transition: background $transition;
+}
+
+@mixin play{
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35) url("../images/about/videoControls/pause.svg") no-repeat center center;
+  background-size: 64px;
+  @media ($mobile) {
+    background: rgba(0, 0, 0, 0.35) url("../images/about/videoControls/pause.svg") no-repeat center center;
+    background-size: 52px;
+  }
+
+  &.paused {
+    background: rgba(0, 0, 0, 0.35) url("../images/about/videoControls/play.svg") no-repeat center center;
+    background-size: 64px;
+    @media ($mobile) {
+      background: rgba(0, 0, 0, 0.35) url("../images/about/videoControls/play.svg") no-repeat center center;
+      background-size: 52px;
+    }
+  }
+}
+
+@mixin volume{
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  background: url("../images/about/videoControls/volume.svg") no-repeat center center;
+  @media ($mobile) {
+    width: 30px;
+    height: 30px;
+  }
+
+  &.muted {
+    background: url("../images/about/videoControls/muted.svg") no-repeat center center;
+  }
+}
+
+
+//////////////////////////////////////////// blog - catalog card ///////////////////////////////////////////////////////
+
+@mixin contactsWrapper{
+  @include font18(20px);
+  font-family: $gothamProLight;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  span{
+    padding-left: 44px;
+    margin-bottom: 30px;
+    position: relative;
+    &:before {
+      position: absolute;
+      left: 0;
+      content: '';
+      height: 24px;
+      width: 24px;
+    }
+    @media ($laptop) {
+      margin-bottom: 20px;
+    }
+    @media ($mobile) {
+      margin-left: 14px;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+  }
+  .brand_phone_number{
+    font-family: $gothamProBold;
+    &:before {
+      top: -2px;
+      background: url("../images/blogCard/icon1.png") no-repeat center center;
+    }
+  }
+  .brand_link{
+    color: $color3;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    top: -3px;
+    &:before {
+      background: url("../images/blogCard/icon2.png") no-repeat center center;
+    }
+  }
+  .brand_working_hours{
+    line-height: 30px;
+    @media ($laptop) {
+      line-height: 26px;
+      margin-bottom: 18px;
+    }
+    @media ($mobile) {
+      line-height: 30px;
+      margin-bottom: 12px;
+    }
+    &:before {
+      top: 2px;
+      background: url("../images/blogCard/icon3.png") no-repeat center center;
+    }
+  }
+}
+
+
+//////////////////////////////////////////// catalog items /////////////////////////////////////////////////////////////
+
+@mixin catalogTileItems{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media ($tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media ($tabletMini) {
+    gap: 20px;
+  }
+  @media ($mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@mixin catalogTilesItem{
+  position: relative;
+  border: 1px solid #bbc1ca;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@mixin tilesItemImageWrapper{
+  background: $color6;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 395 / 290 ;
+
+  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68%;
+    height: 55%;
+    object-fit: contain;
+
+  }
+}
+
+@mixin tilesItemTextWrapper{
+  flex: 1;
+  padding: 14px 24px 20px 30px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid #bbc1ca;
+  @media ($laptop) {
+    padding: 4px 20px 20px;
+  }
+
+  h5{
+    font-family: $gothamProMedium;
+    font-size: 20px;
+    line-height: 44px;
+    margin: 0 0 -10px 0;
+  }
+  p{
+    font-family: $gothamPro;
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 16px;
+    @media ($laptop) {
+      font-size: 14px;
+    }
+    @media ($mobile) {
+      line-height: 18px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@mixin tilesItemTextBottom{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: calc(100%);
+  bottom: 20px;
+  column-gap: 40px;
+  row-gap: 20px;
+  font-size: 15px;
+  line-height: 20px;
+  @media ($laptop) {
+    font-size: 14px;
+    column-gap: 10px;
+  }
+  span{
+    font-family: $gothamProBold;
+  }
+  a{
+    position: relative;
+    right: 0;
+    font-family: $gothamPro;
+    color: $color3;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding-left: 30px;
+    @media ($laptop) {
+      padding-left: 26px;
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 30px;
+      left: 0;
+      top: -6px;
+      background: url("../images/iconLocation.png") no-repeat center center;
+      @media ($laptop) {
+        top: -4px;
+      }
+    }
+  }
+}

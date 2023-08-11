@@ -2,248 +2,58 @@
 @import "common";
 
 
+//////////////////////////////////////////////// introduction  /////////////////////////////////////////////////////////
 
-
-
-.about_center_section{
-  position: relative;
-  width: 100%;
-  height: 852px;
-  overflow: hidden;
-  background-image: url("../images/mainImg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-  @media ($laptop) {
-    height: clamp(626px, 100vh, 852px);
-  }
-  @media ($tablet) {
-    height: max(586px, 100dvh);
-  }
-
-  & h1{
-    position: absolute;
-    top: 262px;
-    width: 100%;
-    font-family: $gothamProBold;
-    font-size: 56px;
-    line-height: 44px;
-    color: $color1;
-    text-align: center;
-    @media ($laptop) {
-      font-size: 42px;
-      line-height: 38px;
-      top: 222px;
-    }
-    @media ($tablet) {
-      font-size: 56px;
-      line-height: 44px;
-      top: 100px;
-    }
-    @media ($mobile) {
-        font-size: 24px;
-        top: 88px;
-    }
-  }
+.introduction_section {
+  @include introAboutArenda;
 }
 
-.about_center_info{
-  @include container;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: $color1;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 40px;
-  padding-top: 56px;
-  padding-bottom: 50px;
-  @media ($laptop) {
-    padding-top: 46px;
-    padding-bottom: 40px;
-  }
-  @media (max-width: 1170px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media (max-width: 660px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
-    grid-auto-flow: column;
-    gap: 20px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
+.introduction_info {
+  @include infoAboutArenda;
 }
-
-.center_info_item{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @media (max-width: 660px) {
-    margin-bottom: 20px;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  & span{
-    white-space: nowrap;
-    @media (max-width: 660px) {
-      white-space: normal;
-    }
-    &:nth-child(1){
-      font-family: $gothamProBlack;
-      font-size: 54px;
-      line-height: 44px;
-      color: $color3;
-      margin-bottom: 18px;
-      & span{
-        font-size: 44px;
-        & sup{
-          font-size: 26px;
-        }
-      }
-      @media ($laptop) {
-        font-size: 48px;
-        margin-bottom: 10px;
-        & span{
-          font-size: 40px;
-          & sup{
-            font-size: 22px;
-          }
-        }
-      }
-      @media (max-width: 660px) {
-        font-size: 36px;
-        line-height: 40px;
-      }
-    }
-    &:nth-child(2){
-      @include font18(22px);
-      font-family: $gothamPro;
-    }
-  }
+.introduction_info_item {
+  @include infoItemAboutArenda;
 }
 
 
-/////////////////////// about us ////////
+//////////////////////////////////////////////// about us  /////////////////////////////////////////////////////////////
 
-.about_us_section{
-  @include section($color2)
-}
-
-.about_us_container{
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 126px;
-  padding-bottom: 80px;
-  column-gap: 130px;
-  @media ($tablet) {
-  padding-top: 40px;
-  padding-bottom: 46px;
-  flex-direction: column-reverse;
-}
-}
-.about_us_image_wrapper{
-  position: relative;
-  flex: 1;
-  & img{
-    width: 100%;
-    height: auto;
-    @media (max-width: 1280px) {
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
-.lines{
-  position: absolute;
-  width: 80px;
-  right: 12px;
-  bottom: 8px;
-  z-index: 23;
-  display: flex;
-  & span{
-    display: inline-block;
-    height: 4px;
-    width: 100%;
-    background: $gradient;
-    transform: rotate(-90deg);
-    &:nth-child(1){
-      transform: translateX(26px) rotate(-90deg);
-    }
-  }
+.about_us_section {
+  @include aboutUsSection;
 }
 
+.about_us_container {
+  @include aboutUsContainer;
+}
+.about_us_image_wrapper {
+  @include aboutUsImageWrapper;
+
+}
 .about_us_text_wrapper {
-  flex: 1;
-  color: $color1;
-  max-width: 470px;
-  @media ($tablet) {
-    max-width: 100%;
-  }
-  & h2 {
-    position: absolute;
-    top: -5px;
-    right: 254px;
-    font-family: $gothamProBlack;
-    font-size: 90px;
-    text-transform: uppercase;
-    color: #4d535b;
-    z-index: 1;
-    @media ($tablet) {
-      position: relative;
-      top: unset;
-      right: unset;
-      text-align: center;
-      margin: 0;
-    }
-    @media ($mobile) {
-        font-size: 68px;
-    }
-    }
-  & p {
-    font-size: 16px;
-    line-height: 22px;
-    position: relative;
-    font-family: $gothamPro;
-    margin-bottom: 26px;
-    z-index: 2;
-    @media ($mobile) {
-     text-align: center;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-  }
+  @include aboutUsTextWrapper;
 }
 
-//////////////////////////////////////////// pages nav section /////////////////////////////////////////////////////////
 
-.pages_nav_section{
+//////////////////////////////////////////////// pages nav section  ////////////////////////////////////////////////////
+
+.pages_nav_section {
   @include pagesNavSection;
 }
-
-.pages_nav_item{
+.pages_nav_item {
   @include pagesNavItem;
 }
-
-.pages_nav_item_button{
+.pages_nav_item_button {
   @include pagesNavButton
 }
 
 
+//////////////////////////////////////////////// renters  //////////////////////////////////////////////////////////////
 
-
-
-
-////////////////////////// renters /////////
-
-.renters_section{
+.renters_section {
   @include section(transparent);
 }
 
-.renters_section_container{
+.renters_section_container {
   padding-top: 68px;
   @media ($laptop) {
     padding-top: 46px;
@@ -251,14 +61,16 @@
   @media ($tablet) {
     padding-top: 40px;
   }
-  & h3{
+
+  & h3 {
     font-family: $gothamProBold;
     font-size: 26px;
     line-height: 32px;
     margin-bottom: 30px;
     text-transform: uppercase;
     position: relative;
-    &:after{
+
+    &:after {
       content: '';
       position: absolute;
       top: 50%;
@@ -268,6 +80,7 @@
       transform: translateY(-50%);
       background: $gradient;
     }
+
     @media ($laptop) {
       font-size: 22px;
       line-height: 30px;
@@ -279,7 +92,8 @@
     }
 
   }
-  & p{
+
+  & p {
     @include font16(22px);
     font-family: $gothamPro;
     margin-bottom: 72px;
@@ -290,7 +104,7 @@
   }
 }
 
-.renters_logo_container{
+.renters_logo_container {
   @media ($mobile) {
     max-height: 60vh;
     overflow: hidden;
@@ -303,38 +117,40 @@
     }
   }
 }
-.renters_logo{
-    --columns: auto;
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(var(--columns), 1fr);
-    justify-items: center;
-    row-gap: 56px;
-    margin-bottom: 106px;
-    grid-auto-rows: 1fr;
-  @media ($mobile) {
-    row-gap: 20px;
-    margin-bottom: 0;
-  }
-  }
-.renters_logo_item{
-  width: 100%;
-  &.empty{
-  }
-}
-.renters_logo_wrapper{
+.renters_logo_wrapper {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  & img{
+
+  & img {
     width: 100%;
     height: auto;
   }
 }
+.renters_logo {
+  --columns: auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  justify-items: center;
+  row-gap: 56px;
+  margin-bottom: 106px;
+  grid-auto-rows: 1fr;
+  @media ($mobile) {
+    row-gap: 20px;
+    margin-bottom: 0;
+  }
+}
+.renters_logo_item {
+  width: 100%;
 
-.see_all_button{
+  &.empty {
+  }
+}
+
+.see_all_button {
   position: relative;
   font-family: $gothamPro;
   font-size: 14px;
@@ -350,12 +166,14 @@
   @media ($mobile) {
     display: block;
   }
-  & span{
-    &:nth-child(2){
+
+  & span {
+    &:nth-child(2) {
       display: none;
     }
   }
-  &:after{
+
+  &:after {
     content: "";
     position: absolute;
     right: -16px;
@@ -367,16 +185,19 @@
     transition: $transition;
     transform: rotate(0deg);
   }
-  &.active{
-    & span{
-      &:nth-child(1){
+
+  &.active {
+    & span {
+      &:nth-child(1) {
         display: none;
       }
-      &:nth-child(2){
+
+      &:nth-child(2) {
         display: inline;
       }
     }
-    &:after{
+
+    &:after {
       transform: rotate(-180deg);
     }
   }
@@ -384,126 +205,32 @@
 }
 
 
+//////////////////////////////////////////////// video  ////////////////////////////////////////////////////////////////
 
-////////////////////////////////// video ////////////////////////
-
-.video_section{
-  @include section($color2);
+.video_section {
+  @include videoSection;
 }
 
-.video_section_container{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 44px;
-  padding-bottom: 78px;
-  & h3{
-    font-family: $gothamProBlack;
-    font-size: 50px;
-    line-height: 1;
-    width: fit-content;
-    background: $gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    text-transform: uppercase;
-    margin: 0;
-    @media ($mobile) {
-      font-size: 7vw;
-    }
-  }
-  @media ($laptop) {
-    padding-bottom: 40px;
-  }
+.video_section_container {
+  @include videoSectionContainer;
+}
+.video_container {
+  @include videoContainer;
+}
+.video_wrapper {
+  @include videoWrapper;
 }
 
-
-.video_container{
-  width: 100%;
-  padding: 110px 40px 0;
-  margin-bottom: 74px;
-  position: relative;
-  & svg{
-    position: absolute;
-    width: 200px;
-    height: auto;
-    top: 15px;
-    right: -9px;
-    z-index: 2;
-    @media ($mobile) {
-      width: 110px;
-    }
-  }
-  & video{
-    width: 100%;
-    height: auto;
-  }
-  @media ($laptop) {
-    margin-bottom: 68px;
-  }
-  @media ($mobile) {
-    padding-top: 60px;
-    padding-left: 0;
-    padding-right: 0;
-    margin-bottom: 40px;
-  }
-  }
-
-.video_wrapper{
-  position: relative;
-}
-
-@mixin controls{
-  display: block;
-  position: absolute;
-  cursor: pointer;
-  border: none;
-  transition: background $transition;
-}
-.play{
+.play {
   @include controls;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.35) url("../images/about/videoControls/pause.svg") no-repeat center center;
-  background-size: 64px;
-  @media ($mobile) {
-    background: rgba(0, 0, 0, 0.35) url("../images/about/videoControls/pause.svg") no-repeat center center;
-    background-size: 52px;
-  }
-  &.paused{
-    background: rgba(0, 0, 0, 0.35) url("../images/about/videoControls/play.svg") no-repeat center center;
-    background-size: 64px;
-    @media ($mobile) {
-      background: rgba(0, 0, 0, 0.35) url("../images/about/videoControls/play.svg") no-repeat center center;
-      background-size: 52px;
-    }
-  }
-
+  @include play;
 }
-.volume{
+.volume {
   @include controls;
-  display: block;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 40px;
-  height: 40px;
-  background: url("../images/about/videoControls/volume.svg") no-repeat center center;
-  @media ($mobile) {
-    width: 30px;
-    height: 30px;
-  }
-  &.muted{
-    background: url("../images/about/videoControls/muted.svg") no-repeat center center;
-  }
+  @include volume;
 }
 
-
-
-.title_wrapper{
+.title_wrapper {
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
@@ -516,7 +243,8 @@
   @media ($mobile) {
     flex-direction: column;
   }
-  & h3{
+
+  & h3 {
     font-size: 90px;
     line-height: 1.07;
     @media (max-width: 712px) {
@@ -532,12 +260,14 @@
       text-align: center;
       width: 100%;
     }
-    & span{
+
+    & span {
       display: block;
       background: $gradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      &:nth-child(2){
+
+      &:nth-child(2) {
         position: relative;
         right: -72px;
         @media ($mobile) {
@@ -546,7 +276,8 @@
       }
     }
   }
-  & p{
+
+  & p {
     @include text($color1);
     position: relative;
     left: -154px;
@@ -562,9 +293,7 @@
     }
   }
 }
-
-
-.video_info_items{
+.video_info_items {
   display: flex;
   justify-content: space-between;
   gap: 40px;
@@ -572,8 +301,7 @@
     flex-wrap: wrap;
   }
 }
-
-.video_info_item{
+.video_info_item {
   flex: 1;
   @media ($tablet) {
     flex-basis: calc(50% - 20px);
@@ -581,25 +309,28 @@
   @media ($mobile) {
     flex-basis: 100%;
   }
-  & img{
+
+  & img {
     width: 50px;
     height: auto;
   }
-  & p{
+
+  & p {
     @include text($color1);
     @include font14(20px);
     font-family: $gothamPro;
   }
 }
 
-//////////////////////////////////// descriotion ////
+//////////////////////////////////////////////// description  //////////////////////////////////////////////////////////
 
-.description_section{
+.description_section {
   @include section(transparent);
   overflow: hidden;
   width: 100%;
 }
-.description_container{
+
+.description_container {
   padding-top: 122px;
   padding-bottom: 92px;
   @media ($laptop) {
@@ -610,8 +341,9 @@
     padding-top: 0;
     padding-bottom: 0;
   }
-  }
-.description_item{
+}
+
+.description_item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -623,14 +355,15 @@
     flex-direction: column-reverse;
     margin-bottom: 0;
   }
-  &:nth-child(2n){
+
+  &:nth-child(2n) {
     flex-direction: row-reverse;
     @media ($mobile) {
       flex-direction: column-reverse;
     }
   }
 }
-.description_text{
+.description_text {
   flex: 1;
   justify-self: flex-end;
   position: relative;
@@ -641,12 +374,14 @@
     justify-self: flex-start;
     width: 100%;
   }
-  & h4{
+
+  & h4 {
     position: relative;
     font-family: $gothamProBlack;
     font-size: 26px;
     width: fit-content;
     margin-bottom: 0;
+
     &:after {
       content: "";
       position: absolute;
@@ -660,6 +395,7 @@
         display: none;
       }
     }
+
     @media ($laptop) {
       font-size: 22px;
     }
@@ -667,26 +403,31 @@
       font-size: 26px;
     }
   }
-  & p{
+
+  & p {
     @include text(black);
     max-width: 370px;
   }
-  &.reverse{
+
+  &.reverse {
     transform: translateX(200%);
-    & h4{
-      &:after{
+
+    & h4 {
+      &:after {
         all: unset;
       }
     }
-    & p{
+
+    & p {
       max-width: 470px;
     }
   }
-  &.animated{
+
+  &.animated {
     transform: translateY(0);
   }
 }
-.description_images{
+.description_images {
   position: relative;
   flex: 1.5;
   display: flex;
@@ -698,18 +439,21 @@
     flex: 1;
   }
 
-  & img{
+  & img {
     margin-bottom: 26px;
     @media ($mobile) {
       margin-bottom: 40px;
     }
   }
-  & .large{
+
+  & .large {
     width: 470px;
     height: auto;
-    &.reverse{
+
+    &.reverse {
       align-self: flex-end;
     }
+
     @media ($tablet) {
       width: 400px;
     }
@@ -723,13 +467,16 @@
       object-position: top center;
     }
   }
-  & .small{
+
+  & .small {
     width: 440px;
     height: auto;
     align-self: flex-end;
-    &.reverse{
+
+    &.reverse {
       align-self: unset;
     }
+
     @media ($tablet) {
       width: 370px;
     }
@@ -739,8 +486,9 @@
     @media ($mobile) {
       display: none;
     }
-    }
-  &:after{
+  }
+
+  &:after {
     content: "";
     position: absolute;
     top: 60px;
@@ -754,22 +502,26 @@
       display: none;
     }
   }
-  &.reverse{
+
+  &.reverse {
     transform: translateX(-200%);
-    & .large{
-        align-self: flex-end;
-        margin-right: 100px;
-        @media ($tablet) {
-          margin-right: 40px;
-        }
-        @media ($tablet) {
-          margin-right: unset;
-        }
+
+    & .large {
+      align-self: flex-end;
+      margin-right: 100px;
+      @media ($tablet) {
+        margin-right: 40px;
+      }
+      @media ($tablet) {
+        margin-right: unset;
+      }
     }
-    & .small{
+
+    & .small {
       align-self: flex-start;
     }
-    &:before, &:after{
+
+    &:before, &:after {
       all: unset;
       content: "";
       position: absolute;
@@ -798,7 +550,8 @@
         height: 7px;
       }
     }
-    &:after{
+
+    &:after {
       top: 306px;
       right: 40px;
       @media ($tablet) {
@@ -813,8 +566,9 @@
       }
     }
   }
-  &.big_square{
-    &:after{
+
+  &.big_square {
+    &:after {
       content: "";
       position: absolute;
       top: 60px;
@@ -829,7 +583,8 @@
       }
     }
   }
-  &.animated{
+
+  &.animated {
     transform: translateY(0);
   }
 }

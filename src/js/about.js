@@ -1,42 +1,4 @@
 
-const setVideoControls = () => {
-    const video = $('#video')[0]
-    const play = $(".play")
-    const volume = $('.volume')
-
-    play.on('click', function (){
-        if(video.paused){
-            video.play()
-            $(this).removeClass('paused')
-        }else {
-            video.pause()
-            $(this).addClass('paused')
-        }
-    })
-
-    volume.on('click', function() {
-        if(video.muted){
-            video.muted = !video.muted;
-            $(this).addClass('muted')
-        } else {
-            video.muted = !video.muted;
-            $(this).removeClass('muted')
-        }
-    });
-
-    $('.play, .volume').hide();
-
-    $('.video_wrapper').hover(
-        function() {
-            $('.play, .volume').fadeIn(300);
-        },
-        function() {
-            $('.play, .volume').fadeOut(300);
-        }
-    );
-
-}
-
 const setLogoGrid = (columns, even) =>{
 
     // clear prev state
@@ -109,7 +71,7 @@ const setLogoGrid = (columns, even) =>{
     }
 }
 const rentersLogoGrid = () => {
-    $('.see_all_button').click(function (){
+    $('.see_all_button').on('click', function (){
         $(this).toggleClass('active')
         $('.renters_logo_container').toggleClass('active')
     })
@@ -127,7 +89,6 @@ const rentersLogoGrid = () => {
     return setLogoGrid(5, true)
 
 }
-
 
 const animation = () => {
     let windowTop = $(window).scrollTop() - 300;
@@ -150,6 +111,7 @@ const animation = () => {
     });
 }
 
+
 const initSettings = [
     setFixedHeader,
     setDropMenu,
@@ -170,5 +132,4 @@ const settings = {
 }
 
 
-// execute
 isDocumentReady(settings)

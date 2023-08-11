@@ -1,15 +1,16 @@
 @import "variables";
 @import "common";
 
-.how_to_go_section{
-  h1{
+.how_to_go_section {
+  h1 {
     @include h1;
     margin-bottom: 50px;
   }
 }
 
+/////////////////////////////////////////// map section ////////////////////////////////////////////////////////////////
 
-.how_to_go_map_wrapper{
+.how_to_go_map_wrapper {
   position: relative;
   width: 100%;
   height: 700px;
@@ -28,20 +29,20 @@
   }
 }
 
-.desktop_map, .desktop_overlay{
+.desktop_map, .desktop_overlay {
   @media ($mobile) {
     display: none;
   }
 }
 
-.how_to_go_form_wrapper{
+//form
+.how_to_go_form_wrapper {
   position: absolute;
   left: 0;
   top: 0;
   width: 650px;
   min-height: 100%;
   background: $color1;
-  box-shadow: black;
   border-radius: 0 20px 20px 0;
   -webkit-box-shadow: 0 5px 32px 0 rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 5px 32px 0 rgba(0, 0, 0, 0.3);
@@ -73,7 +74,7 @@
     background: transparent;
   }
 
-  & h3{
+  & h3 {
     font-family: $gothamProBold;
     font-size: 24px;
     line-height: 28px;
@@ -97,20 +98,21 @@
     }
   }
 
-
-  & form{
+  & form {
     grid-template-columns: 1fr 1fr;
     gap: 22px;
     margin-bottom: 30px;
     display: none;
-    &.active{
+
+    &.active {
       display: grid;
     }
+
     @media ($mobile) {
-      &:before{
+      &:before {
         content: "";
         position: absolute;
-        top: 0px;
+        top: 0;
         left: 0;
         width: 100%;
         height: 220px;
@@ -121,7 +123,7 @@
     }
   }
 
-  & p{
+  & p {
     grid-column: span 2;
     font-family: $gothamPro;
     font-size: 14px;
@@ -139,8 +141,14 @@
     }
   }
 
+  & label:nth-child(3) {
+    display: block;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+  }
 
-  & label:nth-child(4){
+  & label:nth-child(4) {
     grid-column: span 2;
     grid-row: 3;
     display: block;
@@ -148,7 +156,8 @@
     height: fit-content;
     position: relative;
   }
-  & input[type="text"]{
+
+  & input[type="text"] {
     font-size: 16px;
     line-height: 26px;
     font-family: $gothamProMedium;
@@ -172,119 +181,12 @@
       padding: 12px 10px;
     }
   }
-
-
-
-  & label:nth-child(3){
-    display: block;
-    width: 100%;
-    height: fit-content;
-    position: relative;
-  }
-
-
-  & select{
-    padding: 20px;
-    border-radius: 8px;
-    @media ($mobile) {
-      padding: 18px 15px;
-    }
-
-    font-family: $gothamProBold;
-    width: 100%;
-    height: 100%;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-    background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 90% 60%;
-    background-size: 24px 24px;
-    transition: $transition;
-    outline: none;
-    padding: 16px 20px;
-    border: 1px solid black;
-    @media ($laptop) {
-      background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 90% 50%;
-      background-size: 24px 24px;
-    }
-    @media ($mobile) {
-      background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 93% 50%;
-      background-size: 24px 24px;
-      width: 130%;
-      height: unset;
-      font-size: 13px;
-    }
-    option{
-      font-family: $gothamPro;
-      font-size: 16px;
-    }
-    option[value=""][disabled] {
-      display: none;
-    }
-  }
 }
-
-
-.rout_selector{
-  display: none;
-  &.active{
-    display: block;
-  }
-}
-.rout_button{
-  all: unset;
-  background: #212832;
-  color: $color1;
-  padding: 14px 0;
-  font-family: $gothamProBold;
-  font-size: 14px;
-  line-height: 26px;
-  width: 100%;
-  border-radius: 8px;
-  transition: $transition;
-  text-align: center;
-  cursor: pointer;
-  display: none;
-  @media ($mobile) {
-    width: 71%;
-    justify-self: end;
-  }
-  &.active{
-    display: block;
-  }
-  & span:nth-child(2){
-    display: none;
-    @media ($mobile) {
-      display: inline-block;
-    }
-  }
-  & span:nth-child(1){
-    @media ($mobile) {
-      display: none;
-    }
-  }
-}
-
-.reset_button{
-  all: unset;
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  display: none;
-  &.active{
-    display: block;
-  }
-  & .fa-circle-xmark{
-    font-size: 20px;
-  }
-}
-
 
 .how_to_go_radio_button {
   cursor: pointer;
   width: 100%;
+
   input[type="radio"] {
     display: none;
 
@@ -317,68 +219,153 @@
     }
   }
 
-  & .mobile_button{
+  & .mobile_button {
     display: none;
     @media ($mobile) {
       display: inline-block !important;
     }
   }
-  & .desktop_button{
+
+  & .desktop_button {
     @media ($mobile) {
       display: none;
     }
   }
 }
-
-.how_to_go_form_parking{
-  margin-bottom: 20px;
+.route_selector {
   display: none;
-  &.active{
+
+  & select {
+    border-radius: 8px;
+    font-family: $gothamProBold;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 90% 60%;
+    background-size: 24px 24px;
+    transition: $transition;
+    outline: none;
+    padding: 16px 20px;
+    border: 1px solid black;
+    @media ($laptop) {
+      background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 90% 50%;
+      background-size: 24px 24px;
+    }
+    @media ($mobile) {
+      background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 93% 50%;
+      background-size: 24px 24px;
+      width: 130%;
+      height: unset;
+      font-size: 13px;
+      padding: 18px 15px;
+    }
+
+    option {
+      font-family: $gothamPro;
+      font-size: 16px;
+    }
+
+    option[value=""][disabled] {
+      display: none;
+    }
+  }
+
+  &.active {
     display: block;
   }
-  & .pIcon{
-    font-size: 50px;
-    line-height: 30px;
-    margin-right: 14px;
-  }
-  & span{
-    position: relative;
-    display: inline-block;
-    font-family: $gothamPro;
-    font-size: 14px;
-    line-height: 20px;
-    max-width: 200px;
-    top: -3px;
-  }
+}
+.route_button {
+  all: unset;
+  background: #212832;
+  color: $color1;
+  padding: 14px 0;
+  font-family: $gothamProBold;
+  font-size: 14px;
+  line-height: 26px;
+  width: 100%;
+  border-radius: 8px;
+  transition: $transition;
+  text-align: center;
+  cursor: pointer;
+  display: none;
   @media ($mobile) {
+    width: 71%;
+    justify-self: end;
+  }
+
+  &.active {
     display: block;
-    margin-top: 50px;
-    margin-bottom: 0;
+  }
+
+  & span:nth-child(2) {
+    display: none;
+    @media ($mobile) {
+      display: inline-block;
+    }
+  }
+
+  & span:nth-child(1) {
+    @media ($mobile) {
+      display: none;
+    }
+  }
+}
+.reset_button {
+  all: unset;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  & .fa-circle-xmark {
+    font-size: 20px;
   }
 }
 
-.how_to_go_form_map_links{
+/// form bottom
+.how_to_go_form_bottom {
+  &.mobile {
+    position: absolute;
+    bottom: 0;
+    background: $color1;
+    width: 100%;
+  }
+}
+.how_to_go_form_map_links {
   margin-bottom: 20px;
   display: none;
   @media ($mobile) {
     margin-top: 20px;
   }
-  &.active{
+
+  &.active {
     display: block;
   }
-  & a{
+
+  & a {
     font-family: $gothamPro;
     font-size: 14px;
     line-height: 22px;
     color: $color2;
     position: relative;
-    &:nth-child(1){
+
+    &:nth-child(1) {
       margin-right: 50px;
       padding-left: 30px;
       @media ($mobile) {
         margin-right: 29px;
       }
-      &:before{
+
+      &:before {
         content: '';
         position: absolute;
         top: -12px;
@@ -388,9 +375,11 @@
         background: url("../images/yandexMap.png") no-repeat center center;
       }
     }
-    &:nth-child(2){
+
+    &:nth-child(2) {
       padding-left: 36px;
-      &:before{
+
+      &:before {
         content: '';
         position: absolute;
         top: -12px;
@@ -402,48 +391,56 @@
     }
   }
 }
+.how_to_go_form_parking {
+  margin-bottom: 20px;
+  display: none;
 
-.how_to_go_form_bottom{
-  &.mobile{
-    position: absolute;
-    bottom: 0;
-    background: $color1;
-    width: 100%;
+  &.active {
+    display: block;
+  }
+
+  & .pIcon {
+    font-size: 50px;
+    line-height: 30px;
+    margin-right: 14px;
+  }
+
+  & span {
+    position: relative;
+    display: inline-block;
+    font-family: $gothamPro;
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 200px;
+    top: -3px;
+  }
+
+  @media ($mobile) {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 0;
   }
 }
 
-.detailed_route_wrapper{
+/// detailed route
+.detailed_route_wrapper {
   display: none;
-  &.active{
+
+  &.active {
     display: block;
   }
-  &.mobile_hide{
+
+  &.mobile_hide {
     @media ($mobile) {
       display: none;
     }
   }
 }
-.detailed_route_mobile{
-  display: none;
-  position: fixed;
-  background: $color1;
-  z-index: 9999;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  @media ($mobile) {
-    &.active{
-      display: block;
-    }
-  }
-}
-
-
-
-.detailed_route_top{
+.detailed_route_top {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+
   & p {
     @media ($mobile) {
       font-size: 14px;
@@ -453,7 +450,7 @@
     }
   }
 }
-.detailed_route{
+.detailed_route {
   height: 440px;
   overflow-y: auto;
   display: flex;
@@ -475,7 +472,8 @@
   @media(max-width: 600px) and (max-height: 500px) {
     padding-bottom: 160px;
   }
-  & p{
+
+  & p {
     font-family: $gothamProBold;
     position: relative;
     padding: 0 22px;
@@ -489,7 +487,8 @@
       text-align: left;
       margin-bottom: 18px;
     }
-    &:before{
+
+    &:before {
       content: "";
       position: absolute;
       left: -2px;
@@ -499,7 +498,8 @@
       background: url("../images/iconLocation.png") no-repeat center center;
     }
   }
-  & span{
+
+  & span {
     font-family: $gothamProLight;
     position: relative;
     padding: 0 22px;
@@ -516,7 +516,7 @@
       margin-bottom: 14px;
     }
 
-    &:before{
+    &:before {
       content: "—";
       position: absolute;
       left: -2px;
@@ -527,8 +527,7 @@
   }
 
 }
-
-.detailed_route_back{
+.detailed_route_back {
   font-family: $gothamProBold;
   font-size: 14px;
   line-height: 26px;
@@ -544,7 +543,8 @@
     padding: 12px 22px 12px 16px;
     margin-right: 16px;
   }
-  & .fa-arrow-left{
+
+  & .fa-arrow-left {
     font-size: 20px;
     line-height: 1;
     margin-right: 10px;
@@ -556,8 +556,7 @@
     }
   }
 }
-
-.detailed_route_close{
+.detailed_route_close {
   all: unset;
   position: absolute;
   top: 60px;
@@ -569,6 +568,7 @@
   @media ($mobile) {
     display: none;
   }
+
   & .fa-xmark {
     font-size: 50px;
   }
@@ -576,7 +576,9 @@
 }
 
 
-.mobile_map{
+//////////////////////////////////////////// mobile ////////////////////////////////////////////////////////////////////
+
+.mobile_map {
   position: relative;
   width: 100vw;
   height: 345px;
@@ -588,14 +590,25 @@
   }
 }
 
+.detailed_route_mobile {
+  display: none;
+  position: fixed;
+  background: $color1;
+  z-index: 9999;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  @media ($mobile) {
+    &.active {
+      display: block;
+    }
+  }
+}
 
 
+//////////////////////////////////////////// description  //////////////////////////////////////////////////////////////
 
-
-
-
-
-.how_to_go_description{
+.how_to_go_description {
   @include container;
   padding-bottom: 116px;
   @media ($laptop) {
@@ -604,12 +617,14 @@
   @media ($mobile) {
     padding-bottom: 10px;
   }
-  & > div{
+
+  & > div {
     margin-bottom: 36px;
     @media ($laptop) {
       margin-bottom: 28px;
     }
   }
+
   & h3 {
     font-family: $gothamProBlack;
     font-size: 24px;
@@ -625,7 +640,8 @@
       margin-bottom: 0;
     }
   }
-  & p{
+
+  & p {
     font-family: $gothamProLight;
     font-size: 20px;
     line-height: 30px;
@@ -643,29 +659,27 @@
 }
 
 
-
-
-
 //////////////////////////////////////////// pages nav section /////////////////////////////////////////////////////////
 
-.pages_nav_section{
+.pages_nav_section {
   @include pagesNavSection;
 }
-
-.pages_nav_item{
+.pages_nav_item {
   @include pagesNavItem;
-  &:nth-child(1){
+
+  &:nth-child(1) {
     background: $color1;
   }
-  &:nth-child(2){
+
+  &:nth-child(2) {
     background: $color5;
   }
-  &:nth-child(3){
+
+  &:nth-child(3) {
     background: $color1;
   }
 }
-
-.pages_nav_item_button{
+.pages_nav_item_button {
   @include pagesNavButton
 }
 

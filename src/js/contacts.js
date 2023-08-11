@@ -1,3 +1,4 @@
+
 const initSettings = [
     setFixedHeader,
     setDropMenu,
@@ -14,6 +15,4 @@ const settings = {
     mobile: []
 }
 
-
-// execute
 isDocumentReady(settings)

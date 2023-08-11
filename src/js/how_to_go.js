@@ -1,7 +1,4 @@
 
-
-
-
 const inputUpdate = () => {
     const form2 = () =>{
         $('.detailed_route_wrapper').removeClass('active')
@@ -12,8 +9,8 @@ const inputUpdate = () => {
         }
 
         $('.reset_button').addClass('active')
-        $('.rout_button').addClass('active')
-        $('.rout_selector').addClass('active')
+        $('.route_button').addClass('active')
+        $('.route_selector').addClass('active')
         $('.how_to_go_form_map_links').addClass('active')
         $('.how_to_go_form_parking').removeClass('active')
     }
@@ -27,8 +24,8 @@ const inputUpdate = () => {
         }
 
         $('.reset_button').removeClass('active')
-        $('.rout_button').removeClass('active')
-        $('.rout_selector').removeClass('active')
+        $('.route_button').removeClass('active')
+        $('.route_selector').removeClass('active')
         $('.how_to_go_form_map_links').removeClass('active')
         $('.how_to_go_form_parking').addClass('active')
     }
@@ -63,10 +60,11 @@ const inputUpdate = () => {
         form1()
     })
 
-    $('.rout_button').on('click', function (){
+    $('.route_button').on('click', function (){
         form3()
     })
 }
+
 
 const initSettings = [
     setFixedHeader,
@@ -86,5 +84,4 @@ const settings = {
 }
 
 
-// execute
 isDocumentReady(settings)
