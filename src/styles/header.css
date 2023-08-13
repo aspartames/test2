@@ -48,6 +48,10 @@ header.fixed {
     width: 850px;
   }
 }
+.header_top li:hover {
+  color: #6d82fc;
+  transition: 150ms;
+}
 @media (max-width: 1024px) {
   .header_top {
     display: none;
@@ -221,6 +225,9 @@ header.fixed {
   text-underline-offset: 3px;
   margin-right: 20px;
 }
+.header_address_links a:hover {
+  text-decoration: none;
+}
 @media (max-width: 1600px) {
   .header_address_links a {
     font-size: 13px;
@@ -380,11 +387,15 @@ header.fixed {
   font-size: 20px;
   line-height: 44px;
   font-family: "GothamProMedium";
+  transition: 150ms;
 }
 @media (max-width: 1600px) {
   .header_bottom_nav_list li {
     font-size: 16px;
   }
+}
+.header_bottom_nav_list li:hover {
+  color: #6d82fc;
 }
 @media (max-width: 1600px) {
   .header_bottom_nav_list li {
@@ -642,7 +653,7 @@ header.fixed {
   font-family: "GothamPro";
 }
 
-.drop_menu_shops_item:hover {
+.drop_menu_shops_item a:hover {
   display: inline-block;
   color: #6d82fc;
   text-decoration: underline;
@@ -670,11 +681,15 @@ header.fixed {
   line-height: 40px;
   list-style-type: none;
   font-family: "GothamProMedium";
+  transition: 150ms;
 }
 @media (max-width: 1600px) {
   .drop_menu_bottom_nav li {
     font-size: 16px;
   }
+}
+.drop_menu_bottom_nav li:hover {
+  color: #6d82fc;
 }
 
 .drop_menu_content {
@@ -758,7 +773,8 @@ header.fixed {
 
 .drop_menu_mobile_buttons {
   display: flex;
-  justify-content: space-between;
+  column-gap: 20px;
+  justify-content: flex-start;
   padding: 12px 0;
 }
 
@@ -813,7 +829,7 @@ header.fixed {
     display: grid;
     grid-template-columns: repeat(2, 140px);
     grid-template-rows: repeat(5, 1fr);
-    justify-content: space-between;
+    justify-content: start;
     grid-auto-flow: column;
     grid-column-gap: 20px;
   }
@@ -847,7 +863,7 @@ header.fixed {
     display: grid;
     grid-template-columns: repeat(2, 140px);
     grid-template-rows: repeat(3, 1fr);
-    justify-content: space-between;
+    justify-content: start;
     grid-auto-flow: column;
     grid-column-gap: 20px;
   }

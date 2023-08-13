@@ -235,6 +235,10 @@ footer {
   height: 100%;
 }
 
+.map-widget-content-view {
+  display: none;
+}
+
 .map_overlay {
   position: absolute;
   width: 100%;
@@ -419,6 +423,9 @@ footer {
   text-decoration: underline;
   text-underline-offset: 3px;
   margin-right: 20px;
+}
+.footer_address_links a:hover {
+  text-decoration: none;
 }
 @media (max-width: 1600px) {
   .footer_address_links a {
@@ -627,6 +634,10 @@ footer {
     width: 850px;
   }
 }
+.footer_bottom_nav li:hover {
+  color: #6d82fc;
+  transition: 150ms;
+}
 .footer_bottom_nav span {
   font-family: "GothamPro";
 }
@@ -641,10 +652,18 @@ footer {
     width: 100%;
   }
 }
+.footer_bottom_nav span:hover {
+  color: #4aa8ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 @media (max-width: 1024px) {
   .footer_bottom_nav ul {
     display: none;
   }
+}
+.footer_bottom_nav ul li:hover {
+  color: #4aa8ff;
 }
 @media (max-width: 1600px) {
   .footer_bottom_nav {

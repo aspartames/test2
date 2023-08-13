@@ -128,7 +128,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   z-index: 90000;
   background: rgba(18, 18, 18, 0.5);
   justify-content: center;
@@ -207,7 +207,7 @@
 
   & form {
     @media (max-width: 900px) {
-      height: 100vh;
+      height: 100dvh;
       overflow-x: auto;
       padding-bottom: 200px;
     }
@@ -220,6 +220,7 @@
 
   & h2 {
     font-family: $gothamProMedium;
+    font-weight: 800;
     font-size: 48px;
     line-height: 1;
     margin: 0 0 24px 0;
@@ -315,6 +316,7 @@
   @include formInputsSection;
   justify-content: flex-start;
   margin-bottom: 70px;
+  column-gap: 40px;
   @media ($laptop) {
     margin-bottom: 50px;
   }
@@ -337,28 +339,23 @@
     max-width: 200px;
     height: fit-content;
 
-    &:nth-child(1) {
-      margin-right: 20px;
-    }
-
-    &:nth-child(2) {
-      margin-right: 20px;
-    }
-
-    @media (max-width: 900px) {
-      max-width: unset;
-      &:nth-child(1) {
-        margin-right: 0;
-      }
-      &:nth-child(2) {
-        margin-right: 0;
-      }
-    }
     @media (max-width: 460px) {
       text-align: center;
     }
   }
 
+  & .form_select_title{
+    min-width: 200px;
+    margin-right: 20px;
+    @media (max-width: 1300px) {
+      min-width: unset;
+    }
+    @media (max-width: 900px) {
+      margin-right: unset;
+      min-width: 100%;
+      text-align: center;
+    }
+  }
   & label {
     display: flex;
     align-items: center;
@@ -366,11 +363,16 @@
 }
 
 .rent_type_wrapper {
+  flex: 0.647;
   @media (max-width: 900px) {
+    flex: unset;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  @media ($mobile) {
+    width: 100%;
   }
 }
 #rent_type {
@@ -389,6 +391,7 @@
   background-size: 24px 24px;
   transition: $transition;
   outline: none;
+  color: #7d7d7d;
   @media ($laptop) {
     padding: 16px 22px;
   }
@@ -490,6 +493,9 @@
   & a {
     color: $color3;
     text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+    }
   }
 
   & #agreement {
@@ -521,5 +527,85 @@
       background: url("../images/about/svg/check.svg") no-repeat center 55%;
       background-size: 70%;
     }
+  }
+}
+
+
+//////////////////////////////////////////// custom select ////////////////////////////////////////////////////////////////////
+
+
+.select2{
+  max-width: unset !important;
+  width: 100% !important;
+  min-height: 66px !important;
+  height: 66px !important;
+  @media ($laptop) {
+    min-height: 62px !important;
+    height: 62px !important;
+  }
+  @media (max-width: 1400px) {
+    min-height: 50px !important;
+    height: 50px !important;
+  }
+  @media (max-width: 1120px) {
+    width: 395px !important;
+  }
+  @media (max-width: 900px) {
+    margin: 10px 0 !important;
+  }
+
+  span{
+    max-width: unset !important;
+    width: 100% !important;
+  }
+}
+
+.selection{
+  max-width: unset !important;
+  width: 100% !important;
+}
+
+.select2-selection__rendered {
+  font-family: $gothamProMedium !important;
+  min-width: 260px !important;
+  min-height: 66px;
+  font-size: 18px !important;
+  line-height: 26px !important;
+  padding: 18px 26px !important;
+  margin-right: 40px;
+  background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 94.5% 52%;
+  background-size: 24px 24px;
+  border: 2px solid  #777777;
+  color: #7d7d7d !important;
+  @media ($laptop) {
+    font-size: 16px !important;
+    padding: 16px 22px !important;
+    min-height: 62px !important;
+    background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 94.5% 55%;
+    background-size: 24px 24px;
+  }
+  @media (max-width: 1400px) {
+    padding: 10px 20px !important;
+    min-height: 50px !important;
+    background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 94.5% 58%;
+    background-size: 24px 24px;
+  }
+
+}
+
+.select2-container--open{
+  z-index: 90000;
+}
+
+.select2-results__option{
+  padding: 18px 26px !important;
+  font-size: 18px !important;
+  line-height: 26px !important;
+  @media ($laptop) {
+    font-size: 16px !important;
+    padding: 16px 22px !important;
+  }
+  @media (max-width: 1400px) {
+    padding: 10px 20px !important;
   }
 }

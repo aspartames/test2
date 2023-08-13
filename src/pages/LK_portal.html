@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/custom_select.css">
     <link rel="stylesheet" type="text/css" href="../styles/LK_portal.css">
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/header.css">
@@ -490,7 +492,7 @@
                     <h6>Оставить заявку</h6>
                     <form action="">
                         <label>
-                            <span>Выберите отдел, в который отправляется заявка</span>
+                            <span class="letter_select_title">Выберите отдел, в который отправляется заявка</span>
                             <select name="" id="letter_department">
                                 <option value="">Технический отдел</option>
                                 <option value="">Технический отдел</option>
@@ -500,7 +502,7 @@
                             </select>
                         </label>
                         <label>
-                            <textarea type="text" id="letter_text" placeholder="Текст вашей заявки" resi></textarea>
+                            <textarea type="text" id="letter_text" placeholder="Текст вашей заявки"></textarea>
                         </label>
                         <button type="submit">Отправить заявку</button>
                     </form>
@@ -612,6 +614,7 @@
 </body>
 
 <script src="../libraries/jquery.js"></script>
+<script type="text/javascript" src="../libraries/select2.min.js"></script>
 <script type="text/javascript" src="../fonts/fontAwesomeAll.min.js"></script>
 <script type="text/javascript" src="../js/init.js"></script>
 <script type="text/javascript" src="../js/header.js"></script>

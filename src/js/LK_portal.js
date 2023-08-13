@@ -54,6 +54,22 @@ const LKNavigation = () =>{
     })
 }
 
+let isCustomized = false
+const setCustomSelect = () => {
+    if(!isMobile() && !isCustomized){
+        $('#letter_department').select2({
+            minimumResultsForSearch: -1,
+        })
+
+        isCustomized = true
+    }
+    else if (isMobile() && isCustomized) {
+        $('#letter_department').select2('destroy');
+
+        isCustomized = false
+    }
+
+}
 
 const initSettings = [
     setFixedHeader,
@@ -61,14 +77,15 @@ const initSettings = [
     setMobileMenu,
     setImageZoom,
     LKNavigation,
+    setCustomSelect
 ]
 
 const settings = {
     init: initSettings,
     scroll: [setFixedHeader],
-    desktop: [setDropMenu, setFixedHeader, updateHeaderParameters],
-    tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters],
-    mobile: []
+    desktop: [setDropMenu, setFixedHeader, updateHeaderParameters, setCustomSelect],
+    tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters, setCustomSelect],
+    mobile: [setCustomSelect]
 }
 
 

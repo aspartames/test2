@@ -33,6 +33,33 @@ const setMobileButtons = () =>{
     })
 }
 
+// custom select
+let isCustomized = false
+const setCustomSelect = () => {
+    if(!isMobile() && !isCustomized){
+        $('#catalog_category').select2({
+            minimumResultsForSearch: -1,
+            placeholder: "Категория",
+            allowClear: false,
+        })
+
+        $('#catalog_floor').select2({
+            minimumResultsForSearch: -1,
+            placeholder: "Выбор этажа",
+            allowClear: false,
+        })
+
+        isCustomized = true
+    }
+    else if (isMobile() && isCustomized) {
+        $('#catalog_category').select2('destroy');
+        $('#catalog_floor').select2('destroy');
+
+        isCustomized = false
+    }
+
+}
+
 
 const initSettings = [
     setFixedHeader,
@@ -41,14 +68,15 @@ const initSettings = [
     setImageZoom,
     setCatalogViewButtons,
     setMobileButtons,
+    setCustomSelect,
 ]
 
 const settings = {
     init: initSettings,
     scroll: [setFixedHeader],
-    desktop: [setDropMenu, setFixedHeader, updateHeaderParameters],
-    tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters],
-    mobile: []
+    desktop: [setDropMenu, setFixedHeader, updateHeaderParameters, setCustomSelect],
+    tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters, setCustomSelect],
+    mobile: [setCustomSelect]
 }
 
 isDocumentReady(settings)

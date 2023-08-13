@@ -124,5 +124,8 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+.login_form_wrapper a:hover {
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=login.css.map */

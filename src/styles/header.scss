@@ -178,6 +178,10 @@ header{
   & li {
     @include font20(44px);
     font-family: $gothamProMedium;
+    transition: $transition / 2;
+    &:hover{
+      color: $color3;
+    }
     @media ($laptop) {
       line-height: 38px;
     }
@@ -395,7 +399,9 @@ $bottomNavOffsetLaptop: 62px;
   font-family: $gothamPro;
 }
 .drop_menu_shops_item{
-  @include dropItemHover;
+  & a{
+    @include dropItemHover;
+  }
 }
 
 .drop_menu_bottom_nav{
@@ -415,6 +421,10 @@ $bottomNavOffsetLaptop: 62px;
     @include font20(40px);
     list-style-type: none;
     font-family: $gothamProMedium;
+    transition: $transition / 2;
+    &:hover{
+      color: $color3;
+    }
   }
 }
 
@@ -486,7 +496,8 @@ $bottomNavOffsetLaptop: 62px;
 
 .drop_menu_mobile_buttons{
   display: flex;
-  justify-content: space-between;
+  column-gap: 20px;
+  justify-content: flex-start;
   padding: 12px 0;
 }
 .drop_menu_mobile_button{
@@ -535,7 +546,7 @@ $bottomNavOffsetLaptop: 62px;
       display: grid;
       grid-template-columns: repeat(2, 140px);
       grid-template-rows: repeat(5, 1fr);
-      justify-content: space-between;
+      justify-content: start;
       grid-auto-flow: column;
       grid-column-gap: 20px
     }
@@ -565,7 +576,7 @@ $bottomNavOffsetLaptop: 62px;
       display: grid;
       grid-template-columns: repeat(2, 140px);
       grid-template-rows: repeat(3, 1fr);
-      justify-content: space-between;
+      justify-content: start;
       grid-auto-flow: column;
       grid-column-gap: 20px;
     }

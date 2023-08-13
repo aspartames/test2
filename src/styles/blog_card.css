@@ -330,6 +330,9 @@
 .brand_contacts_wrapper .brand_link:before {
   background: url("../images/blogCard/icon2.png") no-repeat center center;
 }
+.brand_contacts_wrapper .brand_link:hover {
+  text-decoration: none;
+}
 .brand_contacts_wrapper .brand_working_hours {
   line-height: 30px;
 }

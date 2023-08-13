@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/header.css">
     <link rel="stylesheet" type="text/css" href="../styles/footer.css">
+    <link rel="stylesheet" type="text/css" href="../styles/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/custom_select.css">
     <link rel="stylesheet" type="text/css" href="../fonts/fontAwesomeAll.min.css">
     <link rel="stylesheet" href="../libraries/swiper-bundle.min.css"/>
 
@@ -327,7 +329,13 @@
                 <form action="">
                     <label>
                         <select name="map_scheme_category" id="map_scheme_category">
-                            <option value="">Одежда и обувь</option>
+                            <option value="" class="placeholder" disabled selected>Категория</option>
+                            <option value="1">Одежда и обувь</option>
+                            <option value="2">Одежда и обувь</option>
+                            <option value="3">Одежда и обувь</option>
+                            <option value="4">Одежда и обувь</option>
+                            <option value="5">Одежда и обувь</option>
+
                         </select>
                     </label>
                 </form>
@@ -409,62 +417,62 @@
             <h2>Магазины на 1 этаже:</h2>
             <ul class="map_scheme_shops">
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Айкрафт</span>
+                    <a href="#"><span class="shop_title">Айкрафт</span></a>
                     <span class="shop_category">Красота и здоровье</span>
                 </li>
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Аптека 36,6</span>
+                    <a href="#"><span class="shop_title">Аптека 36,6</span></a>
                     <span class="shop_category">Красота и здоровье</span>
                 </li>
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Барбершоп</span>
+                    <a href="#"><span class="shop_title">Барбершоп</span></a>
                     <span class="shop_category">Красота и здоровье</span>
                 </li>
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Динозаврик</span>
+                    <a href="#"><span class="shop_title">Динозаврик</span></a>
                     <span class="shop_category">Для детей</span>
                 </li>
 
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Айкрафт</span>
+                    <a href="#"><span class="shop_title">Айкрафт</span></a>
                     <span class="shop_category">Красота и здоровье</span>
                 </li>
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Аптека 36,6</span>
+                    <a href="#"><span class="shop_title">Аптека 36,6</span></a>
                     <span class="shop_category">Красота и здоровье</span>
                 </li>
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Барбершоп</span>
+                    <a href="#"><span class="shop_title">Барбершоп</span></a>
                     <span class="shop_category">Красота и здоровье</span>
                 </li>
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Динозаврик</span>
+                    <a href="#"><span class="shop_title">Динозаврик</span></a>
                     <span class="shop_category">Для детей</span>
                 </li>
 
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Айкрафт</span>
+                    <a href="#"><span class="shop_title">Айкрафт</span></a>
                     <span class="shop_category">Красота и здоровье</span>
                 </li>
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Аптека 36,6</span>
+                    <a href="#"><span class="shop_title">Аптека 36,6</span></a>
                     <span class="shop_category">Красота и здоровье</span>
                 </li>
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Барбершоп</span>
+                    <a href="#"><span class="shop_title">Барбершоп</span></a>
                     <span class="shop_category">Красота и здоровье</span>
                 </li>
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Динозаврик</span>
+                    <a href="#"><span class="shop_title">Динозаврик</span></a>
                     <span class="shop_category">Для детей</span>
                 </li>
 
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Айкрафт</span>
+                    <a href="#"><span class="shop_title">Айкрафт</span></a>
                     <span class="shop_category">Красота и здоровье</span>
                 </li>
                 <li class="map_scheme_shops_item">
-                    <span class="shop_title">Аптека 36,6</span>
+                    <a href="#"><span class="shop_title">Аптека 36,6</span></a>
                     <span class="shop_category">Красота и здоровье</span>
                 </li>
 
@@ -535,6 +543,7 @@
 
 <script src="../libraries/jquery.js"></script>
 <script src="../libraries/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="../libraries/select2.min.js"></script>
 <script type="text/javascript" src="../fonts/fontAwesomeAll.min.js"></script>
 <script type="text/javascript" src="../js/init.js"></script>
 <script type="text/javascript" src="../js/header.js"></script>

@@ -302,10 +302,10 @@
 }
 .pages_nav_item h3 {
   font-size: 30px;
-  line-height: 44px;
+  line-height: 34px;
   position: relative;
-  margin: 0 0 20px 0;
-  padding-bottom: 20px;
+  margin: 4px 0 20px 0;
+  padding-bottom: 24px;
   font-family: "GothamProBlack";
   text-transform: uppercase;
 }
@@ -381,7 +381,7 @@
   }
 }
 .pages_nav_item img {
-  transition: 300ms;
+  transition: 1200ms;
   position: absolute;
   z-index: -1;
   width: auto;
@@ -477,7 +477,7 @@
   z-index: -1;
 }
 .pages_nav_item_button.light:after {
-  background: linear-gradient(90deg, #ffffff, #cfeff9);
+  background: linear-gradient(90deg, #ffffff, #B1E3E1);
   opacity: 0;
   transition: 600ms;
 }

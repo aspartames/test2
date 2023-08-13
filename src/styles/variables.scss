@@ -21,7 +21,7 @@ $gradient: linear-gradient(90deg, $gradientColor1, $gradientColor2);
 $gradientReverse: linear-gradient(90deg, $gradientColor2, $gradientColor1);
 
 $gradient2: linear-gradient(90deg, #cfeff9, #ffffff);
-$gradientReverse2: linear-gradient(90deg, #ffffff, #cfeff9);
+$gradientReverse2: linear-gradient(90deg, #ffffff, #B1E3E1);
 
 $marginDesktop: 110px;
 $marginLaptop: 31px;
@@ -310,6 +310,13 @@ $mobile: 'max-width: 600px';
       width: 850px;
     }
   }
+
+  & li{
+    &:hover{
+      color: $color3;
+      transition: $transition / 2;
+    }
+  }
 }
 
 @mixin floorPlanButton {
@@ -363,6 +370,9 @@ $mobile: 'max-width: 600px';
     text-decoration: underline;
     text-underline-offset: 3px;
     margin-right: 20px;
+    &:hover{
+      text-decoration: none;
+    }
     @media ($laptop) {
       font-size: 13px;
     }

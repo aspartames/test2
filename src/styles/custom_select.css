@@ -1,0 +1,70 @@
+@import '../fonts/stylesheet.css';
+.select2 {
+  width: auto !important;
+}
+
+.select2-selection__rendered {
+  font-family: "GothamProMedium";
+  font-size: 18px;
+  line-height: 26px;
+  padding: 16px 16px 16px 24px !important;
+  border-radius: 8px;
+  min-width: 250px;
+  background: white url("../images/about/svg/angleDown.svg") no-repeat 90% 60%;
+  background-size: 24px 24px;
+  border: none;
+}
+@media (max-width: 1600px) {
+  .select2-selection__rendered {
+    background: white url("../images/about/svg/angleDown.svg") no-repeat 90% 50%;
+    background-size: 24px 24px;
+  }
+}
+
+.select2-container .select2-selection--single {
+  height: 60px !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none;
+  line-height: 60px;
+}
+
+.select2-selection__arrow {
+  display: none !important;
+}
+
+.select2-results {
+  border-radius: 8px 8px 8px 8px !important;
+  background: transparent !important;
+}
+
+.select2-results > .select2-results__options {
+  max-height: unset !important;
+  border-radius: 8px 8px 8px 8px !important;
+  background: transparent !important;
+}
+
+.select2-results__option {
+  font-family: "GothamProMedium";
+  font-size: 16px;
+  line-height: 26px;
+  padding: 18px 16px 16px 24px !important;
+  max-height: 600px !important;
+}
+
+.select2-dropdown {
+  border-radius: 8px 8px 8px 8px !important;
+  z-index: 10 !important;
+  border: none !important;
+  filter: drop-shadow(0px 2px 10px rgba(4, 13, 52, 0.4));
+}
+
+.select2-results__option[aria-selected=true] {
+  background: #6d82fc !important;
+}
+
+.select2-selection__placeholder {
+  color: black !important;
+}
+
+/*# sourceMappingURL=custom_select.css.map */

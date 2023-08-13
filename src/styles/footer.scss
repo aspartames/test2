@@ -175,8 +175,11 @@ footer{
     width: 100%;
     height: 100%;
   }
-}
 
+}
+.map-widget-content-view{
+  display: none;
+}
 .map_overlay{
   position: absolute;
   width: 100%;
@@ -368,10 +371,20 @@ footer{
       text-align: center;
       width: 100%;
     }
+    &:hover{
+      color: $color4;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
   }
   & ul{
     @media ($tablet) {
       display: none;
+    }
+    & li{
+      &:hover{
+        color: $color4;
+      }
     }
   }
 

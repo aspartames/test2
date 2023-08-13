@@ -66,21 +66,39 @@ const inputUpdate = () => {
 }
 
 
+let isCustomized = false
+const setCustomSelect = () => {
+    if(!isMobile() && !isCustomized){
+        $('#route_select').select2({
+            minimumResultsForSearch: -1,
+        })
+
+        isCustomized = true
+    }
+    else if (isMobile() && isCustomized) {
+        $('#route_select').select2('destroy');
+
+        isCustomized = false
+    }
+
+}
+
 const initSettings = [
     setFixedHeader,
     setDropMenu,
     setMobileMenu,
     setImageZoom,
     setMapActive,
-    inputUpdate
+    inputUpdate,
+    setCustomSelect
 ]
 
 const settings = {
     init: initSettings,
     scroll: [setFixedHeader],
-    desktop: [setDropMenu, setFixedHeader, updateHeaderParameters],
-    tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters],
-    mobile: []
+    desktop: [setDropMenu, setFixedHeader, updateHeaderParameters, setCustomSelect],
+    tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters, setCustomSelect],
+    mobile: [setCustomSelect]
 }
 
 

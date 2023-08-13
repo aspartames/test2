@@ -94,10 +94,10 @@
     }
   }
   & h3{
-    @include font30(44px);
+    @include font30(34px);
     position: relative;
-    margin: 0 0 20px 0;
-    padding-bottom: 20px;
+    margin: 4px 0 20px 0;
+    padding-bottom: 24px;
     font-family: $gothamProBlack;
     text-transform: uppercase;
     @media ($laptop) {
@@ -142,7 +142,7 @@
     }
   }
   & img{
-    transition: $transition;
+    transition: $transition * 4;
     position: absolute;
     z-index: -1;
     width: auto;
@@ -368,7 +368,7 @@
     height: clamp(626px, 100vh, 852px);
   }
   @media ($tablet) {
-    height: max(586px, 100vh);
+    height: 580px;
   }
 
   & h1 {
@@ -747,6 +747,9 @@
     &:before {
       background: url("../images/blogCard/icon2.png") no-repeat center center;
     }
+    &:hover{
+      text-decoration: none;
+    }
   }
   .brand_working_hours{
     line-height: 30px;
@@ -887,3 +890,6 @@
     }
   }
 }
+
+
+

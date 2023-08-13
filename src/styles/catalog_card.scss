@@ -93,7 +93,7 @@
   }
 
   & p {
-    @include text(black);
+    @include text($color2);
     line-height: 24px;
     margin-bottom: 24px;
     @media ($laptop) {
@@ -104,6 +104,10 @@
       font-size: 14px;
       line-height: 22px;
       margin-bottom: 20px;
+      padding-right: 10px;
+      /*
+      -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
+      */
     }
 
     &:first-child {

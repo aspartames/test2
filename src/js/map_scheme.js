@@ -61,6 +61,27 @@ const setMapSchemeSlider = () =>{
     });
 }
 
+// custom select
+let isCustomized = false
+const setCustomSelect = () => {
+    if(!isMobile()){
+        $('#map_scheme_category').select2({
+            minimumResultsForSearch: -1,
+            placeholder: "Категория",
+            allowClear: false,
+
+        })
+
+        isCustomized = true
+
+    }
+    else if(isMobile() && isCustomized) {
+        $('#map_scheme_category').select2('destroy');
+
+        isCustomized = false
+    }
+
+}
 
 
 const initSettings = [
@@ -70,14 +91,15 @@ const initSettings = [
     mobileButtonSearch,
     setMapSchemeSlider,
     zoomFloorScheme,
+    setCustomSelect
 ]
 
 const settings = {
     init: initSettings,
     scroll: [setFixedHeader],
-    desktop: [setDropMenu, setFixedHeader, updateHeaderParameters],
-    tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters],
-    mobile: []
+    desktop: [setDropMenu, setFixedHeader, updateHeaderParameters, setCustomSelect],
+    tablet: [setMobileMenu, setFixedHeader, updateHeaderParameters, setCustomSelect],
+    mobile: [setCustomSelect, setCustomSelect]
 }
 
 

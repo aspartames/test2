@@ -28,6 +28,46 @@ const setIntroductionSlider = () => {
     })
 }
 
+let logoSlider = null
+let duplicate = false
+const setLogoSlider = () => {
+    if (isMobile()){
+        $('.logo_swiper_wrapper').find('.duplicate').remove()
+        logoSlider && logoSlider.destroy()
+        duplicate = false
+    }
+    else {
+        if(!duplicate){
+
+            const swiperWrapper = $('.logo_swiper_wrapper');
+            const logoSlide = $('.logo_slide');
+            logoSlide.each(function (){
+                const dublicateSlide = $(this).clone()
+                dublicateSlide.addClass('duplicate')
+                dublicateSlide.appendTo(swiperWrapper)
+            })
+
+
+
+
+            duplicate = true
+        }
+
+
+
+        logoSlider = new Swiper('.promotions_brands',{
+            allowTouchMove: false,
+            loop: true,
+            slidesPerView: isTablet() ? 6 : 12,
+            spaceBetween: 40,
+            autoplay: {
+                delay: 0,
+            },
+            speed: 6000,
+        })
+    }
+
+}
 
 const initSettings = [
     setFixedHeader,
@@ -36,14 +76,15 @@ const initSettings = [
     setIntroductionSlider,
     setImageZoom,
     setMapActive,
+    setLogoSlider,
 ]
 
 const settings = {
     init: initSettings,
     scroll: [setFixedHeader],
-    desktop: [setDropMenu, setIntroductionSlider, setFixedHeader, updateHeaderParameters],
-    tablet: [setMobileMenu, setIntroductionSlider, setFixedHeader, updateHeaderParameters],
-    mobile: [setIntroductionSlider]
+    desktop: [setDropMenu, setIntroductionSlider, setFixedHeader, updateHeaderParameters, setLogoSlider],
+    tablet: [setMobileMenu, setIntroductionSlider, setFixedHeader, updateHeaderParameters, setLogoSlider],
+    mobile: [setIntroductionSlider, setLogoSlider]
 }
 
 

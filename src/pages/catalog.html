@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/header.css">
     <link rel="stylesheet" type="text/css" href="../styles/footer.css">
+    <link rel="stylesheet" type="text/css" href="../styles/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/custom_select.css">
     <link rel="stylesheet" type="text/css" href="../fonts/fontAwesomeAll.min.css">
 
     <title>Каталог</title>
@@ -335,20 +337,21 @@
                         <label for="catalog_category"></label>
                         <select name="category" id="catalog_category">
                             <option value="" disabled selected>Категория</option>
-                            <option value="">Категория</option>
-                            <option value="">Категория</option>
+                            <option value="1">Одежда и обувь</option>
+                            <option value="2">Категория 2</option>
+                            <option value="3">Категория 3</option>
                         </select>
                     </form>
                     <form action="" id="catalog_floor_form">
                         <label for="catalog_floor"></label>
                         <select name="floor" id="catalog_floor">
                             <option value="" disabled selected>Выбор этажа</option>
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                            <option value="">6</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
                         </select>
                     </form>
                 </div>
@@ -845,6 +848,7 @@
 </body>
 
 <script src="../libraries/jquery.js"></script>
+<script type="text/javascript" src="../libraries/select2.min.js"></script>
 <script type="text/javascript" src="../fonts/fontAwesomeAll.min.js"></script>
 <script type="text/javascript" src="../js/init.js"></script>
 <script type="text/javascript" src="../js/header.js"></script>

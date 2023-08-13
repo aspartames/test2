@@ -346,7 +346,7 @@
     }
   }
 
-  & span {
+  & .letter_select_title {
     display: inline-block;
     font-family: $gothamProBold;
     font-size: 16px;
@@ -371,6 +371,10 @@
       margin-bottom: 32px;
       display: flex;
       align-items: center;
+      @media ($tablet) {
+        row-gap: 20px;
+        flex-wrap: wrap;
+      }
       @media ($mobile) {
         flex-direction: column;
         margin-bottom: 14px;
@@ -505,7 +509,7 @@
   aspect-ratio: 300 / 220;
 
   & img {
-    transition: $transition;
+    transition: $transition * 4;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -555,8 +559,18 @@
 
 
 
+//////////////////////////////////////////// custom select ////////////////////////////////////////////////////////////////////
 
-
+.select2-selection__rendered {
+  min-width: 344px;
+  background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 93.5% 57%;
+  background-size: 24px 24px;
+  border: 1px solid #787878;
+  @media ($laptop) {
+    background: rgb(255, 255, 255) url("../images/about/svg/angleDown.svg") no-repeat 93.5% 50%;
+    background-size: 24px 24px;
+  }
+}
 
 
 

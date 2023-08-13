@@ -151,7 +151,7 @@
   line-height: 22px;
   position: relative;
   font-family: "GothamPro";
-  color: black;
+  color: #212832;
   line-height: 24px;
   margin-bottom: 24px;
 }
@@ -176,6 +176,10 @@
     font-size: 14px;
     line-height: 22px;
     margin-bottom: 20px;
+    padding-right: 10px;
+    /*
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
+    */
   }
 }
 .catalog_card_text p:first-child {
@@ -492,6 +496,9 @@
 }
 .brand_contacts_wrapper .brand_link:before {
   background: url("../images/blogCard/icon2.png") no-repeat center center;
+}
+.brand_contacts_wrapper .brand_link:hover {
+  text-decoration: none;
 }
 .brand_contacts_wrapper .brand_working_hours {
   line-height: 30px;

@@ -112,7 +112,7 @@ const setDropMenu = () => {
             return () => clearTimeout()
         })
 
-        hoverItem.mouseenter((e) => {
+/*        hoverItem.mouseenter((e) => {
             clearTimeout(timer)
             dropMenuNavSelected.html('')
             isButtonAllShops = false
@@ -133,7 +133,7 @@ const setDropMenu = () => {
             }, 300)
 
             return () => clearTimeout()
-        })
+        })*/
 
         dropMenu.mouseenter(() => {
             clearTimeout(timer)
