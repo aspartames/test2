@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="src/styles/style.css">
     <link rel="stylesheet" type="text/css" href="src/styles/header.css">
     <link rel="stylesheet" type="text/css" href="src/styles/footer.css">
+    <link rel="stylesheet" type="text/css" href="src/styles/rental_form.css">
     <link rel="stylesheet" type="text/css" href="src/fonts/fontAwesomeAll.min.css">
     <link rel="stylesheet" type="text/css" href="./src/libraries/swiper-bundle.min.css"/>
 
@@ -39,7 +40,7 @@
         <div class="header_mid_info">
             <div class="header_logo">
                 <a href="#">
-                    <img src="./src/images/logo.png" alt="logo">
+                    <img src="src/images/png/logo.png" alt="logo">
                 </a>
             </div>
             <div class="header_mid_center">
@@ -310,6 +311,71 @@
         </nav>
     </div>
 </header>
+
+<div class="rental_form">
+    <div class="form_wrapper">
+        <div class="form_title_wrapper">
+            <h2>Заявка на аренду</h2>
+            <p>Для аренды площади в ТЦ «Вешняки» заполните форму ниже, указав необходимые данные о вашей
+                организации.</p>
+        </div>
+        <div class="form_close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <form action="/submit" method="post">
+            <div class="form_contacts">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder="Ваше имя">
+
+                <label for="phoneNumber"></label>
+                <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Ваш номер телефона">
+
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="Ваша электронная почта">
+            </div>
+            <div class="form_organization_info">
+                <label for="organizationName"></label>
+                <input type="text" name="organizationName" id="organizationName"
+                       placeholder="Полное наименование организации">
+
+                <label for="brand"></label>
+                <input type="text" name="brand" id="brand" placeholder="Бренд / торговая марка">
+
+                <label for="product"></label>
+                <input type="text" name="product" id="product" placeholder="Товарный профиль (например: одежда, обувь)">
+            </div>
+            <div class="form_rent_info">
+                <label class="rent_type_wrapper">
+                    <span class="form_select_title">Тип интересующей арендуемой площади:</span>
+                    <select name="rent_type" id="rent_type">
+                        <option value="1">Островная аренда</option>
+                        <option value="2">Островная аренда</option>
+                    </select>
+                </label>
+                <label class="form_area_wrapper">
+                    <span class="form_select_title">Размер интересующей вас площади м2:</span>
+                    <span class="area_wrapper">
+                <input type="number" name="area_from" id="area_from" placeholder="От" class="form_area">
+                <input type="number" name="area_to" id="area_to" placeholder="До" class="form_area">
+                <input type="number" name="area_optimal" id="area_optimal" placeholder="Оптимально" class="form_area">
+              </span>
+
+                </label>
+            </div>
+            <div class="form_agreement">
+                <input type="checkbox" name="agreement" id="agreement">
+                <label for="agreement">
+              <span>
+                Я даю согласие на обработку
+                <a href="#">персональных данных</a>
+              </span>
+                </label>
+            </div>
+            <button type="submit">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
 <main>
     <section class="introduction_section">
         <div class="slider_container">
@@ -485,26 +551,27 @@
             <h3>Кафе и рестораны</h3>
             <p>На четвёртом этаже расположен внушительный фудкорт с большим выбором мест и ресторанных концепций.</p>
             <button class="pages_nav_item_button light" onclick="window.location.href='#'">Посмотреть на схеме</button>
-            <img src="./src/images/mainPage/caffe.png" alt="">
+            <img src="./src/images/backgrounds/caffe.png" alt="">
         </div>
         <div class="pages_nav_item light zoom_hover" onclick="window.location.href='#'" role="button">
             <h3>Эко-тренды</h3>
             <p>Актуальные предложения от брендов, которые заботятся об экологии и мотивируют своих клиентов
                 присоединяться к трендам.</p>
             <button class="pages_nav_item_button light" onclick="window.location.href='#'">Подробнее</button>
-            <img src="./src/images/mainPage/eco.png" alt="">
+            <img src="./src/images/backgrounds/eco.png" alt="">
         </div>
-        <div class="pages_nav_item light" onclick="window.location.href='#'" role="button">
+        <div class="pages_nav_item light rental_form_open"  role="button">
             <h3>Арендаторам</h3>
             <p>Хотите к нам? <br> Вместе каждый из нас будет успешнее!</p>
-            <button class="pages_nav_item_button light" onclick="window.location.href='#'">Оставить заявку</button>
+            <button class="pages_nav_item_button light rental_form_open">Оставить заявку</button>
         </div>
     </section>
 </main>
+
 <footer>
     <div class="footer_subscribe">
         <div class="footer_subscribe_logo">
-            <img src="./src/images/at.png" alt="at">
+            <img src="src/images/png/at.png" alt="at">
             <span>VESHNYAKI</span>
         </div>
         <div class="footer_subscribe_form">
@@ -526,7 +593,7 @@
         <div class="footer_info">
             <div class="footer_logo">
                 <a href="#">
-                    <img src="./src/images/logo.png" alt="logo">
+                    <img src="src/images/png/logo.png" alt="logo">
                 </a>
             </div>
             <div class="footer_address_container">
@@ -545,7 +612,7 @@
                 <span>Планы этажей</span>
             </button>
             <div class="questor_it_logo_wrapper">
-                <img src="./src/images/questorItLogo.png" alt="questoe it">
+                <img src="src/images/png/questorItLogo.png" alt="questoe it">
                 <span>Разработка и поддержка сайта</span>
             </div>
         </div>
@@ -571,5 +638,6 @@
 <script type="text/javascript" src="src/js/init.js"></script>
 <script type="text/javascript" src="src/js/header.js"></script>
 <script type="text/javascript" src="src/js/common.js"></script>
+<script type="text/javascript" src="src/js/rental_form.js"></script>
 <script type="text/javascript" src="src/js/index.js"></script>
 </html>

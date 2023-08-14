@@ -94,7 +94,8 @@ const initSettings = [
     setImageZoom,
     setMapActive,
     inputUpdate,
-    setCustomSelect
+    setCustomSelect,
+    rentalForm,
 ]
 
 const settings = {

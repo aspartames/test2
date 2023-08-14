@@ -5,6 +5,7 @@ const initSettings = [
     setMobileMenu,
     setImageZoom,
     setMapActive,
+    rentalForm,
 ]
 
 const settings = {

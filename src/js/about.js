@@ -120,7 +120,8 @@ const initSettings = [
     setMapActive,
     setVideoControls,
     rentersLogoGrid,
-    animation
+    animation,
+    rentalForm
 ]
 
 const settings = {

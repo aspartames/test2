@@ -42,13 +42,10 @@ const setLogoSlider = () => {
             const swiperWrapper = $('.logo_swiper_wrapper');
             const logoSlide = $('.logo_slide');
             logoSlide.each(function (){
-                const dublicateSlide = $(this).clone()
-                dublicateSlide.addClass('duplicate')
-                dublicateSlide.appendTo(swiperWrapper)
+                const duplicateSlide = $(this).clone()
+                duplicateSlide.addClass('duplicate')
+                duplicateSlide.appendTo(swiperWrapper)
             })
-
-
-
 
             duplicate = true
         }
@@ -79,6 +76,7 @@ const initSettings = [
     setImageZoom,
     setMapActive,
     setLogoSlider,
+    rentalForm,
 ]
 
 const settings = {
