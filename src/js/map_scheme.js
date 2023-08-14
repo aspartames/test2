@@ -8,11 +8,20 @@ const zoomFloorScheme = () => {
     const zoomOutButton = $('.zoom_minus');
 
 
-    zoomInButton.on('click', function () {
+    zoomInButton.on('touchstart', function () {
         sliderContainer.addClass('zoom')
         slider.addClass('zoom')
     });
 
+    zoomOutButton.on('touchstart', function () {
+        sliderContainer.removeClass('zoom')
+        slider.removeClass('zoom')
+    });
+
+    zoomInButton.on('click', function () {
+        sliderContainer.addClass('zoom')
+        slider.addClass('zoom')
+    });
 
     zoomOutButton.on('click', function () {
         sliderContainer.removeClass('zoom')
