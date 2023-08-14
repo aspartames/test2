@@ -1,5 +1,5 @@
 
-// slider
+// sliders
 let swiper = null
 
 const setIntroductionSlider = () => {
@@ -68,6 +68,8 @@ const setLogoSlider = () => {
     }
 
 }
+
+
 
 const initSettings = [
     setFixedHeader,

@@ -6,6 +6,17 @@ const zoomFloorScheme = () => {
     const zoomInButton = $('.zoom_plus');
     const zoomOutButton = $('.zoom_minus');
 
+
+    zoomInButton.on('touchstart', function () {
+        zoomImage.addClass('zoom')
+        zoomImage2.addClass('zoom')
+    });
+
+    zoomOutButton.on('touchstart', function () {
+        zoomImage.removeClass('zoom')
+        zoomImage2.removeClass('zoom')
+    });
+
     zoomInButton.on('click', function () {
         zoomImage.addClass('zoom')
         zoomImage2.addClass('zoom')
@@ -15,6 +26,8 @@ const zoomFloorScheme = () => {
         zoomImage.removeClass('zoom')
         zoomImage2.removeClass('zoom')
     });
+
+
 }
 
 const initSettings = [

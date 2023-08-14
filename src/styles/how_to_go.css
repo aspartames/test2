@@ -879,6 +879,7 @@
   .pages_nav_item h3 {
     margin: 0 0 20px 0;
     padding-bottom: 16px;
+    text-align: center;
   }
 }
 .pages_nav_item h3::after {

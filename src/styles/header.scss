@@ -179,8 +179,10 @@ header{
     @include font20(44px);
     font-family: $gothamProMedium;
     transition: $transition / 2;
-    &:hover{
-      color: $color3;
+    & a{
+      &:hover{
+        color: $color3;
+      }
     }
     @media ($laptop) {
       line-height: 38px;

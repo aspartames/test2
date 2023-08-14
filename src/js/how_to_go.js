@@ -1,4 +1,6 @@
 
+
+/// change form state
 const inputUpdate = () => {
     const form2 = () =>{
         $('.detailed_route_wrapper').removeClass('active')
@@ -65,7 +67,7 @@ const inputUpdate = () => {
     })
 }
 
-
+/// custom select
 let isCustomized = false
 const setCustomSelect = () => {
     if(!isMobile() && !isCustomized){
@@ -82,6 +84,8 @@ const setCustomSelect = () => {
     }
 
 }
+
+
 
 const initSettings = [
     setFixedHeader,

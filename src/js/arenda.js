@@ -13,7 +13,7 @@ const rentalForm = () => {
 
 }
 
-
+// custom select
 let isCustomized = false
 const setCustomSelect = () => {
     if(!isMobile() && !isCustomized){

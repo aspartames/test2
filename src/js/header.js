@@ -14,7 +14,7 @@ const updateHeaderParameters = () => {
     headerParameters.heightTop = $('.header_top').height()
 }
 
-
+/// fixed header
 const setFixedHeader = () => {
     if (!isTablet()) {
         const {isHeaderFixed, header, heightHeader, heightBottom, heightTop} = headerParameters
@@ -23,7 +23,7 @@ const setFixedHeader = () => {
 
         const headerFixedHeight = heightHeader - heightBottom - heightTop
 
-        const dropMenuFixedTop = isLaptop() ? 110 : 124
+        const dropMenuFixedTop = isLaptop() ? 109 : 124
         const dropMenuDefaultTop = isLaptop() ? 216 : 240
 
         if (scrollPosition > heightTop ) {
@@ -78,24 +78,22 @@ const setFixedHeader = () => {
     }
 }
 
+/// drop menu
 const setDropMenu = () => {
     if (!isTablet()) {
         removeMenuHandlers()
 
         const dropMenu = $('.drop_menu')
-        const hoverItem = $('.header_bottom_nav_item')
         const button = $('.header_all')
         const menuIcon = $('.menu_icon')
         const dropMenuNavList = $('.drop_menu_nav_list')
         const dropMenuNavSelected = $('.drop_menu_nav_selected')
 
         let timer = null
-        let isButtonAllShops = false
 
         button.mouseenter(() => {
             clearTimeout(timer)
             dropMenuNavSelected.html('')
-            isButtonAllShops = true
             dropMenu.addClass('active')
             button.addClass('active')
             menuIcon.addClass('active')
@@ -106,39 +104,15 @@ const setDropMenu = () => {
                 dropMenu.removeClass('active')
                 button.removeClass('active')
                 menuIcon.removeClass('active')
-                return () => clearTimeout()
             }, 300)
-
-            return () => clearTimeout()
         })
 
-/*        hoverItem.mouseenter((e) => {
-            clearTimeout(timer)
-            dropMenuNavSelected.html('')
-            isButtonAllShops = false
 
-            dropMenu.addClass('active')
-            menuIcon.removeClass('active')
-
-            const selectedShopItems = $(`[data-category="${e.currentTarget.dataset.navItem}"]`)
-            const copySelectedShopItems = selectedShopItems.clone()
-            dropMenuNavSelected.html(copySelectedShopItems)
-            dropMenuNavList.addClass('hidden')
-        })
-        hoverItem.mouseleave(() => {
-            timer = setTimeout(() => {
-                dropMenu.removeClass('active')
-
-                return () => clearTimeout()
-            }, 300)
-
-            return () => clearTimeout()
-        })*/
 
         dropMenu.mouseenter(() => {
             clearTimeout(timer)
             dropMenu.addClass('active')
-            isButtonAllShops && menuIcon.addClass('active')
+            menuIcon.addClass('active')
         })
         dropMenu.mouseleave(() => {
             dropMenu.removeClass('active')
@@ -148,6 +122,7 @@ const setDropMenu = () => {
     }
 }
 
+/// mobile menu
 const setMobileMenu = () => {
     if (isTablet()) {
         removeMenuHandlers()
@@ -160,6 +135,7 @@ const setMobileMenu = () => {
     }
 }
 
+/// clear menu handlers
 const removeMenuHandlers = () => {
     $('.header_all').off()
     $('.header_bottom_nav_item').off()
