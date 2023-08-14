@@ -1,41 +1,41 @@
 @font-face {
 	font-family: 'Gotham Pro';
-	src: url('Gothampro.ttf') format('truetype');
+	src: url('gothampro.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'GothamProMedium';
-	src: url('Gothampro_medium.ttf') format('truetype');
+	src: url('gothampro_medium.ttf') format('truetype');
 	font-weight: 600;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'GothamProBold';
-	src: url('Gothampro_bold.ttf') format('truetype');
+	src: url('gothampro_bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'GothamProLight';
-	src: url('Gothampro_Light.ttf') format('truetype');
+	src: url('gothampro_Light.ttf') format('truetype');
 	font-weight: 300;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'GothamProBlack';
-	src: url('Gothampro_Black.ttf') format('truetype');
+	src: url('gothampro_Black.ttf') format('truetype');
 	font-weight: 900;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'GothamPro';
-	src: url('Gothampro.ttf') format('truetype');
+	src: url('gothampro.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
